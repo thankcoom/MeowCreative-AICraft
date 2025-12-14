@@ -1,0 +1,121 @@
+{
+  "patterns": [
+    {
+      "id": "pattern_1dd456cc",
+      "type": "success",
+      "category": "opening",
+      "pattern": "問句開頭+痛點描述",
+      "description": "",
+      "example": "你是否也曾經花了好幾個小時寫文章，卻發現沒人看？",
+      "context": [],
+      "metrics": {
+        "usage_count": 1,
+        "success_rate": 0.5,
+        "avg_engagement": 0.0
+      },
+      "created_at": "2025-11-26T17:43:11.425271",
+      "updated_at": "2025-11-26T17:43:11.425285"
+    },
+    {
+      "id": "pattern_866e8596",
+      "type": "success",
+      "category": "opening",
+      "pattern": "empathy_question",
+      "description": "開頭使用empathy_question模式",
+      "example": "你是否曾經為了交易機器人的高昂訂閱費而猶豫？Cryptohopper 月費 $99，一年下來就是 $1,188。3Commas 雖然沒公開定價，但同樣需要持續訂閱成本。更令人困擾的是，這些商業平台往往功能受限，僅支援中心化交易所（CEX），無法利用去中心化交易所（DEX）的流動性機會。",
+      "context": [],
+      "metrics": {
+        "usage_count": 1,
+        "success_rate": 1.0,
+        "avg_score": 85.0
+      },
+      "created_at": "2025-12-11T04:33:11.187781",
+      "updated_at": "2025-12-11T04:33:11.187788"
+    },
+    {
+      "id": "pattern_8763e497",
+      "type": "success",
+      "category": "structure",
+      "pattern": "deep_hierarchy",
+      "description": "文章結構: deep_hierarchy",
+      "example": "H1:5, H2:8, H3:23, Paragraphs:157",
+      "context": [],
+      "metrics": {
+        "usage_count": 5,
+        "success_rate": 1.0,
+        "avg_score": 85.0
+      },
+      "created_at": "2025-12-11T04:33:11.188718",
+      "updated_at": "2025-12-11T04:33:11.216101"
+    },
+    {
+      "id": "pattern_05ad541a",
+      "type": "success",
+      "category": "cta",
+      "pattern": "aggressive",
+      "description": "CTA 強度: aggressive (count: 20)",
+      "example": "CTA 出現 20 次",
+      "context": [],
+      "metrics": {
+        "usage_count": 5,
+        "success_rate": 1.0,
+        "avg_score": 85.0
+      },
+      "created_at": "2025-12-11T04:33:11.189228",
+      "updated_at": "2025-12-11T04:33:11.217108"
+    },
+    {
+      "id": "pattern_bb95a171",
+      "type": "success",
+      "category": "opening",
+      "pattern": "unknown",
+      "description": "開頭使用unknown模式",
+      "example": "我花了三年才明白一個道理：賺錢是個技能，不是運氣。",
+      "context": [],
+      "metrics": {
+        "usage_count": 2,
+        "success_rate": 1.0,
+        "avg_score": 92.0
+      },
+      "created_at": "2025-12-11T04:33:11.204038",
+      "updated_at": "2025-12-11T04:33:11.212433"
+    },
+    {
+      "id": "pattern_bc22005f",
+      "type": "success",
+      "category": "opening",
+      "pattern": "question",
+      "description": "開頭使用question模式",
+      "example": "你有沒有想過，當有人在 PTT 或 Dcard 抱怨你的產品時，你多久才會知道？一小時？一天？還是等到負評已經擴散到無法收拾，才從朋友那裡聽說？",
+      "context": [],
+      "metrics": {
+        "usage_count": 1,
+        "success_rate": 1.0,
+        "avg_score": 91.0
+      },
+      "created_at": "2025-12-11T04:33:11.208130",
+      "updated_at": "2025-12-11T04:33:11.208132"
+    },
+    {
+      "id": "pattern_aafa8507",
+      "type": "success",
+      "category": "opening",
+      "pattern": "data_hook",
+      "description": "開頭使用data_hook模式",
+      "example": "> **Meta Description**: 學習如何用 AI 建立 55 分鐘部落格寫作流水線。Multi-Agent 系統、真實測試數據、可複製的技術架構，從 10 小時縮短到 55 分鐘，節省 91% 時間。包含 Claude Code、MCP 整合、完整代碼範例。",
+      "context": [],
+      "metrics": {
+        "usage_count": 1,
+        "success_rate": 1.0,
+        "avg_score": 92.0
+      },
+      "created_at": "2025-12-11T04:33:11.215297",
+      "updated_at": "2025-12-11T04:33:11.215299"
+    }
+  ],
+  "metadata": {
+    "version": "1.0.0",
+    "created": "2025-11-26T17:27:16.591483",
+    "updated": "2025-12-11T04:33:11.217111"
+  }
+}

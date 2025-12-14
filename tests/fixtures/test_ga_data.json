@@ -1,0 +1,84 @@
+{
+  "pageviews": 15000,
+  "users": 5000,
+  "avgSessionDuration": 210,
+  "bounceRate": 48.5,
+  "pageviewsPerSession": 3.2,
+  "previous_period": {
+    "pageviews": 12000,
+    "users": 4200
+  },
+  "pages": [
+    {
+      "pageTitle": "Claude Code 自動化寫作系統完整指南",
+      "pagePath": "/claude-code-automation-guide",
+      "pageviews": 3500,
+      "avgTimeOnPage": 320,
+      "bounceRate": 35.2,
+      "exitRate": 42.1
+    },
+    {
+      "pageTitle": "10 個提升部落格流量的 SEO 技巧",
+      "pagePath": "/10-seo-tips-for-blog",
+      "pageviews": 2800,
+      "avgTimeOnPage": 280,
+      "bounceRate": 42.5,
+      "exitRate": 48.3
+    },
+    {
+      "pageTitle": "AI 寫作工具比較：ChatGPT vs Claude",
+      "pagePath": "/ai-writing-tools-comparison",
+      "pageviews": 2200,
+      "avgTimeOnPage": 350,
+      "bounceRate": 38.7,
+      "exitRate": 45.2
+    },
+    {
+      "pageTitle": "內容行銷自動化：完整實作教學",
+      "pagePath": "/content-marketing-automation",
+      "pageviews": 1900,
+      "avgTimeOnPage": 290,
+      "bounceRate": 44.8,
+      "exitRate": 52.1
+    },
+    {
+      "pageTitle": "WordPress 外掛推薦：提升寫作效率",
+      "pagePath": "/wordpress-plugins-for-writing",
+      "pageviews": 1500,
+      "avgTimeOnPage": 240,
+      "bounceRate": 51.2,
+      "exitRate": 58.3
+    }
+  ],
+  "sources": [
+    {
+      "medium": "organic",
+      "sessions": 7500
+    },
+    {
+      "medium": "direct",
+      "sessions": 3000
+    },
+    {
+      "medium": "referral",
+      "sessions": 1500
+    },
+    {
+      "medium": "social",
+      "sessions": 2000
+    },
+    {
+      "medium": "email",
+      "sessions": 1000
+    }
+  ],
+  "daily_data": [
+    {"date": "2025-11-03", "pageviews": 2100},
+    {"date": "2025-11-04", "pageviews": 2300},
+    {"date": "2025-11-05", "pageviews": 1900},
+    {"date": "2025-11-06", "pageviews": 2500},
+    {"date": "2025-11-07", "pageviews": 2200},
+    {"date": "2025-11-08", "pageviews": 1800},
+    {"date": "2025-11-09", "pageviews": 2200}
+  ]
+}

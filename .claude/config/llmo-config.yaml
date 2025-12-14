@@ -1,0 +1,456 @@
+# LLMO - Large Language Model Optimization 配置
+# 大語言模型優化：讓內容被 ChatGPT、Perplexity、Claude、Gemini 引用
+# 版本: 1.0.0
+# 更新: 2025-12-11
+
+version: "1.0.0"
+updated: "2025-12-11"
+
+# ============================================================
+# LLMO 核心概念
+# ============================================================
+
+overview:
+  definition: |
+    LLMO (Large Language Model Optimization) 是優化內容以提升在 AI 生成回答中
+    被引用、提及、推薦的可能性。與傳統 SEO 追求「排名」不同，LLMO 追求「被 AI 選中」。
+
+  why_important:
+    - "AI 搜尋流量 2024-2025 成長 1,200%"
+    - "AI 搜尋用戶轉換率是傳統搜尋的 4.4 倍"
+    - "2028 年預計 $7,500 億美元收入經由 AI 搜尋"
+    - "82.5% 的 AI 引用來自深層頁面，非首頁"
+    - "未準備好的品牌可能損失 20-50% 流量"
+
+  key_platforms:
+    - name: "ChatGPT"
+      market_share: "59%"
+      characteristics: "偏好結構化、權威性內容"
+    - name: "Google Gemini"
+      market_share: "13%"
+      characteristics: "整合 Google 搜尋數據"
+    - name: "Microsoft Copilot"
+      market_share: "14%"
+      characteristics: "整合 Bing 索引"
+    - name: "Perplexity"
+      market_share: "5.5%"
+      characteristics: "高引用率，偏好有來源的內容"
+    - name: "Claude"
+      market_share: "2.8%"
+      characteristics: "偏好結構化輸出"
+
+# ============================================================
+# LLMO 優化策略
+# ============================================================
+
+optimization_strategies:
+
+  # 策略 1: 結構化內容
+  structured_content:
+    importance: "★★★★★"
+    description: "LLM 偏好清晰、有組織的內容結構"
+
+    requirements:
+      headings:
+        - "使用清晰的標題階層 (H1 → H2 → H3)"
+        - "標題要包含關鍵概念，不要模糊"
+        - "每個 H2 下 2-4 個 H3"
+
+      paragraphs:
+        - "每段 3-5 句話，不超過 150 字"
+        - "每段一個核心觀點"
+        - "段落開頭即點明主題 (倒金字塔)"
+
+      lists:
+        - "關鍵步驟用有序列表 (1, 2, 3)"
+        - "並列選項用無序列表"
+        - "每個列表項目簡潔明確"
+
+      tables:
+        - "比較資訊用表格呈現"
+        - "表頭清晰標示各欄位意義"
+        - "數據要有單位和來源"
+
+    verification:
+      - "是否有清晰的 H1 > H2 > H3 結構？"
+      - "每段是否只表達一個核心觀點？"
+      - "步驟和比較是否用列表/表格呈現？"
+
+  # 策略 2: 明確定義
+  clear_definitions:
+    importance: "★★★★★"
+    description: "LLM 會抓取明確的定義來回答「什麼是 X」類問題"
+
+    patterns:
+      definition_sentence:
+        format: "[術語] 是 [類別]，[核心特徵]。"
+        example: "LLMO 是一種內容優化策略，專門提升內容在 AI 生成回答中被引用的機率。"
+
+      expanded_definition:
+        format: |
+          [術語] ([全名]) 是指 [定義]。
+          具體來說，它包含 [要素1]、[要素2]、[要素3]。
+        example: |
+          E-E-A-T (Experience, Expertise, Authoritativeness, Trustworthiness)
+          是 Google 評估內容品質的四大標準。
+          具體來說，它包含第一手經驗、專業知識、權威地位、可信程度。
+
+    verification:
+      - "文章中的專業術語是否都有清晰定義？"
+      - "定義是否出現在術語首次出現的位置？"
+      - "定義句是否簡潔且完整？"
+
+  # 策略 3: 數據和引用
+  data_and_citations:
+    importance: "★★★★★"
+    description: "LLM 偏好有數據支持和可驗證來源的內容"
+
+    requirements:
+      statistics:
+        - "使用具體數字，避免「很多」「大部分」"
+        - "標明數據來源和時間"
+        - "優先使用近期數據 (2023-2025)"
+
+      sources:
+        - "引用權威來源 (學術、官方、產業領袖)"
+        - "提供可驗證的連結"
+        - "標明引用的具體內容"
+
+      expert_quotes:
+        - "引用領域專家的觀點"
+        - "標明專家的身份和資歷"
+        - "使用直接引述而非轉述"
+
+    examples:
+      bad: "研究顯示大部分人都這樣做"
+      good: "根據 McKinsey 2025 年報告，61% 的消費者使用 AI 輔助購物決策"
+
+      bad: "專家認為這很重要"
+      good: "Semrush 研究總監指出：「AI 搜尋用戶的轉換率是傳統搜尋的 4.4 倍」"
+
+    verification:
+      - "是否每個關鍵論點都有數據支持？"
+      - "數據來源是否可驗證？"
+      - "是否引用了領域專家？"
+
+  # 策略 4: 問答格式
+  qa_format:
+    importance: "★★★★☆"
+    description: "LLM 優先抓取問答格式內容回答用戶問題"
+
+    patterns:
+      direct_qa:
+        format: |
+          ## [問題]？
+          [直接回答，1-2 句話]
+
+          [詳細說明...]
+        example: |
+          ## LLMO 和 SEO 有什麼不同？
+          LLMO 優化內容以被 AI 引用，SEO 優化內容以在搜尋引擎排名。
+
+          具體來說，SEO 追求的是「被找到」，LLMO 追求的是「被選中作為答案」...
+
+      faq_section:
+        format: |
+          ## 常見問題
+
+          ### Q: [問題 1]？
+          A: [回答 1]
+
+          ### Q: [問題 2]？
+          A: [回答 2]
+
+    verification:
+      - "是否有 FAQ 區塊？"
+      - "問題是否反映真實用戶搜尋意圖？"
+      - "回答是否直接且完整？"
+
+  # 策略 5: 獨特觀點
+  unique_insights:
+    importance: "★★★★☆"
+    description: "LLM 會進行多來源比對，獨特數據和觀點更容易被引用"
+
+    what_counts:
+      - "原創研究數據"
+      - "第一手經驗分享"
+      - "獨特的分析角度"
+      - "實際案例和結果"
+      - "專有框架或方法論"
+
+    what_doesnt:
+      - "重複網路上已有的資訊"
+      - "沒有來源的通用觀點"
+      - "純粹的內容整理"
+
+    verification:
+      - "文章是否有獨特的數據或觀點？"
+      - "是否有第一手經驗？"
+      - "是否有原創框架或方法？"
+
+  # 策略 6: 實體覆蓋
+  entity_coverage:
+    importance: "★★★★☆"
+    description: "LLM 根據實體 (人、組織、概念) 建立知識圖譜"
+
+    requirements:
+      - "提及相關的人物 (專家、創始人)"
+      - "提及相關的組織 (公司、機構)"
+      - "提及相關的概念 (方法論、框架)"
+      - "提及相關的產品 (工具、服務)"
+      - "確保實體名稱拼寫正確"
+
+    example:
+      topic: "一人公司經營"
+      entities:
+        people:
+          - "Paul Jarvis (Company of One 作者)"
+          - "Justin Welsh (一人公司 $6.4M/年)"
+          - "Tiago Forte (PARA 方法創始人)"
+        organizations:
+          - "Forte Labs"
+          - "LinkedIn"
+        concepts:
+          - "PARA 方法"
+          - "支柱內容 (Pillar Content)"
+          - "槓桿系統"
+        products:
+          - "Notion"
+          - "Obsidian"
+          - "Buffer"
+
+    verification:
+      - "是否提及該領域的關鍵人物？"
+      - "是否提及相關的方法論/框架？"
+      - "實體名稱是否正確？"
+
+# ============================================================
+# 內容格式優化
+# ============================================================
+
+content_formatting:
+
+  # 適合 LLM 抓取的格式
+  llm_friendly_formats:
+
+    summary_box:
+      description: "開頭的 TL;DR 摘要框"
+      format: |
+        > **TL;DR (太長不看版)**
+        > - 要點 1
+        > - 要點 2
+        > - 要點 3
+      benefit: "LLM 可直接抓取作為快速回答"
+
+    definition_block:
+      description: "術語定義區塊"
+      format: |
+        **[術語]**: [一句話定義]
+      benefit: "直接回答「什麼是 X」問題"
+
+    step_by_step:
+      description: "步驟式教學"
+      format: |
+        ## 如何 [做某事]
+
+        1. **步驟一**: [動作] - [說明]
+        2. **步驟二**: [動作] - [說明]
+        3. **步驟三**: [動作] - [說明]
+      benefit: "直接回答「如何做 X」問題"
+
+    comparison_table:
+      description: "比較表格"
+      format: |
+        | 項目 | A 方案 | B 方案 |
+        |------|--------|--------|
+        | 優點 | ... | ... |
+        | 缺點 | ... | ... |
+        | 適合 | ... | ... |
+      benefit: "直接回答「A 和 B 哪個好」問題"
+
+    key_takeaways:
+      description: "關鍵要點區塊"
+      format: |
+        ## 關鍵要點
+
+        ✅ 要點 1
+        ✅ 要點 2
+        ✅ 要點 3
+      benefit: "LLM 抓取作為總結"
+
+# ============================================================
+# 平台特定優化
+# ============================================================
+
+platform_specific:
+
+  chatgpt:
+    characteristics:
+      - "偏好結構化、有標題的內容"
+      - "重視來源可信度"
+      - "喜歡有明確結論的內容"
+    optimization:
+      - "使用清晰的 H2/H3 標題"
+      - "提供權威來源連結"
+      - "每個段落有明確的主題句"
+
+  perplexity:
+    characteristics:
+      - "高引用率，會顯示來源"
+      - "偏好有圖表的內容"
+      - "重視事實準確性"
+    optimization:
+      - "加入圖表、數據視覺化"
+      - "確保所有數據有來源"
+      - "使用 Schema.org 標記"
+
+  google_gemini:
+    characteristics:
+      - "整合 Google 搜尋排名"
+      - "重視 E-E-A-T 信號"
+      - "偏好已有 SEO 基礎的內容"
+    optimization:
+      - "同時做好傳統 SEO"
+      - "強化 E-E-A-T 信號"
+      - "使用 Schema 結構化數據"
+
+  claude:
+    characteristics:
+      - "偏好邏輯清晰的內容"
+      - "重視論證完整性"
+      - "喜歡有深度的分析"
+    optimization:
+      - "論點要有邏輯推演"
+      - "提供多角度分析"
+      - "避免邏輯謬誤"
+
+# ============================================================
+# 評分標準
+# ============================================================
+
+scoring:
+
+  dimensions:
+    structure:
+      weight: 20
+      criteria:
+        - "標題階層清晰 (H1>H2>H3)"
+        - "段落長度適中 (3-5句)"
+        - "使用列表和表格"
+
+    definitions:
+      weight: 15
+      criteria:
+        - "關鍵術語有定義"
+        - "定義格式標準化"
+        - "定義位置正確"
+
+    data_citations:
+      weight: 25
+      criteria:
+        - "有具體數據支持"
+        - "來源可驗證"
+        - "引用權威專家"
+
+    qa_format:
+      weight: 15
+      criteria:
+        - "有 FAQ 區塊"
+        - "問題反映真實搜尋意圖"
+        - "回答直接完整"
+
+    unique_insights:
+      weight: 15
+      criteria:
+        - "有原創數據或觀點"
+        - "有第一手經驗"
+        - "有獨特框架"
+
+    entity_coverage:
+      weight: 10
+      criteria:
+        - "提及關鍵人物"
+        - "提及相關方法論"
+        - "實體名稱正確"
+
+  grading:
+    A: "90-100 - 極高 LLM 引用潛力"
+    B: "80-89 - 高 LLM 引用潛力"
+    C: "70-79 - 中等 LLM 引用潛力"
+    D: "60-69 - 低 LLM 引用潛力"
+    F: "<60 - 極低 LLM 引用潛力"
+
+# ============================================================
+# 驗證清單
+# ============================================================
+
+verification_checklist:
+
+  pre_publish:
+    structure:
+      - "□ 有清晰的 H1 > H2 > H3 結構"
+      - "□ 段落長度 3-5 句"
+      - "□ 步驟用有序列表"
+      - "□ 比較用表格"
+
+    definitions:
+      - "□ 關鍵術語首次出現時有定義"
+      - "□ 定義簡潔完整"
+
+    data:
+      - "□ 關鍵論點有數據支持"
+      - "□ 數據有來源和時間"
+      - "□ 引用權威專家"
+
+    qa:
+      - "□ 有 TL;DR 摘要"
+      - "□ 有 FAQ 區塊或問答格式標題"
+
+    uniqueness:
+      - "□ 有獨特觀點或數據"
+      - "□ 有第一手經驗"
+
+    entities:
+      - "□ 提及領域關鍵人物"
+      - "□ 提及相關框架/方法論"
+      - "□ 實體名稱正確"
+
+# ============================================================
+# 與現有系統整合
+# ============================================================
+
+integration:
+
+  with_seo_optimizer:
+    - "LLMO 評分納入 SEO 報告"
+    - "Schema 生成支援 FAQ/HowTo"
+    - "AI Overviews 優化已整合"
+
+  with_editor_agent:
+    - "結構檢查整合 LLMO 標準"
+    - "引用驗證整合數據要求"
+
+  with_fact_checker:
+    - "數據來源驗證"
+    - "專家引用驗證"
+
+  with_writer_agent:
+    - "寫作時遵循 LLMO 格式"
+    - "自動加入定義和摘要"
+
+# ============================================================
+# 輸出報告格式
+# ============================================================
+
+report_format:
+  filename: "llmo_report.md"
+  sections:
+    - "LLMO 評分總覽"
+    - "結構分析"
+    - "定義檢查"
+    - "數據引用分析"
+    - "問答格式檢查"
+    - "獨特性評估"
+    - "實體覆蓋分析"
+    - "平台適配建議"
+    - "改進建議"

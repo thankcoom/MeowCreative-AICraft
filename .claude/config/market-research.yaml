@@ -1,0 +1,29 @@
+# 市場研究配置
+research_sources:
+  taiwan_tech_blogs:
+    - "https://blog.techbridge.cc/"
+    - "https://engineering.linecorp.com/zh-hant/blog/"
+    - "https://tech-blog.cymetrics.io/"
+
+  popular_platforms:
+    - name: "Medium Taiwan"
+      url: "https://medium.com/tag/技術"
+      metrics: ["claps", "responses"]
+
+    - name: "iT 邦幫忙"
+      url: "https://ithelp.ithome.com.tw/"
+      metrics: ["views", "讚", "留言數"]
+
+# 熱門文章判斷標準
+popularity_criteria:
+  min_views: 1000
+  min_engagement_rate: 0.03
+  recency_days: 90
+
+# 內容分析指標
+analysis_metrics:
+  - "標題吸引力"
+  - "開頭鉤子設計"
+  - "小標題結構"
+  - "程式碼範例比例"
+  - "視覺化元素"

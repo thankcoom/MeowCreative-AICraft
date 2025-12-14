@@ -1,0 +1,323 @@
+<!--
+  AI 寫手系統效能儀表板 v2.6.0 - WordPress 嵌入版
+  使用方式：在 WordPress 新增頁面 > 使用「自定義 HTML」區塊 > 貼上此代碼
+-->
+
+<style>
+.ai-dashboard {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    background: linear-gradient(135deg, #0f172a, #1e293b);
+    color: #e2e8f0;
+    padding: 2rem;
+    border-radius: 1rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.ai-dashboard * {
+    box-sizing: border-box;
+}
+
+.ai-header {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.ai-header h2 {
+    font-size: 1.75rem;
+    background: linear-gradient(135deg, #6366f1, #a855f7);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    color: transparent;
+    margin: 0 0 0.5rem 0;
+}
+
+.ai-version {
+    color: #94a3b8;
+    font-size: 0.9rem;
+}
+
+.ai-badge {
+    display: inline-block;
+    background: linear-gradient(135deg, #6366f1, #a855f7);
+    padding: 0.25rem 0.75rem;
+    border-radius: 9999px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    margin-left: 0.5rem;
+    color: white;
+}
+
+.ai-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    justify-content: center;
+    margin-top: 0.75rem;
+}
+
+.ai-tag {
+    padding: 0.25rem 0.5rem;
+    border-radius: 0.25rem;
+    font-size: 0.7rem;
+    font-weight: 500;
+}
+
+.ai-tag-llmo { background: rgba(34, 197, 94, 0.2); color: #86efac; }
+.ai-tag-geo { background: rgba(59, 130, 246, 0.2); color: #93c5fd; }
+.ai-tag-aeo { background: rgba(99, 102, 241, 0.2); color: #a5b4fc; }
+.ai-tag-vso { background: rgba(168, 85, 247, 0.2); color: #d8b4fe; }
+.ai-tag-cro { background: rgba(245, 158, 11, 0.2); color: #fcd34d; }
+.ai-tag-aiso { background: rgba(236, 72, 153, 0.2); color: #f9a8d4; }
+
+.ai-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.5rem;
+}
+
+.ai-card {
+    background: rgba(30, 41, 59, 0.8);
+    border-radius: 1rem;
+    padding: 1.5rem;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.3);
+}
+
+.ai-card-title {
+    font-size: 0.875rem;
+    color: #94a3b8;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    margin-bottom: 1rem;
+}
+
+.ai-new-badge {
+    background: linear-gradient(135deg, #22c55e, #16a34a);
+    color: white;
+    padding: 0.125rem 0.375rem;
+    border-radius: 0.25rem;
+    font-size: 0.6rem;
+    font-weight: 700;
+    margin-left: 0.25rem;
+    vertical-align: middle;
+}
+
+.ai-aiso-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.5rem;
+}
+
+.ai-aiso-item {
+    display: flex;
+    justify-content: space-between;
+    padding: 0.5rem;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 0.25rem;
+    font-size: 0.8rem;
+}
+
+.ai-aiso-weight {
+    color: #6366f1;
+    font-weight: 600;
+}
+
+.ai-feature-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1rem;
+}
+
+.ai-feature {
+    padding: 1rem;
+    border-radius: 0.5rem;
+}
+
+.ai-feature-llmo { background: rgba(34, 197, 94, 0.1); border-left: 3px solid #22c55e; }
+.ai-feature-geo { background: rgba(59, 130, 246, 0.1); border-left: 3px solid #3b82f6; }
+.ai-feature-vso { background: rgba(168, 85, 247, 0.1); border-left: 3px solid #a855f7; }
+.ai-feature-cro { background: rgba(245, 158, 11, 0.1); border-left: 3px solid #f59e0b; }
+
+.ai-feature-title {
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+}
+
+.ai-feature-desc {
+    color: #94a3b8;
+    font-size: 0.8rem;
+}
+
+.ai-stats-banner {
+    margin-top: 1.5rem;
+    padding: 1rem;
+    background: rgba(99, 102, 241, 0.1);
+    border-radius: 0.5rem;
+    text-align: center;
+}
+
+.ai-stats-banner strong {
+    color: #a5b4fc;
+}
+
+.ai-phase-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.ai-phase-item {
+    display: flex;
+    justify-content: space-between;
+    padding: 0.5rem 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    font-size: 0.85rem;
+}
+
+.ai-phase-item:last-child {
+    border-bottom: none;
+}
+
+.ai-phase-time {
+    color: #94a3b8;
+}
+
+.ai-full-span {
+    grid-column: 1 / -1;
+}
+
+.ai-footer {
+    text-align: center;
+    margin-top: 1.5rem;
+    padding-top: 1rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    color: #64748b;
+    font-size: 0.8rem;
+}
+</style>
+
+<div class="ai-dashboard">
+    <!-- 標題區 -->
+    <div class="ai-header">
+        <h2>AI 寫手系統效能儀表板</h2>
+        <p class="ai-version">
+            v2.6.0 - Search Everywhere
+            <span class="ai-badge">全通路搜尋優化</span>
+        </p>
+        <div class="ai-tags">
+            <span class="ai-tag ai-tag-llmo">LLMO</span>
+            <span class="ai-tag ai-tag-geo">GEO</span>
+            <span class="ai-tag ai-tag-aeo">AEO</span>
+            <span class="ai-tag ai-tag-vso">VSO</span>
+            <span class="ai-tag ai-tag-cro">CRO</span>
+            <span class="ai-tag ai-tag-aiso">AISO</span>
+        </div>
+    </div>
+
+    <div class="ai-grid">
+        <!-- AISO 評分權重 -->
+        <div class="ai-card">
+            <div class="ai-card-title">
+                AISO 評分權重 <span class="ai-new-badge">v2.6</span>
+            </div>
+            <div class="ai-aiso-grid">
+                <div class="ai-aiso-item"><span>SEO</span><span class="ai-aiso-weight">20%</span></div>
+                <div class="ai-aiso-item"><span>GEO</span><span class="ai-aiso-weight">20%</span></div>
+                <div class="ai-aiso-item"><span>LLMO</span><span class="ai-aiso-weight">20%</span></div>
+                <div class="ai-aiso-item"><span>AEO</span><span class="ai-aiso-weight">15%</span></div>
+                <div class="ai-aiso-item"><span>E-E-A-T</span><span class="ai-aiso-weight">15%</span></div>
+                <div class="ai-aiso-item"><span>VSO</span><span class="ai-aiso-weight">5%</span></div>
+                <div class="ai-aiso-item"><span>CRO</span><span class="ai-aiso-weight">5%</span></div>
+            </div>
+            <p style="color: #64748b; font-size: 0.75rem; text-align: center; margin-top: 0.75rem;">
+                2025 搜尋優化標準權重
+            </p>
+        </div>
+
+        <!-- 新增 Phases -->
+        <div class="ai-card">
+            <div class="ai-card-title">
+                v2.6.0 新增 Phases <span class="ai-new-badge">NEW</span>
+            </div>
+            <ul class="ai-phase-list">
+                <li class="ai-phase-item">
+                    <span>Phase 4d - LLMO Optimizer</span>
+                    <span class="ai-phase-time">45s</span>
+                </li>
+                <li class="ai-phase-item">
+                    <span>Phase 4e - GEO Optimizer</span>
+                    <span class="ai-phase-time">45s</span>
+                </li>
+                <li class="ai-phase-item">
+                    <span>Phase 4f - VSO Optimizer</span>
+                    <span class="ai-phase-time">30s</span>
+                </li>
+                <li class="ai-phase-item">
+                    <span>Phase 4g - CRO Optimizer</span>
+                    <span class="ai-phase-time">30s</span>
+                </li>
+                <li class="ai-phase-item">
+                    <span>Phase 4h - AISO Scorer</span>
+                    <span class="ai-phase-time">30s</span>
+                </li>
+            </ul>
+        </div>
+
+        <!-- 新功能介紹 -->
+        <div class="ai-card ai-full-span">
+            <div class="ai-card-title">
+                Search Everywhere 新功能 <span class="ai-new-badge">v2.6</span>
+            </div>
+            <div class="ai-feature-grid">
+                <div class="ai-feature ai-feature-llmo">
+                    <div class="ai-feature-title">LLMO 優化</div>
+                    <div class="ai-feature-desc">大語言模型優化，讓內容被 ChatGPT/Claude/Perplexity 選為回答素材</div>
+                </div>
+                <div class="ai-feature ai-feature-geo">
+                    <div class="ai-feature-title">GEO 優化</div>
+                    <div class="ai-feature-desc">生成式引擎優化，提升在 Perplexity、Google AI Mode 的能見度</div>
+                </div>
+                <div class="ai-feature ai-feature-vso">
+                    <div class="ai-feature-title">VSO 優化</div>
+                    <div class="ai-feature-desc">語音搜尋優化，被 Siri、Alexa、Google Assistant 選為回答</div>
+                </div>
+                <div class="ai-feature ai-feature-cro">
+                    <div class="ai-feature-title">CRO 優化</div>
+                    <div class="ai-feature-desc">轉換率優化，AI 搜尋用戶轉換率是傳統的 4.4 倍</div>
+                </div>
+            </div>
+            <div class="ai-stats-banner">
+                <strong>2025 關鍵數據：</strong>
+                AI 搜尋流量成長 1,200% ｜ 82.5% AI 引用來自深層頁面 ｜ 65% 零點擊搜尋
+            </div>
+        </div>
+
+        <!-- 可用模式 -->
+        <div class="ai-card ai-full-span">
+            <div class="ai-card-title">可用執行模式</div>
+            <div class="ai-feature-grid">
+                <div class="ai-feature" style="background: rgba(99, 102, 241, 0.1); border-left: 3px solid #6366f1;">
+                    <div class="ai-feature-title">search 模式 <span class="ai-new-badge">v2.6</span></div>
+                    <div class="ai-feature-desc">完整 AISO 優化，最大化跨平台搜尋能見度</div>
+                </div>
+                <div class="ai-feature" style="background: rgba(34, 197, 94, 0.1); border-left: 3px solid #22c55e;">
+                    <div class="ai-feature-title">llmo 模式 <span class="ai-new-badge">v2.6</span></div>
+                    <div class="ai-feature-desc">專注 AI 引用優化，被 ChatGPT/Perplexity 引用</div>
+                </div>
+                <div class="ai-feature" style="background: rgba(168, 85, 247, 0.1); border-left: 3px solid #a855f7;">
+                    <div class="ai-feature-title">voice 模式 <span class="ai-new-badge">v2.6</span></div>
+                    <div class="ai-feature-desc">語音搜尋優化，問句標題 + 直接回答格式</div>
+                </div>
+                <div class="ai-feature" style="background: rgba(245, 158, 11, 0.1); border-left: 3px solid #f59e0b;">
+                    <div class="ai-feature-title">standard 模式</div>
+                    <div class="ai-feature-desc">標準流程，執行 Critical + Important Phases</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="ai-footer">
+        喵哩文創 AI 寫手系統 v2.6.0 "Search Everywhere" ｜ 更新日期: 2025-12-14
+    </div>
+</div>

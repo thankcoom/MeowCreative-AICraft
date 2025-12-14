@@ -1,0 +1,6 @@
+# 日誌目錄
+# 此目錄用於存放系統日誌，包括：
+# - skills.log: Skill 執行日誌
+# - errors.log: 錯誤日誌
+# - performance.log: 效能追蹤日誌
+# - sessions.log: Session 日誌

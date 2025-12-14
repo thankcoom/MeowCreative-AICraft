@@ -1,0 +1,16 @@
+# 敏感資訊
+.claude/config/wordpress-credentials.yaml
+.claude/config/notion-credentials.yaml
+
+# 輸出檔案
+output/
+*.log
+
+# Python
+__pycache__/
+*.pyc
+.venv/
+
+# macOS
+.DS_Store
+node_modules

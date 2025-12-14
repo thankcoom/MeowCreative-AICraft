@@ -1,0 +1,409 @@
+# AISO - AI Search Optimization 統一配置
+# 跨 AI 平台搜尋優化整合策略
+# 版本: 1.0.0
+# 更新: 2025-12-11
+
+version: "1.0.0"
+updated: "2025-12-11"
+
+# ============================================================
+# AISO 總覽
+# ============================================================
+
+overview:
+  definition: |
+    AISO (AI Search Optimization) 是整合所有 AI 相關搜尋優化策略的統一框架，
+    包含 SEO、GEO、AEO、LLMO、VSO 等，確保內容在各種搜尋場景都能被找到和引用。
+
+  core_principle: |
+    「Search Everywhere Optimization」- Rand Fishkin 提倡
+    不是針對單一平台優化，而是讓內容在所有搜尋場景都有能見度。
+
+  search_landscape_2025:
+    traditional_search:
+      platforms: ["Google", "Bing", "Yahoo"]
+      share: "仍占主導，但下降中"
+      optimization: "SEO"
+
+    ai_search:
+      platforms: ["ChatGPT", "Perplexity", "Claude", "Gemini"]
+      share: "快速成長，2024-2025 增長 1200%"
+      optimization: "GEO, LLMO, AEO"
+
+    ai_overviews:
+      platforms: ["Google AI Overviews", "Bing Chat"]
+      share: "50% Google 搜尋已有 AI 摘要"
+      optimization: "GEO, AEO"
+
+    voice_search:
+      platforms: ["Siri", "Alexa", "Google Assistant"]
+      share: "60%+ 搜尋來自語音/行動"
+      optimization: "VSO"
+
+    social_search:
+      platforms: ["TikTok", "YouTube", "Instagram"]
+      share: "Gen Z 的主要搜尋入口"
+      optimization: "SMO"
+
+# ============================================================
+# 優化類型矩陣
+# ============================================================
+
+optimization_matrix:
+
+  # 傳統搜尋優化
+  SEO:
+    full_name: "Search Engine Optimization"
+    chinese: "搜尋引擎優化"
+    target: "Google, Bing 等傳統搜尋引擎"
+    goal: "提升關鍵字排名"
+    status_in_system: "✅ 完整支援"
+    key_tactics:
+      - "關鍵字研究和優化"
+      - "Meta 標籤優化"
+      - "內容結構優化"
+      - "外部連結建設"
+      - "技術 SEO"
+    config_file: "seo-optimizer.md"
+
+  # 生成式引擎優化
+  GEO:
+    full_name: "Generative Engine Optimization"
+    chinese: "生成式引擎優化"
+    target: "ChatGPT, Perplexity, Gemini 等 AI 搜尋"
+    goal: "被 AI 引用為答案來源"
+    status_in_system: "✅ 完整支援"
+    key_tactics:
+      - "結構化內容格式"
+      - "Schema.org 標記"
+      - "FAQ 和 HowTo 格式"
+      - "AI 摘要優化"
+    config_file: "seo-optimizer.md (Phase 0.6)"
+
+  # 回答引擎優化
+  AEO:
+    full_name: "Answer Engine Optimization"
+    chinese: "回答引擎優化"
+    target: "Featured Snippets, AI Overviews"
+    goal: "成為「直接回答」的來源"
+    status_in_system: "✅ 完整支援"
+    key_tactics:
+      - "問答格式內容"
+      - "簡潔直接的回答"
+      - "結構化數據標記"
+    config_file: "seo-optimizer.md"
+
+  # 大語言模型優化
+  LLMO:
+    full_name: "Large Language Model Optimization"
+    chinese: "大語言模型優化"
+    target: "ChatGPT, Claude, Gemini 等 LLM"
+    goal: "被 LLM 選中作為回答素材"
+    status_in_system: "✅ 完整支援"
+    key_tactics:
+      - "明確的術語定義"
+      - "數據和引用支持"
+      - "實體覆蓋完整"
+      - "獨特觀點和數據"
+    config_file: "llmo-config.yaml"
+
+  # 語音搜尋優化
+  VSO:
+    full_name: "Voice Search Optimization"
+    chinese: "語音搜尋優化"
+    target: "Siri, Alexa, Google Assistant"
+    goal: "被語音助理選為回答"
+    status_in_system: "🔄 待補強"
+    key_tactics:
+      - "對話式長尾關鍵字"
+      - "自然語言問句"
+      - "簡潔直接回答"
+      - "本地化資訊"
+    config_file: "vso-config.yaml"
+
+  # 搜尋體驗優化
+  SXO:
+    full_name: "Search Experience Optimization"
+    chinese: "搜尋體驗優化"
+    target: "所有搜尋用戶"
+    goal: "優化搜尋到閱讀的完整體驗"
+    status_in_system: "✅ 完整支援"
+    key_tactics:
+      - "可讀性優化"
+      - "視覺體驗設計"
+      - "參與度元素"
+      - "轉換路徑優化"
+    config_file: "多 Agent 整合"
+
+  # 轉換率優化
+  CRO:
+    full_name: "Conversion Rate Optimization"
+    chinese: "轉換率優化"
+    target: "網站訪客"
+    goal: "提升訪客轉換率"
+    status_in_system: "⚠️ 部分支援"
+    key_tactics:
+      - "CTA 優化"
+      - "說服力設計"
+      - "用戶旅程優化"
+      - "A/B 測試"
+    config_file: "persuasion-agent.md"
+
+  # 內容品質標準
+  E-E-A-T:
+    full_name: "Experience, Expertise, Authoritativeness, Trustworthiness"
+    chinese: "經驗、專業、權威、可信"
+    target: "Google 品質評估"
+    goal: "建立內容可信度"
+    status_in_system: "✅ 完整支援"
+    key_tactics:
+      - "第一手經驗展示"
+      - "專業資歷標明"
+      - "權威來源引用"
+      - "透明誠實呈現"
+    config_file: "eeat-config.yaml"
+
+# ============================================================
+# 內容類型 × 優化策略
+# ============================================================
+
+content_optimization_guide:
+
+  # 教學指南類
+  tutorial:
+    name: "教學指南 / How-to"
+    priority_optimizations:
+      - optimization: "AEO"
+        weight: 30
+        reason: "直接回答「如何做 X」"
+      - optimization: "LLMO"
+        weight: 25
+        reason: "被 AI 引用為教學來源"
+      - optimization: "SEO"
+        weight: 20
+        reason: "傳統搜尋流量"
+      - optimization: "GEO"
+        weight: 15
+        reason: "AI Overviews 露出"
+      - optimization: "VSO"
+        weight: 10
+        reason: "語音搜尋問答"
+
+    format_requirements:
+      - "使用 HowTo Schema"
+      - "步驟用有序列表"
+      - "每步驟有明確動作"
+      - "加入 FAQ 區塊"
+
+  # 比較評測類
+  comparison:
+    name: "比較評測 / vs"
+    priority_optimizations:
+      - optimization: "AEO"
+        weight: 30
+        reason: "回答「A 和 B 哪個好」"
+      - optimization: "E-E-A-T"
+        weight: 25
+        reason: "需要可信的評測經驗"
+      - optimization: "SEO"
+        weight: 20
+        reason: "比較關鍵字流量高"
+      - optimization: "LLMO"
+        weight: 15
+        reason: "被 AI 引用比較"
+      - optimization: "CRO"
+        weight: 10
+        reason: "推動購買決策"
+
+    format_requirements:
+      - "使用比較表格"
+      - "有明確結論和推薦"
+      - "標明評測標準"
+      - "展示第一手使用經驗"
+
+  # 定義解釋類
+  definition:
+    name: "定義解釋 / 什麼是"
+    priority_optimizations:
+      - optimization: "LLMO"
+        weight: 35
+        reason: "AI 回答「什麼是 X」的首選"
+      - optimization: "AEO"
+        weight: 30
+        reason: "Featured Snippet 定義框"
+      - optimization: "GEO"
+        weight: 20
+        reason: "AI Overviews 定義"
+      - optimization: "SEO"
+        weight: 15
+        reason: "定義關鍵字排名"
+
+    format_requirements:
+      - "開頭即給定義 (一句話)"
+      - "使用定義格式標準化"
+      - "加入相關術語連結"
+      - "提供使用範例"
+
+  # 清單推薦類
+  listicle:
+    name: "清單推薦 / Top N"
+    priority_optimizations:
+      - optimization: "SEO"
+        weight: 30
+        reason: "清單類關鍵字搜尋量大"
+      - optimization: "AEO"
+        weight: 25
+        reason: "清單容易被 Featured"
+      - optimization: "LLMO"
+        weight: 20
+        reason: "AI 引用推薦清單"
+      - optimization: "CRO"
+        weight: 15
+        reason: "清單引導購買"
+      - optimization: "E-E-A-T"
+        weight: 10
+        reason: "需要真實評測"
+
+    format_requirements:
+      - "清楚的編號列表"
+      - "每項有簡短說明"
+      - "加入優缺點"
+      - "有明確排名標準"
+
+  # 經驗分享類
+  experience:
+    name: "經驗分享 / 心得"
+    priority_optimizations:
+      - optimization: "E-E-A-T"
+        weight: 40
+        reason: "第一手經驗是核心價值"
+      - optimization: "SXO"
+        weight: 25
+        reason: "故事性閱讀體驗"
+      - optimization: "LLMO"
+        weight: 20
+        reason: "獨特經驗被 AI 引用"
+      - optimization: "SEO"
+        weight: 15
+        reason: "長尾關鍵字流量"
+
+    format_requirements:
+      - "真實個人經歷"
+      - "具體數據和結果"
+      - "Before/After 對比"
+      - "情感連結和故事弧線"
+
+  # 新聞資訊類
+  news:
+    name: "新聞資訊 / 趨勢"
+    priority_optimizations:
+      - optimization: "SEO"
+        weight: 30
+        reason: "即時新聞搜尋"
+      - optimization: "GEO"
+        weight: 25
+        reason: "AI 新聞摘要"
+      - optimization: "E-E-A-T"
+        weight: 25
+        reason: "新聞需要高可信度"
+      - optimization: "LLMO"
+        weight: 20
+        reason: "AI 引用最新資訊"
+
+    format_requirements:
+      - "使用 NewsArticle Schema"
+      - "標明發布和更新時間"
+      - "引用可靠消息來源"
+      - "5W1H 完整"
+
+# ============================================================
+# 統一評分系統
+# ============================================================
+
+unified_scoring:
+
+  # 總分計算
+  total_score:
+    formula: "加權平均各優化類型分數"
+    max_score: 100
+    passing_score: 75
+
+  # 各類型權重 (2025 標準)
+  weights:
+    SEO: 20
+    GEO: 20
+    LLMO: 20
+    AEO: 15
+    E-E-A-T: 15
+    SXO: 10
+
+  # 評級標準
+  grades:
+    S:
+      range: "95-100"
+      label: "卓越"
+      description: "全方位優化，極高能見度"
+    A:
+      range: "85-94"
+      label: "優秀"
+      description: "主要優化完整，高能見度"
+    B:
+      range: "75-84"
+      label: "良好"
+      description: "基本優化完成，中高能見度"
+    C:
+      range: "65-74"
+      label: "及格"
+      description: "部分優化，中等能見度"
+    D:
+      range: "50-64"
+      label: "待改進"
+      description: "優化不足，低能見度"
+    F:
+      range: "0-49"
+      label: "不及格"
+      description: "嚴重缺乏優化"
+
+# ============================================================
+# 快速檢查清單
+# ============================================================
+
+quick_checklist:
+
+  must_have:
+    - "□ 標題包含主要關鍵字 (SEO)"
+    - "□ 有 TL;DR 摘要 (LLMO/AEO)"
+    - "□ 關鍵術語有定義 (LLMO)"
+    - "□ 有數據和來源引用 (E-E-A-T/LLMO)"
+    - "□ 使用結構化標題 H2/H3 (GEO)"
+    - "□ 有 FAQ 或問答格式 (AEO)"
+    - "□ Meta Description 150-160 字 (SEO)"
+    - "□ 有權威專家引用 (E-E-A-T)"
+
+  should_have:
+    - "□ Schema.org 結構化數據 (GEO)"
+    - "□ 比較表格 (AEO)"
+    - "□ 步驟列表 (AEO)"
+    - "□ 內部連結 3-5 個 (SEO)"
+    - "□ 第一手經驗描述 (E-E-A-T)"
+    - "□ CTA 出現 2+ 次 (CRO)"
+
+  nice_to_have:
+    - "□ 語音搜尋友善問句 (VSO)"
+    - "□ 影片嵌入 (SXO)"
+    - "□ 互動元素 (SXO)"
+    - "□ 可下載資源 (CRO)"
+
+# ============================================================
+# 報告輸出
+# ============================================================
+
+report_format:
+  filename: "aiso_report.md"
+  sections:
+    - "AISO 總分和評級"
+    - "各優化類型分數細項"
+    - "內容類型適配度"
+    - "平台能見度預估"
+    - "優先改進建議"
+    - "快速修復清單"

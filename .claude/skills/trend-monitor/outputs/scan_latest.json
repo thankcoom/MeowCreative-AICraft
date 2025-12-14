@@ -1,0 +1,637 @@
+{
+  "scan_time": "2025-12-12T13:05:22.339968",
+  "sources": {
+    "google_trends": [
+      {
+        "rank": 1,
+        "title": "wbc",
+        "traffic": "100+",
+        "traffic_num": 100,
+        "related_news": [
+          "由伸がWBC出場へ 朗希は不参加",
+          "オフシーズン期間中、多くの人々の関心事だったドジャースの日本人投手のワールド·ベースボール·クラシック（WBC）参加の可否、ついに輪郭が明らかになっている。「中日新聞」など日本のメディアは12日、報道..",
+          "「疑念を一掃した」ドジャース首脳、佐々木朗希の先発復帰を明言！？ 米メディア「ついに青写真が…」【海外の反応】"
+        ],
+        "source": "google_trends",
+        "region": "TW",
+        "fetched_at": "2025-12-12T13:05:22.972958"
+      },
+      {
+        "rank": 2,
+        "title": "蘇丹紅",
+        "traffic": "200+",
+        "traffic_num": 200,
+        "related_news": [],
+        "source": "google_trends",
+        "region": "TW",
+        "fetched_at": "2025-12-12T13:05:22.972984"
+      },
+      {
+        "rank": 3,
+        "title": "助理費除罪化意思",
+        "traffic": "200+",
+        "traffic_num": 200,
+        "related_news": [],
+        "source": "google_trends",
+        "region": "TW",
+        "fetched_at": "2025-12-12T13:05:22.972992"
+      },
+      {
+        "rank": 4,
+        "title": "華新",
+        "traffic": "200+",
+        "traffic_num": 200,
+        "related_news": [],
+        "source": "google_trends",
+        "region": "TW",
+        "fetched_at": "2025-12-12T13:05:22.972998"
+      },
+      {
+        "rank": 5,
+        "title": "詹姆斯·哈登",
+        "traffic": "100+",
+        "traffic_num": 100,
+        "related_news": [
+          "哈登：我受够了在快船当牛做马，已和两支球队会面商讨加盟事宜",
+          "盘点哈登五大潜在下家：联手字母哥 还是换取特雷·杨或莫兰特？",
+          "三首轮换哈登！火箭若组“登杜申”三巨头，能叫板雷霆吗？"
+        ],
+        "source": "google_trends",
+        "region": "TW",
+        "fetched_at": "2025-12-12T13:05:22.973009"
+      },
+      {
+        "rank": 6,
+        "title": "霍格華茲的傳承",
+        "traffic": "200+",
+        "traffic_num": 200,
+        "related_news": [
+          "本週可於 Epic Games Store 行動版免費下載《The Darkside Detective》",
+          "EGS限免：哈利波特《霍格華茲的傳承》極好評魔法冒險RPG限時免費",
+          "【PC/Mac 】派對聚會必玩作品 《The Jackbox Party Pack 4》限時免費"
+        ],
+        "source": "google_trends",
+        "region": "TW",
+        "fetched_at": "2025-12-12T13:05:22.973021"
+      },
+      {
+        "rank": 7,
+        "title": "凱爾·庫茲馬",
+        "traffic": "200+",
+        "traffic_num": 200,
+        "related_news": [
+          "Kuzma and Portis lead Bucks past Celtics 116-101 without injured Antetokounmpo",
+          "Keys to the Game: Bucks 116, Celtics 101",
+          "Celtics go ice-cold as Bobby Portis, Bucks snap winning streak: 7 takeaways"
+        ],
+        "source": "google_trends",
+        "region": "TW",
+        "fetched_at": "2025-12-12T13:05:22.973034"
+      },
+      {
+        "rank": 8,
+        "title": "rockets vs clippers",
+        "traffic": "100+",
+        "traffic_num": 100,
+        "related_news": [
+          "Thompson has 20 points, 9 rebounds, 8 assists, Rockets beat Clippers 115-113",
+          "Kevin Durant, Rockets Applauded by NBA Fans After Win vs. James Harden, Clippers",
+          "Joey Linn: Clippers lose 115-113 in Houston. …"
+        ],
+        "source": "google_trends",
+        "region": "TW",
+        "fetched_at": "2025-12-12T13:05:22.973047"
+      },
+      {
+        "rank": 9,
+        "title": "中信金",
+        "traffic": "200+",
+        "traffic_num": 200,
+        "related_news": [
+          "13金控前11月獲利 創同期第三高",
+          "一表看懂13家金控獲利！國泰金單月狂賺146.2億登獲利王 ，這6家前11月賺贏一整年",
+          "13家金控獲利出爐，有6家前11月賺贏去年！中信金、玉山金、永豐金…7檔「正成長金融股」存股優先"
+        ],
+        "source": "google_trends",
+        "region": "TW",
+        "fetched_at": "2025-12-12T13:05:22.973058"
+      },
+      {
+        "rank": 10,
+        "title": "arc raiders",
+        "traffic": "200+",
+        "traffic_num": 200,
+        "related_news": [
+          "Arc Raiders&apos; latest mini update fixes a bunch of ratty exploits, including the zipline that set players free in Stella Montis, as Embark announces it&apos;s stepping back from weekly fixes",
+          "Arc Raiders Shares New Tease for Upcoming Event &apos;Cold Snap&apos; and It Looks Deadly",
+          "ARC Raiders patch 1.6.0 attempts to stop players going out of bounds"
+        ],
+        "source": "google_trends",
+        "region": "TW",
+        "fetched_at": "2025-12-12T13:05:22.973075"
+      }
+    ],
+    "ptt": [
+      {
+        "title": "[情報] 全台捐血贈品",
+        "author": "jumpintosky",
+        "push_count": 100,
+        "date": "",
+        "link": "https://www.ptt.cc/bbs/Lifeismoney/M.1735838860.A.6F3.html",
+        "board": "Lifeismoney",
+        "source": "ptt",
+        "fetched_at": "2025-12-12T13:05:23.316534"
+      },
+      {
+        "title": "[集中] 贈送集中文",
+        "author": "noleese",
+        "push_count": 100,
+        "date": "",
+        "link": "https://www.ptt.cc/bbs/Lifeismoney/M.1756992771.A.346.html",
+        "board": "Lifeismoney",
+        "source": "ptt",
+        "fetched_at": "2025-12-12T13:05:23.316540"
+      },
+      {
+        "title": "[集中] 未滿1元集點抽獎資訊集中文",
+        "author": "noleese",
+        "push_count": 100,
+        "date": "",
+        "link": "https://www.ptt.cc/bbs/Lifeismoney/M.1756992813.A.91F.html",
+        "board": "Lifeismoney",
+        "source": "ptt",
+        "fetched_at": "2025-12-12T13:05:23.316546"
+      },
+      {
+        "title": "[閒聊] 2025/12/12 盤中閒聊",
+        "author": "laptic",
+        "push_count": 99,
+        "date": "",
+        "link": "https://www.ptt.cc/bbs/Stock/M.1765499404.A.A73.html",
+        "board": "Stock",
+        "source": "ptt",
+        "fetched_at": "2025-12-12T13:05:23.230108"
+      },
+      {
+        "title": "[新聞] Meta轉向阿裏巴巴的Qwen來訓練其下一個AI模型",
+        "author": "icrose",
+        "push_count": 57,
+        "date": "",
+        "link": "https://www.ptt.cc/bbs/Stock/M.1765504827.A.118.html",
+        "board": "Stock",
+        "source": "ptt",
+        "fetched_at": "2025-12-12T13:05:23.230070"
+      },
+      {
+        "title": "[新聞] 高雄史上最大投資案簽約 鴻海159億旗艦總部",
+        "author": "DrowningPool",
+        "push_count": 56,
+        "date": "",
+        "link": "https://www.ptt.cc/bbs/Stock/M.1765510046.A.912.html",
+        "board": "Stock",
+        "source": "ptt",
+        "fetched_at": "2025-12-12T13:05:23.230085"
+      },
+      {
+        "title": "[情報]Epic 限免 霍格華茲的傳承  死亡細胞",
+        "author": "Miang141229",
+        "push_count": 41,
+        "date": "",
+        "link": "https://www.ptt.cc/bbs/Lifeismoney/M.1765505687.A.531.html",
+        "board": "Lifeismoney",
+        "source": "ptt",
+        "fetched_at": "2025-12-12T13:05:23.316483"
+      },
+      {
+        "title": "[新聞] 00878配息入帳了！第四季0.4元…近170萬",
+        "author": "haiduc",
+        "push_count": 40,
+        "date": "",
+        "link": "https://www.ptt.cc/bbs/Stock/M.1765511658.A.5F5.html",
+        "board": "Stock",
+        "source": "ptt",
+        "fetched_at": "2025-12-12T13:05:23.230092"
+      },
+      {
+        "title": "[情報] MOMO 麥當勞 豬肉滿福堡加蛋58元",
+        "author": "herculus6502",
+        "push_count": 38,
+        "date": "",
+        "link": "https://www.ptt.cc/bbs/Lifeismoney/M.1765500228.A.D04.html",
+        "board": "Lifeismoney",
+        "source": "ptt",
+        "fetched_at": "2025-12-12T13:05:23.316461"
+      },
+      {
+        "title": "[情報] 薪資查詢平台",
+        "author": "mmkntust",
+        "push_count": 37,
+        "date": "",
+        "link": "https://www.ptt.cc/bbs/Tech_Job/M.1585618843.A.D43.html",
+        "board": "Tech_Job",
+        "source": "ptt",
+        "fetched_at": "2025-12-12T13:05:23.142246"
+      },
+      {
+        "title": "[心得] 2025 新鮮人雜魚面試經驗分享 (完)",
+        "author": "Iversonshao",
+        "push_count": 30,
+        "date": "",
+        "link": "https://www.ptt.cc/bbs/Tech_Job/M.1765462960.A.1FD.html",
+        "board": "Tech_Job",
+        "source": "ptt",
+        "fetched_at": "2025-12-12T13:05:23.142231"
+      }
+    ]
+  },
+  "aggregated": [
+    {
+      "topic": "[情報] 全台捐血贈品",
+      "heat_score": 100.0,
+      "source_scores": {
+        "ptt": 100
+      },
+      "trend": "stable",
+      "recommended_action": "immediate",
+      "suggested_angles": [
+        "教學型：如何理解/使用 [情報] 全台捐血贈品",
+        "觀點型：為什麼 [情報] 全台捐血贈品 很重要",
+        "整理型：[情報] 全台捐血贈品 完整懶人包",
+        "鄉民觀點：PTT 熱議 [情報] 全台捐血贈品 的 5 個重點"
+      ],
+      "calculated_at": "2025-12-12T13:05:23.323899"
+    },
+    {
+      "topic": "[集中] 贈送集中文",
+      "heat_score": 100.0,
+      "source_scores": {
+        "ptt": 100
+      },
+      "trend": "stable",
+      "recommended_action": "immediate",
+      "suggested_angles": [
+        "教學型：如何理解/使用 [集中] 贈送集中文",
+        "觀點型：為什麼 [集中] 贈送集中文 很重要",
+        "整理型：[集中] 贈送集中文 完整懶人包",
+        "鄉民觀點：PTT 熱議 [集中] 贈送集中文 的 5 個重點"
+      ],
+      "calculated_at": "2025-12-12T13:05:23.323903"
+    },
+    {
+      "topic": "[閒聊] 2025/12/12 盤中閒聊",
+      "heat_score": 80.0,
+      "source_scores": {
+        "ptt": 80
+      },
+      "trend": "stable",
+      "recommended_action": "immediate",
+      "suggested_angles": [
+        "教學型：如何理解/使用 [閒聊] 2025/12/12 盤中閒聊",
+        "觀點型：為什麼 [閒聊] 2025/12/12 盤中閒聊 很重要",
+        "整理型：[閒聊] 2025/12/12 盤中閒聊 完整懶人包",
+        "鄉民觀點：PTT 熱議 [閒聊] 2025/12/12 盤中閒聊 的 5 個重點"
+      ],
+      "calculated_at": "2025-12-12T13:05:23.323907"
+    },
+    {
+      "topic": "[新聞] Meta轉向阿裏巴巴的Qwen來訓練其下一個AI模型",
+      "heat_score": 60.0,
+      "source_scores": {
+        "ptt": 60
+      },
+      "trend": "stable",
+      "recommended_action": "watch",
+      "suggested_angles": [
+        "教學型：如何理解/使用 [新聞] Meta轉向阿裏巴巴的Qwen來訓練其下一個AI模型",
+        "觀點型：為什麼 [新聞] Meta轉向阿裏巴巴的Qwen來訓練其下一個AI模型 很重要",
+        "整理型：[新聞] Meta轉向阿裏巴巴的Qwen來訓練其下一個AI模型 完整懶人包",
+        "鄉民觀點：PTT 熱議 [新聞] Meta轉向阿裏巴巴的Qwen來訓練其下一個AI模型 的 5 個重點"
+      ],
+      "calculated_at": "2025-12-12T13:05:23.323912"
+    },
+    {
+      "topic": "wbc",
+      "heat_score": 52.0,
+      "source_scores": {
+        "google_trends": 52.0
+      },
+      "trend": "stable",
+      "recommended_action": "skip",
+      "suggested_angles": [
+        "教學型：如何理解/使用 wbc",
+        "觀點型：為什麼 wbc 很重要",
+        "整理型：wbc 完整懶人包",
+        "趨勢分析：wbc 為什麼突然爆紅？"
+      ],
+      "calculated_at": "2025-12-12T13:05:23.323838"
+    },
+    {
+      "topic": "蘇丹紅",
+      "heat_score": 52.0,
+      "source_scores": {
+        "google_trends": 52.0
+      },
+      "trend": "stable",
+      "recommended_action": "skip",
+      "suggested_angles": [
+        "教學型：如何理解/使用 蘇丹紅",
+        "觀點型：為什麼 蘇丹紅 很重要",
+        "整理型：蘇丹紅 完整懶人包",
+        "趨勢分析：蘇丹紅 為什麼突然爆紅？"
+      ],
+      "calculated_at": "2025-12-12T13:05:23.323853"
+    },
+    {
+      "topic": "助理費除罪化意思",
+      "heat_score": 52.0,
+      "source_scores": {
+        "google_trends": 52.0
+      },
+      "trend": "stable",
+      "recommended_action": "skip",
+      "suggested_angles": [
+        "教學型：如何理解/使用 助理費除罪化意思",
+        "觀點型：為什麼 助理費除罪化意思 很重要",
+        "整理型：助理費除罪化意思 完整懶人包",
+        "趨勢分析：助理費除罪化意思 為什麼突然爆紅？"
+      ],
+      "calculated_at": "2025-12-12T13:05:23.323859"
+    },
+    {
+      "topic": "華新",
+      "heat_score": 52.0,
+      "source_scores": {
+        "google_trends": 52.0
+      },
+      "trend": "stable",
+      "recommended_action": "skip",
+      "suggested_angles": [
+        "教學型：如何理解/使用 華新",
+        "觀點型：為什麼 華新 很重要",
+        "整理型：華新 完整懶人包",
+        "趨勢分析：華新 為什麼突然爆紅？"
+      ],
+      "calculated_at": "2025-12-12T13:05:23.323864"
+    },
+    {
+      "topic": "詹姆斯·哈登",
+      "heat_score": 52.0,
+      "source_scores": {
+        "google_trends": 52.0
+      },
+      "trend": "stable",
+      "recommended_action": "skip",
+      "suggested_angles": [
+        "教學型：如何理解/使用 詹姆斯·哈登",
+        "觀點型：為什麼 詹姆斯·哈登 很重要",
+        "整理型：詹姆斯·哈登 完整懶人包",
+        "趨勢分析：詹姆斯·哈登 為什麼突然爆紅？"
+      ],
+      "calculated_at": "2025-12-12T13:05:23.323868"
+    },
+    {
+      "topic": "凱爾·庫茲馬",
+      "heat_score": 44.0,
+      "source_scores": {
+        "google_trends": 44.0
+      },
+      "trend": "stable",
+      "recommended_action": "skip",
+      "suggested_angles": [
+        "教學型：如何理解/使用 凱爾·庫茲馬",
+        "觀點型：為什麼 凱爾·庫茲馬 很重要",
+        "整理型：凱爾·庫茲馬 完整懶人包",
+        "趨勢分析：凱爾·庫茲馬 為什麼突然爆紅？"
+      ],
+      "calculated_at": "2025-12-12T13:05:23.323881"
+    },
+    {
+      "topic": "rockets vs clippers",
+      "heat_score": 44.0,
+      "source_scores": {
+        "google_trends": 44.0
+      },
+      "trend": "stable",
+      "recommended_action": "skip",
+      "suggested_angles": [
+        "教學型：如何理解/使用 rockets vs clippers",
+        "觀點型：為什麼 rockets vs clippers 很重要",
+        "整理型：rockets vs clippers 完整懶人包",
+        "趨勢分析：rockets vs clippers 為什麼突然爆紅？"
+      ],
+      "calculated_at": "2025-12-12T13:05:23.323885"
+    },
+    {
+      "topic": "中信金",
+      "heat_score": 44.0,
+      "source_scores": {
+        "google_trends": 44.0
+      },
+      "trend": "stable",
+      "recommended_action": "skip",
+      "suggested_angles": [
+        "教學型：如何理解/使用 中信金",
+        "觀點型：為什麼 中信金 很重要",
+        "整理型：中信金 完整懶人包",
+        "趨勢分析：中信金 為什麼突然爆紅？"
+      ],
+      "calculated_at": "2025-12-12T13:05:23.323889"
+    },
+    {
+      "topic": "arc raiders",
+      "heat_score": 44.0,
+      "source_scores": {
+        "google_trends": 44.0
+      },
+      "trend": "stable",
+      "recommended_action": "skip",
+      "suggested_angles": [
+        "教學型：如何理解/使用 arc raiders",
+        "觀點型：為什麼 arc raiders 很重要",
+        "整理型：arc raiders 完整懶人包",
+        "趨勢分析：arc raiders 為什麼突然爆紅？"
+      ],
+      "calculated_at": "2025-12-12T13:05:23.323894"
+    },
+    {
+      "topic": "霍格華茲的傳承",
+      "heat_score": 42.2,
+      "source_scores": {
+        "google_trends": 44.0,
+        "ptt": 40
+      },
+      "trend": "stable",
+      "recommended_action": "skip",
+      "suggested_angles": [
+        "教學型：如何理解/使用 霍格華茲的傳承",
+        "觀點型：為什麼 霍格華茲的傳承 很重要",
+        "整理型：霍格華茲的傳承 完整懶人包",
+        "鄉民觀點：PTT 熱議 霍格華茲的傳承 的 5 個重點",
+        "趨勢分析：霍格華茲的傳承 為什麼突然爆紅？"
+      ],
+      "calculated_at": "2025-12-12T13:05:23.323876"
+    }
+  ],
+  "top_topics": [
+    {
+      "topic": "[情報] 全台捐血贈品",
+      "heat_score": 100.0,
+      "source_scores": {
+        "ptt": 100
+      },
+      "trend": "stable",
+      "recommended_action": "immediate",
+      "suggested_angles": [
+        "教學型：如何理解/使用 [情報] 全台捐血贈品",
+        "觀點型：為什麼 [情報] 全台捐血贈品 很重要",
+        "整理型：[情報] 全台捐血贈品 完整懶人包",
+        "鄉民觀點：PTT 熱議 [情報] 全台捐血贈品 的 5 個重點"
+      ],
+      "calculated_at": "2025-12-12T13:05:23.323899"
+    },
+    {
+      "topic": "[集中] 贈送集中文",
+      "heat_score": 100.0,
+      "source_scores": {
+        "ptt": 100
+      },
+      "trend": "stable",
+      "recommended_action": "immediate",
+      "suggested_angles": [
+        "教學型：如何理解/使用 [集中] 贈送集中文",
+        "觀點型：為什麼 [集中] 贈送集中文 很重要",
+        "整理型：[集中] 贈送集中文 完整懶人包",
+        "鄉民觀點：PTT 熱議 [集中] 贈送集中文 的 5 個重點"
+      ],
+      "calculated_at": "2025-12-12T13:05:23.323903"
+    },
+    {
+      "topic": "[閒聊] 2025/12/12 盤中閒聊",
+      "heat_score": 80.0,
+      "source_scores": {
+        "ptt": 80
+      },
+      "trend": "stable",
+      "recommended_action": "immediate",
+      "suggested_angles": [
+        "教學型：如何理解/使用 [閒聊] 2025/12/12 盤中閒聊",
+        "觀點型：為什麼 [閒聊] 2025/12/12 盤中閒聊 很重要",
+        "整理型：[閒聊] 2025/12/12 盤中閒聊 完整懶人包",
+        "鄉民觀點：PTT 熱議 [閒聊] 2025/12/12 盤中閒聊 的 5 個重點"
+      ],
+      "calculated_at": "2025-12-12T13:05:23.323907"
+    },
+    {
+      "topic": "[新聞] Meta轉向阿裏巴巴的Qwen來訓練其下一個AI模型",
+      "heat_score": 60.0,
+      "source_scores": {
+        "ptt": 60
+      },
+      "trend": "stable",
+      "recommended_action": "watch",
+      "suggested_angles": [
+        "教學型：如何理解/使用 [新聞] Meta轉向阿裏巴巴的Qwen來訓練其下一個AI模型",
+        "觀點型：為什麼 [新聞] Meta轉向阿裏巴巴的Qwen來訓練其下一個AI模型 很重要",
+        "整理型：[新聞] Meta轉向阿裏巴巴的Qwen來訓練其下一個AI模型 完整懶人包",
+        "鄉民觀點：PTT 熱議 [新聞] Meta轉向阿裏巴巴的Qwen來訓練其下一個AI模型 的 5 個重點"
+      ],
+      "calculated_at": "2025-12-12T13:05:23.323912"
+    },
+    {
+      "topic": "wbc",
+      "heat_score": 52.0,
+      "source_scores": {
+        "google_trends": 52.0
+      },
+      "trend": "stable",
+      "recommended_action": "skip",
+      "suggested_angles": [
+        "教學型：如何理解/使用 wbc",
+        "觀點型：為什麼 wbc 很重要",
+        "整理型：wbc 完整懶人包",
+        "趨勢分析：wbc 為什麼突然爆紅？"
+      ],
+      "calculated_at": "2025-12-12T13:05:23.323838"
+    },
+    {
+      "topic": "蘇丹紅",
+      "heat_score": 52.0,
+      "source_scores": {
+        "google_trends": 52.0
+      },
+      "trend": "stable",
+      "recommended_action": "skip",
+      "suggested_angles": [
+        "教學型：如何理解/使用 蘇丹紅",
+        "觀點型：為什麼 蘇丹紅 很重要",
+        "整理型：蘇丹紅 完整懶人包",
+        "趨勢分析：蘇丹紅 為什麼突然爆紅？"
+      ],
+      "calculated_at": "2025-12-12T13:05:23.323853"
+    },
+    {
+      "topic": "助理費除罪化意思",
+      "heat_score": 52.0,
+      "source_scores": {
+        "google_trends": 52.0
+      },
+      "trend": "stable",
+      "recommended_action": "skip",
+      "suggested_angles": [
+        "教學型：如何理解/使用 助理費除罪化意思",
+        "觀點型：為什麼 助理費除罪化意思 很重要",
+        "整理型：助理費除罪化意思 完整懶人包",
+        "趨勢分析：助理費除罪化意思 為什麼突然爆紅？"
+      ],
+      "calculated_at": "2025-12-12T13:05:23.323859"
+    },
+    {
+      "topic": "華新",
+      "heat_score": 52.0,
+      "source_scores": {
+        "google_trends": 52.0
+      },
+      "trend": "stable",
+      "recommended_action": "skip",
+      "suggested_angles": [
+        "教學型：如何理解/使用 華新",
+        "觀點型：為什麼 華新 很重要",
+        "整理型：華新 完整懶人包",
+        "趨勢分析：華新 為什麼突然爆紅？"
+      ],
+      "calculated_at": "2025-12-12T13:05:23.323864"
+    },
+    {
+      "topic": "詹姆斯·哈登",
+      "heat_score": 52.0,
+      "source_scores": {
+        "google_trends": 52.0
+      },
+      "trend": "stable",
+      "recommended_action": "skip",
+      "suggested_angles": [
+        "教學型：如何理解/使用 詹姆斯·哈登",
+        "觀點型：為什麼 詹姆斯·哈登 很重要",
+        "整理型：詹姆斯·哈登 完整懶人包",
+        "趨勢分析：詹姆斯·哈登 為什麼突然爆紅？"
+      ],
+      "calculated_at": "2025-12-12T13:05:23.323868"
+    },
+    {
+      "topic": "凱爾·庫茲馬",
+      "heat_score": 44.0,
+      "source_scores": {
+        "google_trends": 44.0
+      },
+      "trend": "stable",
+      "recommended_action": "skip",
+      "suggested_angles": [
+        "教學型：如何理解/使用 凱爾·庫茲馬",
+        "觀點型：為什麼 凱爾·庫茲馬 很重要",
+        "整理型：凱爾·庫茲馬 完整懶人包",
+        "趨勢分析：凱爾·庫茲馬 為什麼突然爆紅？"
+      ],
+      "calculated_at": "2025-12-12T13:05:23.323881"
+    }
+  ]
+}

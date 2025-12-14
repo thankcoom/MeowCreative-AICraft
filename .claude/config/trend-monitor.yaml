@@ -1,0 +1,120 @@
+# 熱點引擎配置
+# Trend Monitor Configuration
+
+version: "1.0.0"
+
+# 監控設定
+monitoring:
+  interval_minutes: 15  # 掃描間隔
+  auto_write: false     # 自動觸發寫作
+  require_approval: true # 發布前需人工確認
+
+# 數據源設定
+sources:
+  google_trends:
+    enabled: true
+    region: "TW"        # TW, US, JP, etc.
+    language: "zh-TW"
+    categories: []      # 空 = 全部類別
+
+  ptt:
+    enabled: true
+    boards:
+      - Gossiping      # 八卦版
+      - Tech_Job       # 科技工作版
+      - Stock          # 股票版
+      - Lifeismoney    # 省錢版
+      - Car            # 汽車版
+      - home-sale      # 房屋版
+    min_push: 50       # 最低推文數
+
+  dcard:
+    enabled: true
+    forums:
+      - trending       # 熱門
+      - talk           # 閒聊
+      - money          # 理財
+      - job            # 工作
+
+  youtube:
+    enabled: true
+    region: "TW"
+    categories:
+      - "科技"
+      - "教育"
+      - "娛樂"
+
+  news_rss:
+    enabled: true
+    feeds:
+      - name: "聯合新聞網"
+        url: "https://udn.com/rssfeed/news/2/6638?ch=news"
+      - name: "自由時報"
+        url: "https://news.ltn.com.tw/rss/all.xml"
+      - name: "中央社"
+        url: "https://www.cna.com.tw/RSS/aall.xml"
+
+# 熱度評分設定
+scoring:
+  # 權重配置
+  weights:
+    google_trends: 0.30
+    ptt: 0.25
+    dcard: 0.15
+    youtube: 0.15
+    news: 0.15
+
+  # 閾值設定
+  thresholds:
+    immediate: 80      # ≥80 立即寫作
+    watch: 60          # 60-79 關注
+    skip: 0            # <60 略過
+
+  # 時效性衰減
+  decay:
+    enabled: true
+    half_life_hours: 12  # 熱度半衰期
+
+# 領域過濾
+domain_filter:
+  enabled: true
+  include:
+    - "科技"
+    - "AI"
+    - "創業"
+    - "投資理財"
+    - "自媒體"
+    - "行銷"
+  exclude:
+    - "政治"
+    - "八卦緋聞"
+    - "犯罪"
+
+# 競品追蹤
+competitors:
+  enabled: false
+  sites: []
+  # sites:
+  #   - "competitor1.com"
+  #   - "competitor2.com"
+
+# 輸出設定
+output:
+  dir: ".claude/skills/trend-monitor/outputs"
+  format: "yaml"       # yaml, json
+  keep_days: 7         # 保留天數
+
+# 自動寫作設定
+auto_writing:
+  enabled: false
+  workflow: "standard"  # standard, quick, deep
+  max_per_day: 5       # 每日最多自動產出
+  review_required: true
+
+# 通知設定
+notifications:
+  enabled: false
+  channels:
+    slack: false
+    email: false
+    line: false

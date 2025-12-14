@@ -1,0 +1,442 @@
+# 語調預設庫 (Tone of Voice Library)
+# 用於支援不同類型的內容創作需求
+
+# 使用方式：
+# Writer Agent 可以根據內容類型自動選擇合適的語調，
+# 或者用戶可以明確指定使用哪種語調模式
+
+version: 1.0.0
+updated: 2025-11-04
+
+# ============================================================
+# 核心語調維度 (基於 Anthropic 最佳實踐)
+# ============================================================
+
+tone_dimensions:
+  formality:
+    values: [very_casual, casual, professional_warm, professional, formal]
+    description: "正式程度"
+
+  expertise_level:
+    values: [peer_to_peer, approachable_expert, trusted_advisor, industry_expert, academic_authority]
+    description: "專業程度與定位"
+
+  personality:
+    values: [friendly_helpful, honest_storyteller, solution_oriented, insightful_authoritative, analytical_objective]
+    description: "人格特質"
+
+  sentence_structure:
+    values: [conversational_natural, varied_short_and_medium, clear_and_persuasive, sophisticated_but_clear, formal_academic]
+    description: "句子結構風格"
+
+# ============================================================
+# 預設語調模式
+# ============================================================
+
+tone_presets:
+
+  # ----------------------------------------------------------
+  # 1. 部落格教育型 (預設)
+  # ----------------------------------------------------------
+  blog_educational:
+    display_name: "部落格教育型"
+    description: "適用於教學類部落格文章，友善但專業"
+    use_cases:
+      - "技術教學文章"
+      - "How-to 指南"
+      - "概念解釋"
+      - "工具介紹"
+
+    settings:
+      formality: casual
+      expertise_level: approachable_expert
+      personality: friendly_helpful
+      sentence_structure: varied_short_and_medium
+
+    writing_guidelines:
+      pronouns:
+        use: ["我", "你", "我們"]
+        avoid: ["本文", "讀者", "筆者", "閣下"]
+
+      tone_keywords:
+        positive: ["讓我們來看看", "其實很簡單", "你可以試試", "我發現", "分享給你"]
+        avoid: ["必須注意", "應當遵守", "嚴格執行", "務必", "絕對"]
+
+      sentence_length:
+        average: 15-20
+        max: 25
+        guideline: "多使用短句，偶爾用中長句增加節奏變化"
+
+      paragraph_structure:
+        sentences_per_paragraph: 3-5
+        guideline: "每段聚焦一個觀點，段落間使用過渡詞"
+
+      examples_style: "具體的實際案例，搭配程式碼或截圖"
+
+      engagement_techniques:
+        - "使用問句引導思考"
+        - "加入個人經驗或觀察"
+        - "提供實用建議"
+        - "鼓勵讀者嘗試"
+
+  # ----------------------------------------------------------
+  # 2. 內容行銷型
+  # ----------------------------------------------------------
+  content_marketing:
+    display_name: "內容行銷型"
+    description: "建立信任、展現專業、產生潛在客戶"
+    use_cases:
+      - "產品介紹文章"
+      - "解決方案說明"
+      - "產業趨勢分析"
+      - "最佳實踐指南"
+
+    settings:
+      formality: professional_warm
+      expertise_level: trusted_advisor
+      personality: solution_oriented
+      sentence_structure: clear_and_persuasive
+
+    writing_guidelines:
+      pronouns:
+        use: ["我們", "您", "你", "團隊"]
+        avoid: ["吾", "閣下", "敝公司"]
+
+      tone_keywords:
+        positive: ["協助您", "我們了解", "專為...設計", "實證成果", "值得信賴"]
+        avoid: ["最好的", "第一名", "保證", "絕不會失敗", "秒殺"]
+
+      sentence_length:
+        average: 18-22
+        max: 28
+        guideline: "清晰有力，避免冗長但保持專業感"
+
+      paragraph_structure:
+        sentences_per_paragraph: 3-4
+        guideline: "邏輯清晰，從問題→影響→解決方案"
+
+      examples_style: "數據支持的案例研究，客戶成功故事"
+
+      engagement_techniques:
+        - "痛點共鳴（理解讀者面臨的挑戰）"
+        - "數據佐證（使用統計數字增加可信度）"
+        - "明確的行動呼籲 (CTA)"
+        - "社會證明（引用權威或用戶見證）"
+
+      conversion_elements:
+        - "清晰的價值主張"
+        - "解決特定問題的能力"
+        - "下一步行動引導"
+        - "建立專業形象"
+
+  # ----------------------------------------------------------
+  # 3. 口碑行銷型（真實見證）
+  # ----------------------------------------------------------
+  testimonial_authentic:
+    display_name: "口碑行銷型"
+    description: "真誠的個人經驗分享，激發信任和推薦"
+    use_cases:
+      - "產品使用心得"
+      - "個人經驗故事"
+      - "問題解決歷程"
+      - "真實評價"
+
+    settings:
+      formality: very_casual
+      expertise_level: peer_to_peer
+      personality: honest_storyteller
+      sentence_structure: conversational_natural
+
+    writing_guidelines:
+      pronouns:
+        use: ["我", "我的", "當時", "後來"]
+        avoid: ["您", "用戶", "使用者", "消費者"]
+
+      tone_keywords:
+        positive: ["老實說", "我自己的經驗", "真的有用", "後來我發現", "分享一下"]
+        avoid: ["專業角度", "理論上", "研究顯示", "數據表明", "根據報告"]
+
+      sentence_length:
+        average: 12-18
+        max: 22
+        guideline: "自然口語化，像在跟朋友聊天"
+
+      paragraph_structure:
+        sentences_per_paragraph: 2-4
+        guideline: "故事化敘事，時間順序或因果關係"
+
+      examples_style: "親身經歷的具體細節，包括時間、地點、情境"
+
+      storytelling_framework:
+        - "背景設定（遇到什麼問題）"
+        - "困難時刻（問題有多嚴重）"
+        - "轉折點（如何發現解決方案）"
+        - "實際行動（怎麼做的）"
+        - "結果與感受（改變了什麼）"
+
+      authenticity_markers:
+        must_include:
+          - "具體的時間參考（例如：上個月、三週前）"
+          - "真實的情境描述"
+          - "誠實的優缺點評價"
+        must_avoid:
+          - "完美無瑕的描述"
+          - "過度誇張的效果"
+          - "沒有個人細節的泛泛而談"
+          - "虛構的數字或案例"
+
+  # ----------------------------------------------------------
+  # 4. 思想領導型
+  # ----------------------------------------------------------
+  thought_leadership:
+    display_name: "思想領導型"
+    description: "深度洞察、產業趨勢、專業觀點"
+    use_cases:
+      - "產業分析"
+      - "趨勢預測"
+      - "策略建議"
+      - "專業評論"
+
+    settings:
+      formality: professional
+      expertise_level: industry_expert
+      personality: insightful_authoritative
+      sentence_structure: sophisticated_but_clear
+
+    writing_guidelines:
+      pronouns:
+        use: ["我們觀察到", "從...角度", "值得注意的是"]
+        avoid: ["我覺得", "可能吧", "應該是"]
+
+      tone_keywords:
+        positive: ["深入分析", "關鍵趨勢", "策略考量", "長期影響", "本質上"]
+        avoid: ["隨便說說", "個人淺見", "不確定", "大概", "可能"]
+
+      sentence_length:
+        average: 20-25
+        max: 30
+        guideline: "複雜但清晰，展現思考深度"
+
+      paragraph_structure:
+        sentences_per_paragraph: 4-6
+        guideline: "邏輯嚴謹，論點→證據→推論→結論"
+
+      examples_style: "產業案例、研究數據、歷史對比、趨勢分析"
+
+      authority_building:
+        - "引用可靠來源和數據"
+        - "提供獨特視角或框架"
+        - "連結相關理論或概念"
+        - "預測未來發展方向"
+
+      analysis_depth:
+        - "多角度分析（技術、商業、社會）"
+        - "因果關係探討"
+        - "利弊權衡"
+        - "實施建議"
+
+  # ----------------------------------------------------------
+  # 5. 新聞報導型
+  # ----------------------------------------------------------
+  news_commentary:
+    display_name: "新聞報導型"
+    description: "客觀報導、快速傳遞資訊"
+    use_cases:
+      - "產業新聞"
+      - "事件報導"
+      - "快訊更新"
+      - "簡報摘要"
+
+    settings:
+      formality: professional
+      expertise_level: trusted_advisor
+      personality: analytical_objective
+      sentence_structure: clear_and_persuasive
+
+    writing_guidelines:
+      pronouns:
+        use: ["報導指出", "根據消息", "官方表示"]
+        avoid: ["我認為", "我覺得", "個人看法"]
+
+      structure:
+        opening: "倒金字塔結構：重要資訊優先"
+        body: "5W1H（What, Who, When, Where, Why, How）"
+        closing: "背景補充或未來發展"
+
+      sentence_length:
+        average: 15-20
+        max: 25
+        guideline: "簡潔有力，資訊密度高"
+
+      objectivity:
+        - "多方觀點平衡呈現"
+        - "引述原始來源"
+        - "明確標示觀點與事實"
+        - "避免主觀形容詞"
+
+  # ----------------------------------------------------------
+  # 6. 技術文件型
+  # ----------------------------------------------------------
+  technical_documentation:
+    display_name: "技術文件型"
+    description: "精確、系統化、便於查閱"
+    use_cases:
+      - "API 文件"
+      - "系統架構說明"
+      - "操作手冊"
+      - "技術規格"
+
+    settings:
+      formality: formal
+      expertise_level: industry_expert
+      personality: analytical_objective
+      sentence_structure: formal_academic
+
+    writing_guidelines:
+      pronouns:
+        use: ["系統", "該功能", "使用者", "開發者"]
+        avoid: ["我", "你", "我們"]
+
+      structure:
+        - "清晰的標題層級"
+        - "項目列表優於長段落"
+        - "程式碼範例"
+        - "參數說明表格"
+
+      tone_keywords:
+        positive: ["配置", "執行", "參數", "返回值", "注意事項"]
+        avoid: ["可能", "大概", "差不多", "應該可以"]
+
+      precision:
+        - "使用專業術語"
+        - "精確的數值和單位"
+        - "明確的步驟順序"
+        - "完整的錯誤處理說明"
+
+# ============================================================
+# 語調選擇指引
+# ============================================================
+
+selection_guide:
+
+  by_content_type:
+    how_to_guide: blog_educational
+    product_review: testimonial_authentic
+    case_study: content_marketing
+    industry_analysis: thought_leadership
+    news_update: news_commentary
+    tutorial: blog_educational
+    comparison: content_marketing
+    personal_story: testimonial_authentic
+    expert_opinion: thought_leadership
+    api_docs: technical_documentation
+
+  by_target_audience:
+    beginners: blog_educational
+    professionals: content_marketing
+    decision_makers: thought_leadership
+    peers: testimonial_authentic
+    developers: technical_documentation
+
+  by_conversion_goal:
+    educate: blog_educational
+    build_trust: content_marketing
+    generate_leads: content_marketing
+    inspire_sharing: testimonial_authentic
+    establish_authority: thought_leadership
+    inform: news_commentary
+
+# ============================================================
+# 使用範例
+# ============================================================
+
+usage_examples:
+
+  example_1:
+    scenario: "用戶要求：請寫一篇關於 Claude Code 使用心得的文章"
+    recommended_tone: testimonial_authentic
+    reason: "個人使用心得最適合用真實見證的語調"
+
+  example_2:
+    scenario: "用戶要求：請寫一篇 AI Agent 開發教學"
+    recommended_tone: blog_educational
+    reason: "教學文章適合用友善但專業的部落格語調"
+
+  example_3:
+    scenario: "用戶要求：請分析 AI 產業的未來趨勢"
+    recommended_tone: thought_leadership
+    reason: "產業分析需要展現專業洞察力"
+
+  example_4:
+    scenario: "用戶要求：請介紹我們公司的新產品功能"
+    recommended_tone: content_marketing
+    reason: "產品介紹需要在專業與親和之間取得平衡"
+
+# ============================================================
+# Writer Agent 整合指引
+# ============================================================
+
+integration_instructions:
+
+  auto_detection:
+    description: "Writer Agent 應該根據以下因素自動選擇語調"
+    factors:
+      - "experience_profile.md 中的經驗等級"
+      - "文章主題和類型"
+      - "目標讀者"
+      - "用戶明確要求"
+
+  override_option:
+    description: "用戶可以明確指定語調"
+    examples:
+      - "請用口碑行銷的語調寫這篇文章"
+      - "請用專業但親和的方式介紹"
+      - "請用我跟朋友聊天的語氣"
+
+  hybrid_approach:
+    description: "某些文章可能需要混合多種語調"
+    example: "教學文章可以在引言用 testimonial_authentic（分享個人經驗），主體用 blog_educational（清晰教學），結論用 content_marketing（引導行動）"
+
+# ============================================================
+# 品質檢查標準
+# ============================================================
+
+quality_criteria:
+
+  tone_consistency:
+    check: "整篇文章的語調是否一致"
+    threshold: "90% 的段落應符合選定的語調特徵"
+
+  authenticity:
+    check: "口碑行銷型文章的真實性"
+    requirements:
+      - "包含具體時間和情境"
+      - "有優缺點的平衡評價"
+      - "避免過度誇張"
+
+  engagement:
+    check: "是否有效吸引目標讀者"
+    metrics:
+      - "適合目標讀者的語言難度"
+      - "合理的句子和段落長度"
+      - "適當的情感連結"
+
+  conversion_alignment:
+    check: "是否與轉換目標一致"
+    verification:
+      - "CTA 與語調匹配"
+      - "價值主張清晰"
+      - "引導行動的方式符合語調特性"
+
+# ============================================================
+# 版本歷史
+# ============================================================
+
+changelog:
+  - version: 1.0.0
+    date: 2025-11-04
+    changes:
+      - "初始版本"
+      - "建立 6 種核心語調預設"
+      - "定義語調選擇指引"
+      - "提供 Writer Agent 整合指引"

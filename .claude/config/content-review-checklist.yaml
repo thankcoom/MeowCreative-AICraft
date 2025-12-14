@@ -1,0 +1,323 @@
+# 內容審查檢查清單
+# 用於 Editor Agent 進行量化品質評估
+# 版本: 1.0.0
+# 建立日期: 2025-10-24
+
+review_dimensions:
+
+  # ============================================
+  # 維度1: 讀者價值 (Reader Value)
+  # 權重: 30% - 最重要的維度
+  # ============================================
+  reader_value:
+    weight: 30
+    description: "文章是否真正解決讀者問題,提供實際價值"
+
+    checklist:
+      - item: "引言在前100字內明確定義讀者痛點"
+        check_method: "檢查是否包含'你是否遇到...''你可能會困擾...''是否想知道...'等讀者導向描述"
+        pass_criteria: "必須有明確的痛點描述"
+        score_weight: 25
+        examples:
+          good: "你是否曾經花了整個週末設置 Claude Code,結果還是搞不清楚 Agent 怎麼運作?"
+          bad: "本文將介紹 Claude Code 的功能。"
+
+      - item: "每個H2章節都有清晰的價值主張"
+        check_method: "讀者能回答'這段教我什麼/解決什麼問題'"
+        pass_criteria: "每個H2標題都能讓讀者理解該章節的價值"
+        score_weight: 20
+        examples:
+          good: "## 如何在5分鐘內設置第一個Agent"
+          bad: "## Agent 設置"
+
+      - item: "結論提供至少3個可執行的行動步驟"
+        check_method: "檢查結論是否有編號步驟或清單"
+        pass_criteria: "至少3個具體的、可執行的行動"
+        score_weight: 20
+
+      - item: "文章提供獨特洞察,非重複網上已有內容"
+        check_method: "與 research_report.md 對比,是否有新角度或個人經驗"
+        pass_criteria: "至少2個獨特的見解或實證經驗"
+        score_weight: 20
+        examples:
+          unique: "根據我測試了50個不同的 prompt 發現..."
+          common: "Claude Code 是一個 AI 編程助手..."
+
+      - item: "標題承諾與內容交付一致"
+        check_method: "檢查標題承諾的價值是否在文章中實現"
+        pass_criteria: "內容完全符合標題承諾"
+        score_weight: 15
+
+  # ============================================
+  # 維度2: 內容深度 (Content Depth)
+  # 權重: 25%
+  # ============================================
+  content_depth:
+    weight: 25
+    description: "文章是否有足夠的深度和實證支撐"
+
+    checklist:
+      - item: "理論說明包含'為什麼',不只是'是什麼'"
+        check_method: "隨機抽查3個技術概念,是否解釋原理或理由"
+        pass_criteria: "3個概念中至少2個有'為什麼'的解釋"
+        score_weight: 25
+        examples:
+          good: "Agent 使用 Markdown 定義,因為 Markdown 易於閱讀且可以嵌入結構化資訊"
+          bad: "Agent 使用 Markdown 定義"
+
+      - item: "案例具體到可複現"
+        check_method: "檢查案例是否包含具體參數/環境/步驟/結果"
+        pass_criteria: "所有案例都可複現"
+        score_weight: 25
+        examples:
+          good: "使用 Python 3.11,安裝 requests==2.31.0,執行以下命令..."
+          bad: "安裝必要的套件後執行程式..."
+
+      - item: "有個人實證經驗或測試結果"
+        check_method: "搜尋'根據我的經驗''我測試了''實際使用中''我發現'"
+        pass_criteria: "至少2處個人實證描述"
+        score_weight: 20
+
+      - item: "程式碼範例可執行且有詳細註解"
+        check_method: "每個 code block 檢查是否有註解和說明"
+        pass_criteria: "100% 的程式碼有註解"
+        score_weight: 20
+
+      - item: "數據和統計有可靠來源"
+        check_method: "每個數據引用都有來源連結或說明"
+        pass_criteria: "所有數據都有來源標註"
+        score_weight: 10
+
+  # ============================================
+  # 維度3: 結構完整性 (Structure)
+  # 權重: 20%
+  # ============================================
+  structure:
+    weight: 20
+    description: "文章結構是否清晰、邏輯連貫"
+
+    checklist:
+      - item: "引言-正文-結論三段式完整"
+        check_method: "檢查是否有明確的引言、主體、結論章節"
+        pass_criteria: "三段式結構完整"
+        score_weight: 20
+
+      - item: "H2章節數量適中(3-6個)"
+        check_method: "計數H2標籤"
+        pass_criteria: "3 <= H2數量 <= 6"
+        score_weight: 15
+
+      - item: "段落長度控制良好"
+        check_method: "統計段落字數,每段應在50-150字之間"
+        pass_criteria: "90%以上段落符合長度標準"
+        score_weight: 15
+        note: "過長段落影響可讀性,過短段落顯得零碎"
+
+      - item: "視覺元素豐富(列點/表格/程式碼/引言)"
+        check_method: "每500字至少1個視覺元素"
+        pass_criteria: "視覺元素分布均勻"
+        score_weight: 15
+
+      - item: "章節之間邏輯連貫"
+        check_method: "檢查章節順序是否符合邏輯遞進(基礎→進階,問題→解決方案)"
+        pass_criteria: "章節順序合理"
+        score_weight: 15
+
+      - item: "標題階層正確(避免跳級)"
+        check_method: "檢查是否有 H2 直接跳到 H4 的情況"
+        pass_criteria: "標題階層無跳級"
+        score_weight: 10
+
+      - item: "字數符合目標範圍"
+        check_method: "統計總字數"
+        pass_criteria: "2000字 <= 總字數 <= 5000字"
+        score_weight: 10
+        optimal: "理想字數 2800-3200 字"
+
+  # ============================================
+  # 維度4: 風格一致性 (Style Consistency)
+  # 權重: 15%
+  # ============================================
+  style_consistency:
+    weight: 15
+    description: "文章風格是否符合 LOUIS 風格定義"
+
+    checklist:
+      - item: "語氣符合'專業但親和'"
+        check_method: "避免過度學術腔或過度口語化"
+        pass_criteria: "整體語氣平衡"
+        score_weight: 30
+        examples:
+          avoid_academic: "本文旨在闡述..."  # 過度學術
+          avoid_casual: "超酷der!必須試試看!"  # 過度口語
+          correct: "這個方法在實際專案中非常實用"
+
+      - item: "術語處理正確(中文+英文原文)"
+        check_method: "檢查專業術語格式"
+        pass_criteria: "所有重要術語都保留英文原文"
+        score_weight: 25
+        examples:
+          correct: "多Agent協作 (Multi-Agent Collaboration)"
+          incorrect: "多代理協作"
+
+      - item: "無生硬翻譯腔"
+        check_method: "避免'被+動詞''進行+動詞''對...進行...'"
+        pass_criteria: "無明顯翻譯腔"
+        score_weight: 20
+        examples:
+          avoid: ["這個功能被廣泛使用", "對系統進行優化", "被認為是"]
+          correct: ["這個功能很多人用", "優化系統", "大家認為"]
+
+      - item: "使用繁體中文,標點符號正確"
+        check_method: "檢查是否使用繁體中文,標點是否為全形"
+        pass_criteria: "100%繁體中文,標點正確"
+        score_weight: 15
+
+      - item: "人稱使用一致(以'你'稱呼讀者)"
+        check_method: "避免使用'我們''大家''用戶',統一使用'你'"
+        pass_criteria: "讀者導向的人稱使用"
+        score_weight: 10
+        examples:
+          good: "你可以透過這個方法..."
+          bad: "我們可以透過這個方法..."
+
+  # ============================================
+  # 維度5: 事實準確性 (Factual Accuracy)
+  # 權重: 10%
+  # ============================================
+  factual_accuracy:
+    weight: 10
+    description: "文章資訊是否準確、可靠"
+
+    checklist:
+      - item: "數據有可靠來源或參考連結"
+        check_method: "每個統計數據都檢查是否有來源"
+        pass_criteria: "100%的數據有來源"
+        score_weight: 35
+
+      - item: "技術描述無明顯錯誤"
+        check_method: "核對技術概念是否與官方文檔一致"
+        pass_criteria: "無錯誤技術描述"
+        score_weight: 30
+
+      - item: "外部連結有效且權威"
+        check_method: "測試所有 http 連結,檢查來源可信度"
+        pass_criteria: "100%連結有效,來源權威"
+        score_weight: 20
+
+      - item: "版本資訊準確(軟體版本/日期)"
+        check_method: "檢查提到的版本號是否最新或已註明日期"
+        pass_criteria: "版本資訊準確"
+        score_weight: 15
+
+# ============================================
+# 評分計算方式
+# ============================================
+scoring:
+  calculation: |
+    每個維度的分數 = Σ(檢查項得分 × 該項權重) / Σ(檢查項權重)
+
+    範例:
+    reader_value 維度有5個檢查項,權重分別為 25, 20, 20, 20, 15
+    如果得分為: 20, 15, 20, 15, 10
+    則該維度分數 = (20×25 + 15×20 + 20×20 + 15×20 + 10×15) / (25+20+20+20+15)
+                  = (500 + 300 + 400 + 300 + 150) / 100
+                  = 1650 / 100
+                  = 16.5 分 (滿分 30 分)
+
+    總分 = Σ(各維度分數)
+    總分滿分 = 100 分
+
+  grading:
+    A_plus:
+      range: "95-100"
+      label: "卓越 (Outstanding)"
+      action: "直接發布,無需修改"
+
+    A:
+      range: "90-94"
+      label: "優秀 (Excellent)"
+      action: "檢視低優先級建議後發布"
+
+    B_plus:
+      range: "85-89"
+      label: "良好+ (Very Good)"
+      action: "進行建議的小幅修改"
+
+    B:
+      range: "80-84"
+      label: "良好 (Good)"
+      action: "根據中優先級建議修改"
+
+    C:
+      range: "70-79"
+      label: "及格 (Passing)"
+      action: "必須修改高優先級問題"
+
+    D:
+      range: "60-69"
+      label: "不及格 (Fail)"
+      action: "重大修訂或重寫部分章節"
+
+    F:
+      range: "0-59"
+      label: "不合格 (Unacceptable)"
+      action: "重寫文章"
+
+# ============================================
+# 問題優先級定義
+# ============================================
+issue_priority:
+  high:
+    label: "高優先級 (必須修改)"
+    criteria:
+      - "事實錯誤"
+      - "邏輯矛盾"
+      - "缺少關鍵資訊"
+      - "標題承諾未兌現"
+      - "程式碼無法執行"
+    action: "修改前不可發布"
+
+  medium:
+    label: "中優先級 (建議修改)"
+    criteria:
+      - "結構可優化"
+      - "案例不夠具體"
+      - "個人見解不足"
+      - "風格輕微不一致"
+    action: "建議在發布前修改"
+
+  low:
+    label: "低優先級 (可選優化)"
+    criteria:
+      - "措辭可更精煉"
+      - "可增加視覺元素"
+      - "可補充延伸閱讀"
+    action: "可在發布後持續優化"
+
+# ============================================
+# 使用說明
+# ============================================
+usage_instructions: |
+  Editor Agent 使用此清單的流程:
+
+  1. 載入此 YAML 檔案
+  2. 讀取 draft_final.md
+  3. 逐項檢查每個維度的檢查項
+  4. 記錄每個檢查項的得分和問題
+  5. 計算各維度分數和總分
+  6. 根據評分等級產出審查報告
+  7. 列出需要修改的問題(按優先級分類)
+  8. 儲存為 editor_review.md
+
+  輸出報告格式參考:
+  - 檔案: editor_review_template.md (範例模板)
+
+# ============================================
+# 版本記錄
+# ============================================
+version_history:
+  - version: "1.0.0"
+    date: "2025-10-24"
+    changes: "初始版本,建立5大審查維度和量化評分標準"
+    author: "內容教練團隊"

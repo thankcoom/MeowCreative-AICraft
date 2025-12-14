@@ -1,0 +1,365 @@
+# Eugene Schwartz - 文案之王
+# 來源: "Breakthrough Advertising" (1966)
+# 被譽為史上最偉大的文案書籍
+
+version: 1.0.0
+updated: 2025-12-11
+
+master:
+  name: "Eugene Schwartz"
+  title: "文案之王 (The King of Copywriting)"
+  era: "1927-1995"
+  masterpiece: "Breakthrough Advertising (1966)"
+  legacy: "徹底改變了廣告業對消費者心理的理解"
+
+# ============================================================
+# 核心原則 1: 你無法創造需求，只能引導需求
+# ============================================================
+
+principle_1:
+  name: "需求引導原則"
+  english: "You Cannot Create Desire"
+
+  what: |
+    廣告的工作不是創造新的慾望，而是：
+    1. 找到已經存在於消費者心中的慾望
+    2. 將這個慾望引導到你的產品上
+    3. 用最強烈的方式放大這個慾望
+
+  why: |
+    人類的基本慾望是恆定的：
+    - 健康、財富、愛情、認可、安全、舒適
+    - 這些慾望早就存在，不需要你創造
+    - 你的工作是「連結」而非「創造」
+
+  how:
+    steps:
+      - "研究你的目標受眾已有的慾望"
+      - "找出你的產品如何滿足這個慾望"
+      - "用具體、生動的語言描繪慾望被滿足的畫面"
+      - "讓讀者感覺你「懂他」"
+
+  example:
+    bad: "我們的減肥藥含有最新科技成分 XYZ-500"
+    good: "想像一下，3 個月後當你穿上那件一直買了卻不敢穿的洋裝..."
+    why_good: "連結到已存在的慾望（變瘦、自信），而非強調產品特性"
+
+  application_for_blog:
+    - "開頭不要介紹產品/技術，先描繪讀者的痛點"
+    - "用「你是否曾經...」來連結既有慾望"
+    - "讓讀者在前 3 句話就覺得「這就是在說我」"
+
+# ============================================================
+# 核心原則 2: 讀者認知 5 階段 (最重要！)
+# ============================================================
+
+principle_2:
+  name: "讀者認知 5 階段"
+  english: "5 Stages of Awareness"
+  importance: "★★★★★ 最關鍵的文案框架"
+
+  what: |
+    讀者對問題和解決方案的認知程度，決定了你應該怎麼寫：
+
+    Stage 1: Unaware (完全不知道)
+    Stage 2: Problem-Aware (知道問題)
+    Stage 3: Solution-Aware (知道有解決方案)
+    Stage 4: Product-Aware (知道你的產品)
+    Stage 5: Most-Aware (已經相信，只差臨門一腳)
+
+  stages:
+    stage_1_unaware:
+      name: "完全不知道 (Unaware)"
+      description: "讀者不知道自己有問題，也不知道有解決方案"
+
+      reader_mindset: |
+        - 「我沒有這個問題啊」
+        - 「這跟我有什麼關係？」
+        - 「我現在很好啊」
+
+      content_strategy:
+        headline_type: "教育性、引發好奇"
+        opening_approach: "故事、震撼數據、預言"
+        content_focus: "建立問題意識"
+        avoid: "直接推銷、提及產品"
+
+      example_headlines:
+        - "90% 的人不知道自己每天都在犯這個錯誤"
+        - "為什麼成功人士都在早上 5 點起床？"
+        - "你的存款正在以每年 3% 的速度消失"
+
+      blog_application: |
+        適合：趨勢分析、產業洞察、教育類文章
+        開頭策略：用故事或數據製造「認知衝突」
+        目標：讓讀者意識到「原來我有這個問題」
+
+    stage_2_problem_aware:
+      name: "知道問題 (Problem-Aware)"
+      description: "讀者知道自己有問題，但不知道有解決方案"
+
+      reader_mindset: |
+        - 「我知道這是個問題，但能怎麼辦？」
+        - 「這個問題困擾我很久了」
+        - 「我試過很多方法都沒用」
+
+      content_strategy:
+        headline_type: "同理心、放大痛點"
+        opening_approach: "「你是否也...」、描述痛點場景"
+        content_focus: "深化痛點，暗示有解決方案"
+        avoid: "太快進入解決方案"
+
+      example_headlines:
+        - "你是否也厭倦了每天加班到半夜？"
+        - "為什麼你總是存不到錢？真正的原因可能讓你驚訝"
+        - "當你的程式碼又出 bug 時，你是不是也想砸電腦？"
+
+      blog_application: |
+        適合：問題分析、痛點文章、「為什麼」類文章
+        開頭策略：用同理心建立連結，詳細描述痛點
+        目標：讓讀者覺得「終於有人懂我了」
+
+    stage_3_solution_aware:
+      name: "知道有解決方案 (Solution-Aware)"
+      description: "讀者知道問題可以被解決，但不知道你的產品/方法"
+
+      reader_mindset: |
+        - 「我知道這個問題可以解決」
+        - 「我在比較不同的解決方案」
+        - 「哪個方法最適合我？」
+
+      content_strategy:
+        headline_type: "差異化、獨特賣點"
+        opening_approach: "承認其他方案，但指出不足"
+        content_focus: "你的方法為什麼不同/更好"
+        avoid: "貶低競爭對手"
+
+      example_headlines:
+        - "為什麼傳統的時間管理方法對你沒用（以及什麼方法有效）"
+        - "我試過 10 種減肥法，只有這個真正有效"
+        - "你可能用錯了 AI 工具：3 個被忽略的更好選擇"
+
+      blog_application: |
+        適合：比較文章、「vs」類文章、方法論文章
+        開頭策略：承認讀者已經知道的，然後提供新視角
+        目標：讓讀者覺得「這個方法我沒試過」
+
+    stage_4_product_aware:
+      name: "知道你的產品 (Product-Aware)"
+      description: "讀者知道你的產品，但還沒被說服購買/使用"
+
+      reader_mindset: |
+        - 「我聽過這個，但不確定適不適合我」
+        - 「這個真的有效嗎？」
+        - 「有沒有其他人用過？」
+
+      content_strategy:
+        headline_type: "證據、社會證明、案例"
+        opening_approach: "成功案例、數據、見證"
+        content_focus: "證明效果、消除疑慮"
+        avoid: "重複介紹基本功能"
+
+      example_headlines:
+        - "我用 Claude Code 3 個月後，程式碼品質提升了 40%"
+        - "5,000+ 開發者都在用的自動化工作流程"
+        - "真實案例：他如何用這個方法在 6 個月內翻倍收入"
+
+      blog_application: |
+        適合：案例研究、使用心得、數據驗證文章
+        開頭策略：直接展示成果，用數據說話
+        目標：讓讀者覺得「這個方法真的有效」
+
+    stage_5_most_aware:
+      name: "完全相信 (Most-Aware)"
+      description: "讀者已經相信，只需要最後推一把"
+
+      reader_mindset: |
+        - 「我相信這個有效」
+        - 「我只是還沒行動」
+        - 「有什麼優惠嗎？」
+
+      content_strategy:
+        headline_type: "限時、稀缺、行動號召"
+        opening_approach: "直接切入優惠/行動"
+        content_focus: "降低行動門檻、製造緊迫感"
+        avoid: "再次說服（已經不需要）"
+
+      example_headlines:
+        - "限時 48 小時：原價 $299 現在只要 $99"
+        - "最後 10 個名額"
+        - "今天開始，明天見成效"
+
+      blog_application: |
+        適合：CTA 強化、限時優惠、行動指南
+        開頭策略：直接告訴讀者現在就行動
+        目標：讓讀者覺得「現在不做就來不及了」
+
+  how_to_identify_stage:
+    method: "問自己以下問題"
+    questions:
+      - "我的目標讀者是否知道自己有這個問題？"
+      - "他們是否已經在尋找解決方案？"
+      - "他們是否知道我的產品/方法？"
+      - "他們是否已經相信但還沒行動？"
+
+    decision_tree: |
+      讀者知道有問題嗎？
+        ├─ 否 → Stage 1 (Unaware)
+        └─ 是 → 讀者在尋找解決方案嗎？
+              ├─ 否 → Stage 2 (Problem-Aware)
+              └─ 是 → 讀者知道你的方法嗎？
+                    ├─ 否 → Stage 3 (Solution-Aware)
+                    └─ 是 → 讀者相信你的方法嗎？
+                          ├─ 否 → Stage 4 (Product-Aware)
+                          └─ 是 → Stage 5 (Most-Aware)
+
+# ============================================================
+# 核心原則 3: 市場成熟度 (Market Sophistication)
+# ============================================================
+
+principle_3:
+  name: "市場成熟度"
+  english: "5 Levels of Market Sophistication"
+
+  what: |
+    市場對某類產品/訊息的「疲勞程度」，決定了你需要多獨特：
+
+    Level 1: 第一個進入市場 - 直接說好處就夠了
+    Level 2: 競爭者出現 - 需要放大承諾
+    Level 3: 市場飽和 - 需要新機制/方法
+    Level 4: 機制也被複製 - 需要證據和細節
+    Level 5: 完全飽和 - 需要情感連結和故事
+
+  levels:
+    level_1:
+      name: "新市場"
+      strategy: "直接聲明好處"
+      example: "讓你瘦 10 公斤"
+
+    level_2:
+      name: "有競爭"
+      strategy: "放大承諾"
+      example: "讓你在 30 天內瘦 10 公斤"
+
+    level_3:
+      name: "市場飽和"
+      strategy: "新機制/新方法"
+      example: "用間歇性斷食讓你 30 天瘦 10 公斤"
+
+    level_4:
+      name: "機制被複製"
+      strategy: "證據和細節"
+      example: "經過 1,247 人驗證的間歇性斷食法，平均 28 天瘦 9.7 公斤"
+
+    level_5:
+      name: "完全飽和"
+      strategy: "情感連結和故事"
+      example: "「我曾經以為這輩子都要穿 XL...」一位媽媽的真實故事"
+
+  application:
+    tech_blog: "大多數技術主題處於 Level 3-4，需要獨特角度和證據"
+    ai_tools: "AI 工具市場已達 Level 4，需要具體數據和案例"
+
+# ============================================================
+# 核心原則 4: 研究優於寫作
+# ============================================================
+
+principle_4:
+  name: "研究優於寫作"
+  english: "Research Before Writing"
+
+  schwartz_quote: |
+    "我會花 6 週時間研究，然後用 3 週時間寫作。
+     當我開始寫的時候，文案幾乎是自己寫出來的。"
+
+  research_checklist:
+    audience:
+      - "他們最深的恐懼是什麼？"
+      - "他們最大的挫折是什麼？"
+      - "他們夢想中的理想狀態是什麼？"
+      - "什麼會讓他們晚上睡不著？"
+      - "他們用什麼詞彙描述自己的問題？"
+
+    product:
+      - "這個產品真正解決的是什麼問題？"
+      - "為什麼這個方法有效？（背後原理）"
+      - "有什麼獨特之處？"
+      - "有什麼證據證明有效？"
+
+    market:
+      - "競爭對手怎麼說？"
+      - "市場處於哪個成熟度？"
+      - "什麼訊息已經被用爛了？"
+
+# ============================================================
+# 實際應用指南
+# ============================================================
+
+application_guide:
+
+  for_writer_agent:
+    before_writing:
+      - "判斷目標讀者的認知階段 (Stage 1-5)"
+      - "判斷市場成熟度 (Level 1-5)"
+      - "根據階段選擇標題策略"
+      - "根據階段選擇開頭方式"
+
+    headline_matrix:
+      stage_1: "教育型、好奇型標題"
+      stage_2: "同理心型、痛點型標題"
+      stage_3: "差異化型、比較型標題"
+      stage_4: "證據型、案例型標題"
+      stage_5: "行動型、緊迫型標題"
+
+  for_editor_agent:
+    verification_checklist:
+      - "文章是否正確識別讀者認知階段？"
+      - "標題策略是否符合該階段？"
+      - "開頭是否連結到讀者既有慾望？"
+      - "是否有不當的「跳階」（對 Stage 2 讀者直接推銷）？"
+
+  for_benchmark_agent:
+    analysis_framework:
+      - "這篇頂級文章針對哪個認知階段？"
+      - "它如何連結讀者既有慾望？"
+      - "它使用了哪種市場成熟度策略？"
+
+# ============================================================
+# 常見錯誤
+# ============================================================
+
+common_mistakes:
+
+  mistake_1:
+    description: "對 Unaware 讀者直接推銷"
+    example: "Claude Code 是最好的 AI 編程助手！"
+    problem: "讀者還不知道自己需要 AI 編程助手"
+    fix: "先教育，建立問題意識"
+
+  mistake_2:
+    description: "對 Most-Aware 讀者重複說服"
+    example: "讓我再告訴你為什麼這個方法有效..."
+    problem: "讀者已經相信了，不需要再說服"
+    fix: "直接給行動指令和優惠"
+
+  mistake_3:
+    description: "忽略市場成熟度"
+    example: "這個 AI 工具可以幫你寫程式"
+    problem: "這種說法在 2020 年有效，現在太普通了"
+    fix: "需要更具體的差異化和證據"
+
+# ============================================================
+# 延伸閱讀
+# ============================================================
+
+further_reading:
+  - title: "Breakthrough Advertising"
+    author: "Eugene Schwartz"
+    note: "原著，被譽為史上最偉大的文案書"
+
+  - title: "The Adweek Copywriting Handbook"
+    author: "Joseph Sugarman"
+    note: "Schwartz 理論的現代詮釋"
+
+  - title: "Great Leads"
+    author: "Michael Masterson & John Forde"
+    note: "深入探討 Schwartz 的開頭策略"

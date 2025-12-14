@@ -1,0 +1,45 @@
+{
+  "name": "miaoli-blog-automation",
+  "version": "1.0.0",
+  "description": "喵哩文創部落格 AI 寫手系統 - 完整自動化內容行銷 Plugin。包含 WordPress 發布、內容再製、SEO 優化等核心功能。",
+  "author": {
+    "name": "喵哩文創 AI 寫手系統團隊",
+    "email": "team@miaoli.com",
+    "url": "https://github.com/miaoli/blog-automation"
+  },
+  "license": "MIT",
+  "homepage": "https://github.com/miaoli/blog-automation",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/miaoli/blog-automation.git"
+  },
+  "keywords": [
+    "wordpress",
+    "blog",
+    "automation",
+    "marketing",
+    "content",
+    "seo",
+    "social-media",
+    "publishing",
+    "repurposing",
+    "ai-writer"
+  ],
+  "agents": [
+    "./agents"
+  ],
+  "skills": [
+    "./skills"
+  ],
+  "config": {
+    "credentialsPath": "./.claude/config"
+  },
+  "dependencies": {
+    "python": ">=3.9",
+    "node": ">=18.0.0"
+  },
+  "scripts": {
+    "setup": "python scripts/setup.py",
+    "test": "python -m pytest tests/"
+  }
+}

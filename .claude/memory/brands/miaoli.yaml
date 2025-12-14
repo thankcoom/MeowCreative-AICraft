@@ -1,0 +1,115 @@
+# 喵哩文創 品牌 Profile
+# Miaoli Creative Brand Profile
+
+brand_id: miaoli
+brand_name: 喵哩文創
+brand_name_en: Miaoli Creative
+tagline: 用故事連結世界
+website: https://miaolicreative.com
+
+# 基本資訊
+industry: 媒體/內容
+company_size: 小型團隊
+founded_year: 2024
+
+# 品牌識別
+brand_voice: friendly_approachable
+brand_voice_name: 親和友善
+brand_voice_description: 溫暖、對話式、有人味、平易近人
+tone_words:
+  - 一起
+  - 我們
+  - 你
+  - 分享
+  - 其實
+  - 真的
+
+brand_personality:
+  - 創意
+  - 專業
+  - 親切
+  - 誠信
+  - 熱情
+
+# 目標受眾
+target_audience:
+  primary: 25-45歲的創業者、行銷人員、內容創作者
+  demographics:
+    age_range: "25-45"
+    gender: 不限
+    location: 台灣
+  psychographics:
+    interests:
+      - 內容行銷
+      - 創業
+      - 個人品牌
+      - 數位行銷
+    pain_points:
+      - 沒時間寫內容
+      - 不知道怎麼寫
+      - 內容效果不好
+    goals:
+      - 建立專業形象
+      - 增加品牌曝光
+      - 提高轉換率
+
+# 品牌價值觀
+brand_values:
+  - 真實 - 不虛構、不誇大，每一個案例都是真的
+  - 創意 - 用新視角說故事，讓內容有記憶點
+  - 專業 - 紮實的內容品質，經得起檢驗
+  - 人味 - 有溫度的表達，讓人感受到真誠
+
+# 核心服務
+services:
+  - 部落格文章撰寫 - 深度內容，建立專業形象
+  - 社群內容經營 - 多平台內容策略
+  - 品牌故事打造 - 挖掘品牌獨特價值
+  - SEO 內容優化 - 讓好內容被看見
+
+# 寫作指南
+writing_guidelines:
+  do:
+    - 使用對話式語調，像朋友聊天
+    - 分享真實經驗，不空泛說教
+    - 提供實用建議，讀者能立即應用
+    - 適度幽默，增加閱讀樂趣
+    - 用「我」「你」而非「本文」「讀者」
+  dont:
+    - 虛構經驗和數據
+    - 過度誇大效果
+    - 使用艱澀術語
+    - 寫無意義的廢話
+    - 照抄其他文章
+
+  structure:
+    - 每段 3-5 句話
+    - 每句平均 15-20 字
+    - 使用明確的標題階層
+    - 適時使用列表和引言
+
+  banned_words:
+    - 本文
+    - 筆者
+    - 綜上所述
+    - 值得一提的是
+
+# 內容主題
+content_pillars:
+  - AI 工具應用
+  - 內容行銷策略
+  - 創業經驗分享
+  - 生產力提升
+
+# 知識庫
+knowledge_base:
+  description: |
+    喵哩文創是一家專注於內容行銷的創意公司，
+    我們相信好的故事能夠連結品牌與消費者。
+
+    我們不只是寫文章，而是幫助品牌找到自己的聲音，
+    用有溫度的內容建立與讀者的連結。
+
+# 元資料
+created_at: "2024-12-13"
+updated_at: "2024-12-13"

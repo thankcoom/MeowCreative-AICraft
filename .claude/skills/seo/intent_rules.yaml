@@ -1,0 +1,198 @@
+# SEO 搜尋意圖匹配規則
+# 版本: 1.0.0
+# 說明: 定義各種搜尋意圖的匹配關鍵字和權重
+
+intent_patterns:
+  # 教學型 - 使用者想要學習如何做某事
+  tutorial:
+    keywords:
+      - 如何
+      - 怎麼
+      - 教學
+      - 步驟
+      - 指南
+      - 方法
+      - 手把手
+      - 完整
+      - 實作
+      - 教程
+      - 攻略
+      - 入門
+      - 從零開始
+    weight: 1.0
+    priority: high
+    description: "使用者尋求逐步指導的教學內容"
+
+  # 資訊型 - 使用者想要了解概念或定義
+  informational:
+    keywords:
+      - 是什麼
+      - 介紹
+      - 說明
+      - 原理
+      - 為什麼
+      - 定義
+      - 概念
+      - 解析
+      - 了解
+      - 認識
+      - 深入
+      - 剖析
+    weight: 0.9
+    priority: medium
+    description: "使用者尋求概念理解和知識獲取"
+
+  # 比較型 - 使用者想要比較不同選項
+  comparison:
+    keywords:
+      - 比較
+      - vs
+      - 差異
+      - 哪個好
+      - 推薦
+      - 選擇
+      - 對比
+      - 優劣
+      - 評比
+      - 勝過
+      - 還是
+    weight: 1.0
+    priority: high
+    description: "使用者在多個選項間進行決策"
+
+  # 評價型 - 使用者想要了解產品或服務的評價
+  review:
+    keywords:
+      - 好用嗎
+      - 評測
+      - 評價
+      - 心得
+      - 優缺點
+      - 值得
+      - 推不推
+      - 實測
+      - 體驗
+      - 使用感受
+    weight: 0.8
+    priority: medium
+    description: "使用者尋求真實使用經驗和評價"
+
+  # 問題解決型 - 使用者遇到問題需要解決
+  problem_solving:
+    keywords:
+      - 解決
+      - 修復
+      - 錯誤
+      - 問題
+      - 無法
+      - 失敗
+      - 不能
+      - 疑難
+      - 排查
+      - 診斷
+      - 處理
+      - bug
+      - 卡住
+    weight: 1.0
+    priority: high
+    description: "使用者遇到具體問題需要解決方案"
+
+  # 交易型 - 使用者準備購買或註冊
+  transactional:
+    keywords:
+      - 購買
+      - 價格
+      - 費用
+      - 多少錢
+      - 免費
+      - 試用
+      - 方案
+      - 訂閱
+      - 註冊
+      - 下載
+    weight: 0.7
+    priority: low
+    description: "使用者有購買或註冊意圖"
+
+# 進階匹配規則
+advanced_rules:
+  # 複合意圖處理
+  combined_intents:
+    - primary: tutorial
+      secondary: informational
+      condition: "包含'如何'且包含'是什麼'"
+      action: "先解釋概念，再提供步驟"
+
+    - primary: comparison
+      secondary: review
+      condition: "包含'比較'且包含'推薦'"
+      action: "比較表格 + 各自評價"
+
+  # 特殊模式
+  special_patterns:
+    # 問句模式
+    question_pattern:
+      regex: "^(如何|怎麼|為什麼|什麼是)"
+      boost_intent: ["tutorial", "informational"]
+      boost_factor: 1.2
+
+    # 數字模式（N個方法、X步驟）
+    number_pattern:
+      regex: "\\d+\\s*(個|種|步|招)"
+      boost_intent: ["tutorial", "comparison"]
+      boost_factor: 1.1
+
+# 最低匹配閾值
+thresholds:
+  min_confidence: 0.3  # 最低信心度
+  high_confidence: 0.8  # 高信心度
+  match_threshold: 0.7  # 內容匹配閾值
+
+# 地區化設定（繁體中文特有）
+localization:
+  traditional_chinese:
+    enabled: true
+    additional_keywords:
+      tutorial:
+        - 攻略
+        - 懶人包
+        - 教戰手冊
+      comparison:
+        - 勝過
+        - 屌打
+      problem_solving:
+        - 爆掉
+        - 炸裂
+
+# 產業特定規則
+industry_specific:
+  tech:
+    enabled: true
+    boost_keywords:
+      - API
+      - 開發
+      - 程式
+      - 架構
+      - 實作
+    boost_factor: 1.1
+
+  finance:
+    enabled: true
+    boost_keywords:
+      - 交易
+      - 策略
+      - 回測
+      - 指標
+      - 量化
+    boost_factor: 1.1
+
+# 品質控制
+quality_rules:
+  # 如果標題太短，降低信心度
+  title_length:
+    min: 5
+    penalty_factor: 0.8
+
+  # 如果沒有明確意圖信號，使用預設
+  default_intent: informational
+  default_confidence: 0.5

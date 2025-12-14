@@ -1,0 +1,102 @@
+# 禁止使用的寫作模式
+# 這些是 AI 常見但不自然的寫作習慣，必須避免
+
+forbidden_symbols:
+  - symbol: "——"
+    name: "破折號（全形）"
+    reason: "這是 AI 寫作的明顯痕跡，中文寫作很少使用"
+    alternatives:
+      - "句號（。）- 分成兩句"
+      - "逗號（，）- 連接短語"
+      - "冒號（：）- 引出解釋"
+      - "分號（；）- 並列關係"
+
+  - symbol: "——"
+    name: "破折號（半形）"
+    reason: "同上"
+    alternatives: "同上"
+
+forbidden_phrases:
+  - phrase: "讓我們來看看"
+    reason: "過於教條式，不自然"
+    alternatives:
+      - "來看看"
+      - "看看"
+      - "接下來"
+
+  - phrase: "值得注意的是"
+    reason: "過於正式，學術味太重"
+    alternatives:
+      - "注意"
+      - "重點是"
+      - "有趣的是"
+
+  - phrase: "總而言之"
+    reason: "過於制式化"
+    alternatives:
+      - "總結來說"
+      - "簡單說"
+      - 直接進入總結內容
+
+  - phrase: "綜上所述"
+    reason: "過於學術化"
+    alternatives:
+      - "總結"
+      - "整體來看"
+      - 直接總結
+
+forbidden_structures:
+  - pattern: "X——Y"
+    description: "用破折號連接兩個概念"
+    fix: "改用『X：Y』或『X。Y』或『X，Y』"
+    examples:
+      wrong: "這個工具很強大——它可以分析所有社群平台"
+      right_1: "這個工具很強大：它可以分析所有社群平台"
+      right_2: "這個工具很強大。它可以分析所有社群平台"
+      right_3: "這個工具很強大，可以分析所有社群平台"
+
+  - pattern: "不是...而是..."
+    description: "過度使用對比句式"
+    fix: "適度使用，不要每段都用"
+    note: "一篇文章中出現 2-3 次即可"
+
+  - pattern: "❌...✅..."
+    description: "過度使用對比符號"
+    fix: "一篇文章最多 2-3 組對比"
+    note: "用文字說明更自然"
+
+writing_principles:
+  natural_flow:
+    - "寫作應該像說話一樣自然流暢"
+    - "避免過於工整的排比句式"
+    - "句子長度要有變化，不要過於統一"
+
+  authenticity:
+    - "保持人性化的語調"
+    - "避免聽起來像 AI 生成的內容"
+    - "加入個人觀點和情感"
+
+  readability:
+    - "優先考慮可讀性，而非華麗辭藻"
+    - "使用日常用語，避免過度專業術語"
+    - "句子簡潔有力，不拖泥帶水"
+
+validation_checklist:
+  before_publish:
+    - "檢查是否有破折號（——）"
+    - "檢查是否過度使用對比結構"
+    - "檢查句子是否自然流暢"
+    - "檢查是否有 AI 常見短語"
+    - "大聲朗讀，聽起來是否自然"
+
+# 自動檢查腳本（未來可開發）
+auto_check:
+  enabled: true
+  check_before_save: true
+  warning_only: false  # true: 僅警告, false: 阻止保存
+  patterns_to_check:
+    - "——"
+    - "讓我們來看看"
+    - "值得注意的是"
+    - "總而言之"
+    - "綜上所述"

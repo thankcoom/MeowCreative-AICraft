@@ -1,0 +1,552 @@
+# SUCCESs 框架 - 讓訊息「黏住」讀者
+# 來源: "Made to Stick" by Chip Heath & Dan Heath (2007)
+# 為什麼有些訊息能被記住，有些卻被遺忘？
+
+version: 1.0.0
+updated: 2025-12-11
+
+overview:
+  source:
+    book: "Made to Stick: Why Some Ideas Survive and Others Die"
+    authors: ["Chip Heath", "Dan Heath"]
+    year: 2007
+    credentials: "Chip Heath 是史丹佛商學院教授，Dan Heath 是杜克大學研究員"
+
+  core_question: "為什麼都市傳說能流傳幾十年，但重要的研究結論卻被遺忘？"
+
+  answer: |
+    黏著的訊息都有共同特徵：
+    Simple (簡單)
+    Unexpected (出乎意料)
+    Concrete (具體)
+    Credible (可信)
+    Emotional (情感)
+    Stories (故事)
+
+    縮寫：SUCCESs
+
+  why_it_matters_for_blog: |
+    部落格文章最大的挑戰是：讀者讀完就忘了。
+    使用 SUCCESs 框架可以讓你的核心訊息「黏」在讀者腦中，
+    提高分享率、回訪率、和實際採取行動的比例。
+
+# ============================================================
+# S - Simple (簡單)
+# ============================================================
+
+simple:
+  name: "簡單"
+  english: "Simple"
+  importance: "★★★★★"
+
+  what: |
+    找到核心訊息，然後用最精煉的方式表達。
+    簡單 ≠ 簡化（dumbing down）
+    簡單 = 找到核心（finding the core）
+
+  core_concept: |
+    「如果你說了三件事，等於什麼都沒說。」
+    - Chip Heath
+
+    每篇文章應該有一個且只有一個核心訊息。
+
+  how_to_find_core:
+    method: "司令官意圖 (Commander's Intent)"
+    description: |
+      美軍在計畫作戰時會問：
+      「如果一切計畫都失敗了，什麼是我們必須完成的唯一目標？」
+
+      套用到文章：
+      「如果讀者只記住一件事，那應該是什麼？」
+
+    exercise:
+      step_1: "列出文章想傳達的所有訊息"
+      step_2: "強迫自己只選一個"
+      step_3: "用一句話表達這個核心訊息"
+      step_4: "這句話能不能更短？"
+
+  techniques:
+    use_analogies:
+      description: "用讀者已知的概念解釋新概念"
+      example:
+        complex: "Claude Code 使用 MCP 協議，透過標準化的工具介面與外部服務通訊。"
+        simple: "Claude Code 就像一個有超能力的助理，MCP 就是它能連接到你所有工具的萬能插頭。"
+
+    generative_analogy:
+      description: "好的類比可以產生新的洞察"
+      example:
+        analogy: "迪士尼稱員工為『演員』"
+        insights:
+          - "員工不只是工作，是在表演"
+          - "有『台前』和『後台』的區分"
+          - "每個動作都要維持角色"
+          - "顧客是『觀眾』"
+
+  verification_checklist:
+    - "文章的核心訊息是否能用一句話說完？"
+    - "如果讀者只記住一件事，他們會記住什麼？"
+    - "是否使用了類比來解釋複雜概念？"
+    - "是否避免了資訊過載？"
+
+  common_mistakes:
+    - "試圖在一篇文章中傳達太多訊息"
+    - "用複雜術語而非類比"
+    - "把「簡單」誤解為「簡化」（省略重要細節）"
+
+# ============================================================
+# U - Unexpected (出乎意料)
+# ============================================================
+
+unexpected:
+  name: "出乎意料"
+  english: "Unexpected"
+  importance: "★★★★★"
+
+  what: |
+    打破讀者的預期模式，製造「知識缺口」。
+    當預期被打破，大腦會特別注意。
+
+  core_concept: |
+    人類大腦會自動預測接下來會發生什麼。
+    當預測被違反時，我們會停下來注意。
+
+    驚訝 → 注意 → 好奇 → 記憶
+
+  technique_1_break_pattern:
+    name: "打破模式"
+    description: "違反讀者的預期"
+
+    example:
+      expected: "如何提高工作效率"
+      unexpected: "為什麼追求效率可能讓你更沒效率"
+
+    blog_headlines:
+      predictable:
+        - "5 個提高效率的方法"
+        - "如何學好程式設計"
+        - "AI 工具推薦清單"
+      unexpected:
+        - "為什麼大多數『效率方法』會讓你更累"
+        - "我學程式的第一年犯的最大錯誤"
+        - "為什麼我停止使用那個最熱門的 AI 工具"
+
+  technique_2_mystery:
+    name: "製造神秘"
+    description: "開頭提出問題，延遲答案"
+
+    example:
+      direct: "Claude Code 的最大優勢是多檔案編輯功能。"
+      mystery: |
+        "有一個功能讓我的程式碼審查時間從 2 小時縮短到 20 分鐘。
+         很多人用了 Claude Code 卻不知道這個功能存在。
+         它不是 AI 生成程式碼——是更基礎但更強大的東西..."
+
+  technique_3_curiosity_gap:
+    name: "好奇心缺口"
+    description: "告訴讀者他們不知道某件事，但不立即揭曉"
+
+    psychology: |
+      George Loewenstein 的「資訊缺口理論」：
+      當我們意識到自己「不知道」某件事時，
+      會產生強烈的求知慾望。
+
+    how_to_create:
+      - "揭示讀者不知道的事實存在"
+      - "暗示答案會在後面"
+      - "讓讀者想知道答案"
+
+    example:
+      opening: |
+        "大多數人用 Git 的方式是錯的。
+         我知道，因為我也錯了 5 年。
+         直到一位 Google 工程師告訴我這件事..."
+
+  verification_checklist:
+    - "開頭是否能抓住讀者注意力？"
+    - "是否有打破讀者預期的元素？"
+    - "是否製造了好奇心缺口？"
+    - "讀者是否會想知道『接下來呢？』"
+
+# ============================================================
+# C - Concrete (具體)
+# ============================================================
+
+concrete:
+  name: "具體"
+  english: "Concrete"
+  importance: "★★★★★"
+
+  what: |
+    用感官可以感受的方式描述。
+    抽象概念難以記憶，具體細節容易黏住。
+
+  core_concept: |
+    「我們的大腦是為了記住具體資料而設計的。」
+
+    抽象：「節省時間」
+    具體：「每天節省 47 分鐘，相當於一週多出半天」
+
+  technique_sensory_language:
+    name: "感官語言"
+    description: "使用能調動五感的詞彙"
+
+    examples:
+      abstract: "這個方法很有效率"
+      concrete: |
+        "當你第一次看到程式碼自動完成時，
+         會有一種『哇』的感覺——就像看著自動駕駛第一次成功變換車道。"
+
+  technique_specific_numbers:
+    name: "具體數字"
+    description: "用精確數字代替模糊描述"
+
+    examples:
+      vague: "很多人"
+      specific: "1,247 名開發者"
+
+      vague: "節省很多時間"
+      specific: "每週節省 4.7 小時"
+
+      vague: "效果很好"
+      specific: "錯誤率降低 63%"
+
+  technique_concrete_examples:
+    name: "具體案例"
+    description: "用真實案例說明抽象概念"
+
+    pattern: |
+      1. 提出抽象概念
+      2. 立即給出具體案例
+      3. 讓讀者「看到」這個概念
+
+    example:
+      abstract_only: |
+        "良好的程式碼結構很重要，可以提高可維護性。"
+
+      with_concrete: |
+        "良好的程式碼結構很重要。
+
+         舉個例子：上個月我接手一個專案，
+         前任開發者把所有邏輯都寫在一個 2000 行的檔案裡。
+         我花了整整三天才理解它在做什麼。
+
+         後來我重構成 12 個小模組，每個不超過 200 行。
+         下一個接手的人只花了 2 小時就上手了。
+
+         這就是『可維護性』的真正意義。"
+
+  velcro_theory:
+    name: "魔鬼氈理論"
+    description: |
+      知識就像魔鬼氈的鉤子。
+      我們已有的知識（經驗）是表面。
+      新知識是要黏上去的鉤子。
+
+      抽象概念是光滑的，黏不上去。
+      具體細節有很多鉤子，可以黏住。
+
+  verification_checklist:
+    - "是否使用了具體的數字？"
+    - "抽象概念是否都有具體案例？"
+    - "讀者是否能『看到』你描述的情境？"
+    - "是否使用了感官語言？"
+
+# ============================================================
+# C - Credible (可信)
+# ============================================================
+
+credible:
+  name: "可信"
+  english: "Credible"
+  importance: "★★★★☆"
+
+  what: |
+    讓讀者相信你說的是真的。
+    可信度可以來自外部權威，也可以來自內部細節。
+
+  sources_of_credibility:
+    external:
+      - "專家背書"
+      - "數據統計"
+      - "研究引用"
+      - "品牌聯想"
+
+    internal:
+      - "生動細節（細節豐富 = 可信）"
+      - "可驗證的聲明"
+      - "反直覺的坦白"
+      - "讓讀者自己驗證"
+
+  technique_vivid_details:
+    name: "生動細節"
+    description: "細節豐富度傳達可信度"
+
+    psychology: |
+      研究顯示，包含具體細節的陳述被認為更可信，
+      即使這些細節與核心主張無關。
+
+      「他穿著藍色條紋襯衫」比「他穿著襯衫」更可信。
+
+    example:
+      generic: "一位用戶反映這個方法幫助他提高了效率。"
+      detailed: |
+        "台北的前端工程師 Kevin 說：
+         『我用這個方法重構了我們的登入模組，
+          原本預估要 3 天，結果 6 小時就完成了。
+          我甚至提早下班去接小孩。』"
+
+  technique_testable_claim:
+    name: "可驗證聲明"
+    description: "提出讀者可以自己驗證的主張"
+
+    example:
+      untestable: "這個方法非常有效。"
+      testable: |
+        "試試這個：打開你的程式碼，找一個超過 100 行的函數。
+         用這個原則重構它。
+         如果重構後的程式碼不是更清晰，我輸你一杯咖啡。"
+
+  technique_anti_authority:
+    name: "反權威可信"
+    description: "普通人的見證有時比專家更可信"
+
+    psychology: |
+      在某些情況下，「像我一樣的人」的見證
+      比專家更有說服力，因為讀者會想：
+      「他和我很像，如果對他有效，對我也會有效。」
+
+  technique_honest_admission:
+    name: "坦白缺點"
+    description: "主動承認缺點增加可信度"
+
+    example:
+      one_sided: "這個工具是最好的選擇。"
+      balanced: |
+        "這個工具在 X、Y、Z 方面表現優異。
+         但公平地說，它在 A 方面不如競爭對手，
+         而且學習曲線比較陡峭。
+         如果你的主要需求是 X，它仍然是最佳選擇。"
+
+  verification_checklist:
+    - "主張是否有來源支持？"
+    - "是否有生動的細節？"
+    - "讀者是否能自己驗證？"
+    - "是否坦白了缺點或限制？"
+
+# ============================================================
+# E - Emotional (情感)
+# ============================================================
+
+emotional:
+  name: "情感"
+  english: "Emotional"
+  importance: "★★★★☆"
+
+  what: |
+    讓讀者「感覺到」而不只是「知道」。
+    人們基於情感做決定，用邏輯合理化。
+
+  core_concept: |
+    「讓人們關心」比「讓人們知道」更難。
+    - Mother Teresa 效應：我們對一個人的故事有感覺，
+      但對統計數字沒有感覺。
+
+  technique_individual_over_statistics:
+    name: "個體 > 統計"
+    description: "一個人的故事比一百萬人的數據更動人"
+
+    psychology: |
+      研究顯示：
+      - 「非洲饑荒影響 300 萬人」→ 平均捐款 $1.14
+      - 「7 歲的 Rokia 面臨饑餓」→ 平均捐款 $2.38
+      - 兩者結合 → 平均捐款 $1.43（比只有個人故事還少！）
+
+      統計數字會啟動分析思維，抑制情感反應。
+
+    application: |
+      先用個人故事建立情感連結，
+      之後再提供統計數據作為支持。
+
+  technique_appeal_to_identity:
+    name: "訴諸身份認同"
+    description: "連結到讀者的自我形象"
+
+    example:
+      feature_focus: "這個方法可以節省時間。"
+      identity_focus: |
+        "聰明的開發者不會浪費時間在重複的工作上。
+         他們會自動化一切可以自動化的事情。"
+
+    psychology: |
+      問「這符合我是誰嗎？」比
+      問「這對我有什麼好處？」更有力。
+
+  technique_maslow_needs:
+    name: "馬斯洛需求層次"
+    description: "連結到基本人類需求"
+
+    needs_hierarchy:
+      - "自我實現（成為最好的自己）"
+      - "尊重（被認可、有成就）"
+      - "歸屬（社群、被接納）"
+      - "安全（穩定、可預測）"
+      - "生理（基本生存）"
+
+    example:
+      surface: "這個工具可以提高程式碼品質。"
+      deeper: |
+        "想像一下，當你的同事看到你的程式碼時，
+         不是皺眉頭找 bug，而是說：
+         『這寫得真漂亮，我要學習這種寫法。』"
+        # 訴諸「尊重」需求
+
+  verification_checklist:
+    - "文章是否有情感連結點？"
+    - "是否有個人故事或案例？"
+    - "是否連結到讀者的身份認同？"
+    - "讀者會「感覺到」什麼？"
+
+# ============================================================
+# S - Stories (故事)
+# ============================================================
+
+stories:
+  name: "故事"
+  english: "Stories"
+  importance: "★★★★★"
+
+  what: |
+    故事是最古老的資訊傳遞方式。
+    故事同時傳達資訊和激發行動。
+
+  why_stories_work:
+    simulation: |
+      聽故事時，我們的大腦會「模擬」故事中的情境。
+      這種心理模擬有助於我們在現實中應用知識。
+
+    inspiration: |
+      好的故事不只告訴我們「怎麼做」，
+      還激勵我們「想要做」。
+
+  story_types:
+    challenge_plot:
+      name: "挑戰情節"
+      description: "主角克服艱難障礙"
+      effect: "激勵我們面對自己的挑戰"
+      example: "大衛 vs 歌利亞"
+
+    connection_plot:
+      name: "連結情節"
+      description: "跨越鴻溝建立關係"
+      effect: "激勵我們建立連結、幫助他人"
+      example: "好撒馬利亞人"
+
+    creativity_plot:
+      name: "創意情節"
+      description: "用創新方式解決問題"
+      effect: "激勵我們突破框架思考"
+      example: "蘋果落地與萬有引力"
+
+  story_structure_for_blog:
+    pattern: |
+      1. 背景設定（讓讀者理解情境）
+      2. 衝突/問題（製造張力）
+      3. 轉折點（關鍵洞察或行動）
+      4. 解決（問題如何被解決）
+      5. 教訓（讀者可以應用的啟示）
+
+    example:
+      full_story: |
+        「去年這個時候，我的程式碼部署又失敗了。（背景）
+
+         這是這個月第三次了。每次都要花 4-5 小時修復，
+         團隊士氣跌到谷底。（衝突）
+
+         那天晚上 11 點，我坐在電腦前，
+         突然想到：『如果我們不是在修復部署，
+         而是在防止部署失敗呢？』（轉折）
+
+         接下來三週，我們建立了一套自動化測試流程。
+         現在我們已經連續 6 個月沒有部署失敗了。（解決）
+
+         重點不是我們寫了更好的程式碼，
+         而是我們改變了問問題的方式。（教訓）」
+
+  verification_checklist:
+    - "文章是否包含至少一個故事？"
+    - "故事是否有清晰的結構？"
+    - "故事是否傳達了核心訊息？"
+    - "讀者是否能從故事中學到東西？"
+
+# ============================================================
+# 整合應用
+# ============================================================
+
+integration:
+
+  article_structure_template:
+    opening:
+      elements: ["unexpected", "emotional", "story"]
+      purpose: "抓住注意力，建立連結"
+      example: |
+        「他們說 AI 會取代程式設計師。
+         但上週我親眼看到相反的事情發生...」
+
+    body:
+      elements: ["simple", "concrete", "credible"]
+      purpose: "傳遞核心訊息，建立可信度"
+      pattern: |
+        核心訊息（simple）
+        → 具體案例（concrete）
+        → 支持證據（credible）
+        → 再次強化核心訊息
+
+    closing:
+      elements: ["emotional", "story", "simple"]
+      purpose: "激發行動，強化記憶"
+      example: |
+        「回到那個故事...
+         如果他能做到，你也可以。
+         記住：[一句話核心訊息]」
+
+  checklist_for_sticky_article:
+    simple:
+      - "[ ] 核心訊息可以用一句話說完"
+      - "[ ] 使用類比解釋複雜概念"
+
+    unexpected:
+      - "[ ] 開頭打破讀者預期"
+      - "[ ] 製造好奇心缺口"
+
+    concrete:
+      - "[ ] 使用具體數字"
+      - "[ ] 每個抽象概念都有具體案例"
+
+    credible:
+      - "[ ] 有可靠來源支持"
+      - "[ ] 坦白缺點或限制"
+
+    emotional:
+      - "[ ] 有情感連結點"
+      - "[ ] 連結到讀者身份認同"
+
+    stories:
+      - "[ ] 包含至少一個故事"
+      - "[ ] 故事傳達核心訊息"
+
+# ============================================================
+# 延伸閱讀
+# ============================================================
+
+further_reading:
+  - title: "Made to Stick"
+    authors: "Chip Heath & Dan Heath"
+    note: "原著，完整的 SUCCESs 框架"
+
+  - title: "Switch"
+    authors: "Chip Heath & Dan Heath"
+    note: "同作者，關於如何改變行為"
+
+  - title: "The Power of Moments"
+    authors: "Chip Heath & Dan Heath"
+    note: "同作者，關於創造難忘時刻"

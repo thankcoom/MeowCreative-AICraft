@@ -1,0 +1,11 @@
+{
+  "name": "miaoli-local-marketplace",
+  "description": "喵哩文創本地 Plugin Marketplace",
+  "plugins": [
+    {
+      "name": "miaoli-blog-automation",
+      "description": "部落格自動化行銷系統 Plugin",
+      "source": "/Users/liutsungying/喵哩文創部落格AI寫手系統"
+    }
+  ]
+}

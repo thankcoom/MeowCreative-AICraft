@@ -1,0 +1,477 @@
+# 搜尋優化類型完整矩陣
+# Search Optimization Matrix - 2025 完整版
+# 版本: 2.6.0 (配合 Blog Manager v2.6.0)
+# 更新: 2025-12-14
+
+version: "2.6.0"
+updated: "2025-12-14"
+
+# ============================================================
+# 優化類型總覽
+# ============================================================
+
+optimization_types:
+
+  # ─────────────────────────────────────────
+  # 傳統搜尋優化
+  # ─────────────────────────────────────────
+
+  SEO:
+    full_name: "Search Engine Optimization"
+    chinese: "搜尋引擎優化"
+    year_introduced: "1997"
+    target_platforms:
+      - "Google"
+      - "Bing"
+      - "Yahoo"
+    goal: "提升在搜尋引擎結果頁 (SERP) 的排名"
+    status_2025: "仍是基礎，但需與其他優化整合"
+    market_importance: "★★★★★"
+
+    core_tactics:
+      on_page:
+        - "關鍵字研究和優化"
+        - "Meta 標籤 (Title, Description)"
+        - "標題階層 (H1-H6)"
+        - "內部連結結構"
+        - "圖片優化 (Alt text)"
+        - "URL 結構優化"
+      off_page:
+        - "外部連結建設"
+        - "品牌提及"
+        - "社群信號"
+      technical:
+        - "網站速度"
+        - "行動裝置友善"
+        - "結構化數據"
+        - "Sitemap"
+        - "Robots.txt"
+
+    key_metrics:
+      - "關鍵字排名"
+      - "有機流量"
+      - "點擊率 (CTR)"
+      - "跳出率"
+
+    config_file: ".claude/agents/seo-optimizer.md"
+
+  # ─────────────────────────────────────────
+  # AI 搜尋優化 (2023-2025 新興)
+  # ─────────────────────────────────────────
+
+  GEO:
+    full_name: "Generative Engine Optimization"
+    chinese: "生成式引擎優化"
+    year_introduced: "2023"
+    target_platforms:
+      - "ChatGPT"
+      - "Perplexity"
+      - "Google Gemini"
+      - "Microsoft Copilot"
+      - "Claude"
+      - "Google AI Overviews"
+    goal: "被 AI 系統引用為回答來源"
+    status_2025: "快速成長，2024-2025 流量增長 1200%"
+    market_importance: "★★★★★"
+
+    core_tactics:
+      content_structure:
+        - "清晰標題階層"
+        - "結構化段落"
+        - "列表和表格"
+        - "TL;DR 摘要"
+      schema_markup:
+        - "Article Schema"
+        - "FAQ Schema"
+        - "HowTo Schema"
+      authority_signals:
+        - "權威來源引用"
+        - "數據支持"
+        - "專家背書"
+
+    key_metrics:
+      - "AI 引用次數"
+      - "AI Overviews 露出"
+      - "Zero-click 曝光"
+
+    key_insight: "82.5% 的 AI 引用來自深層頁面，非首頁"
+    config_file: ".claude/agents/seo-optimizer.md (Phase 0.6)"
+
+  AEO:
+    full_name: "Answer Engine Optimization"
+    chinese: "回答引擎優化"
+    year_introduced: "2018 (Jason Barnard 提出)"
+    target_platforms:
+      - "Google Featured Snippets"
+      - "Google AI Overviews"
+      - "Bing Answers"
+      - "Voice Assistants"
+    goal: "成為搜尋結果中的「直接回答」"
+    status_2025: "與 GEO 高度重疊，專注問答格式"
+    market_importance: "★★★★☆"
+
+    core_tactics:
+      qa_format:
+        - "問句標題 (H2)"
+        - "直接回答 (第一句)"
+        - "FAQ 區塊"
+      snippet_optimization:
+        - "30-50 字精確回答"
+        - "列表/步驟格式"
+        - "表格比較"
+      schema:
+        - "FAQPage Schema"
+        - "HowTo Schema"
+        - "Q&A Schema"
+
+    key_metrics:
+      - "Featured Snippet 獲取"
+      - "Position Zero 曝光"
+      - "Answer Box 出現"
+
+    config_file: ".claude/agents/seo-optimizer.md"
+
+  LLMO:
+    full_name: "Large Language Model Optimization"
+    chinese: "大語言模型優化"
+    year_introduced: "2024"
+    target_platforms:
+      - "ChatGPT"
+      - "Claude"
+      - "Gemini"
+      - "Perplexity"
+      - "Copilot"
+    goal: "被 LLM 選中作為回答素材"
+    status_2025: "新興但關鍵，轉換率高 4.4 倍"
+    market_importance: "★★★★★"
+
+    core_tactics:
+      definitions:
+        - "明確術語定義"
+        - "標準化定義格式"
+      citations:
+        - "數據支持"
+        - "專家引用"
+        - "來源標註"
+      entity_coverage:
+        - "提及關鍵人物"
+        - "提及方法論/框架"
+        - "正確實體名稱"
+      uniqueness:
+        - "原創數據"
+        - "第一手經驗"
+        - "獨特觀點"
+
+    key_metrics:
+      - "LLM 引用率"
+      - "回答出現頻率"
+      - "來源歸屬"
+
+    key_insight: "LLM 會進行多來源比對，獨特數據更容易被引用"
+    config_file: ".claude/config/llmo-config.yaml"
+
+  AISO:
+    full_name: "AI Search Optimization"
+    chinese: "AI 搜尋優化 (統一框架)"
+    year_introduced: "2024-2025"
+    target_platforms:
+      - "所有 AI 和傳統搜尋平台"
+    goal: "整合所有優化策略的統一框架"
+    status_2025: "行業標準化中"
+    market_importance: "★★★★★"
+
+    includes:
+      - "SEO"
+      - "GEO"
+      - "AEO"
+      - "LLMO"
+      - "VSO"
+
+    key_insight: "Search Everywhere Optimization - 在所有搜尋場景都有能見度"
+    config_file: ".claude/config/aiso-config.yaml"
+
+  # ─────────────────────────────────────────
+  # 語音與體驗優化
+  # ─────────────────────────────────────────
+
+  VSO:
+    full_name: "Voice Search Optimization"
+    chinese: "語音搜尋優化"
+    year_introduced: "2016"
+    target_platforms:
+      - "Google Assistant"
+      - "Siri"
+      - "Alexa"
+      - "Cortana"
+    goal: "被語音助理選為口語回答"
+    status_2025: "60%+ 搜尋來自語音/行動"
+    market_importance: "★★★★☆"
+
+    core_tactics:
+      question_format:
+        - "完整問句標題"
+        - "5W1H 問句覆蓋"
+      direct_answers:
+        - "30 字內直接回答"
+        - "適合朗讀的句子"
+      conversational:
+        - "對話式關鍵字"
+        - "自然語言表達"
+      local:
+        - "地點相關優化"
+        - "「附近」類查詢"
+
+    key_metrics:
+      - "語音搜尋觸發"
+      - "Position Zero (語音只讀一個)"
+
+    key_insight: "語音搜尋只提供 1 個答案，競爭更激烈"
+    config_file: ".claude/config/vso-config.yaml"
+
+  SXO:
+    full_name: "Search Experience Optimization"
+    chinese: "搜尋體驗優化"
+    year_introduced: "2020"
+    target_platforms:
+      - "所有搜尋和網站"
+    goal: "優化從搜尋到閱讀的完整體驗"
+    status_2025: "SEO + UX 的融合，2025 搜尋量增 70%"
+    market_importance: "★★★★☆"
+
+    core_tactics:
+      readability:
+        - "段落長度優化"
+        - "句子長度控制"
+        - "列表和視覺分層"
+      engagement:
+        - "Hook 開頭"
+        - "互動元素"
+        - "情感連結"
+      performance:
+        - "頁面載入速度"
+        - "Core Web Vitals"
+
+    key_metrics:
+      - "停留時間"
+      - "頁面深度"
+      - "跳出率"
+      - "轉換率"
+
+    key_insight: "優化 SXO 的品牌轉換率提升 200-400%"
+    config_file: "多 Agent 整合"
+
+  # ─────────────────────────────────────────
+  # 轉換與品質優化
+  # ─────────────────────────────────────────
+
+  CRO:
+    full_name: "Conversion Rate Optimization"
+    chinese: "轉換率優化"
+    year_introduced: "2007"
+    target_platforms:
+      - "網站"
+      - "Landing Page"
+      - "電商"
+    goal: "提升訪客轉換率"
+    status_2025: "市場規模 $50 億美元"
+    market_importance: "★★★★★"
+
+    core_tactics:
+      cta:
+        - "CTA 位置優化"
+        - "CTA 文案優化"
+        - "CTA 設計優化"
+      value_proposition:
+        - "清楚價值傳達"
+        - "好處導向標題"
+      trust:
+        - "社會證明"
+        - "權威背書"
+        - "保證承諾"
+      friction:
+        - "簡化流程"
+        - "減少表單欄位"
+
+    key_metrics:
+      - "轉換率"
+      - "表單完成率"
+      - "購買率"
+
+    key_insight: "內容行銷轉換率是傳統行銷的 3 倍"
+    config_file: ".claude/config/cro-config.yaml"
+
+  E-E-A-T:
+    full_name: "Experience, Expertise, Authoritativeness, Trustworthiness"
+    chinese: "經驗、專業、權威、可信"
+    year_introduced: "2014 (E-A-T), 2022 (加入第一個 E)"
+    target_platforms:
+      - "Google 搜尋品質評估"
+      - "AI 系統信任判斷"
+    goal: "建立內容可信度"
+    status_2025: "Google 核心標準，影響所有搜尋"
+    market_importance: "★★★★★"
+
+    dimensions:
+      experience:
+        weight: "25%"
+        signals:
+          - "第一手使用經驗"
+          - "個人故事和細節"
+          - "Before/After 對比"
+      expertise:
+        weight: "25%"
+        signals:
+          - "專業知識展示"
+          - "技術深度"
+          - "可執行建議"
+      authoritativeness:
+        weight: "25%"
+        signals:
+          - "專業資歷"
+          - "被引用/推薦"
+          - "業界認可"
+      trustworthiness:
+        weight: "25%"
+        signals:
+          - "資訊準確"
+          - "透明揭露"
+          - "平衡觀點"
+
+    key_insight: "YMYL 主題 (金融/健康/法律) 需要更高標準"
+    config_file: ".claude/config/eeat-config.yaml"
+
+  # ─────────────────────────────────────────
+  # 其他優化類型
+  # ─────────────────────────────────────────
+
+  ASO:
+    full_name: "App Store Optimization"
+    chinese: "應用商店優化"
+    target_platforms:
+      - "Apple App Store"
+      - "Google Play Store"
+    goal: "提升 App 在商店的曝光和下載"
+    status_2025: "不適用於本系統 (非 App)"
+    market_importance: "N/A"
+
+  SMO:
+    full_name: "Social Media Optimization"
+    chinese: "社群媒體優化"
+    target_platforms:
+      - "Facebook"
+      - "Instagram"
+      - "LinkedIn"
+      - "Twitter/X"
+      - "TikTok"
+    goal: "優化社群平台內容表現"
+    status_2025: "Gen Z 的主要搜尋入口"
+    market_importance: "★★★☆☆"
+
+    core_tactics:
+      - "平台特定格式"
+      - "Hashtag 策略"
+      - "發布時間優化"
+      - "互動優化"
+
+    config_file: ".claude/skills/content-repurposer/"
+
+  YSO:
+    full_name: "YouTube Search Optimization"
+    chinese: "YouTube 搜尋優化"
+    target_platforms:
+      - "YouTube"
+    goal: "提升影片在 YouTube 的曝光"
+    status_2025: "第二大搜尋引擎"
+    market_importance: "★★★☆☆"
+
+    note: "本系統專注文字內容，影片為延伸"
+
+# ============================================================
+# 2025 優化權重建議
+# ============================================================
+
+weights_2025:
+  description: "2025 年各優化類型的建議權重配置"
+
+  standard_article:
+    SEO: 20
+    GEO: 20
+    LLMO: 20
+    AEO: 15
+    E-E-A-T: 15
+    SXO: 5
+    CRO: 5
+    total: 100
+
+  conversion_focused:
+    SEO: 15
+    GEO: 15
+    LLMO: 15
+    AEO: 10
+    E-E-A-T: 15
+    SXO: 10
+    CRO: 20
+    total: 100
+
+  thought_leadership:
+    SEO: 15
+    GEO: 20
+    LLMO: 25
+    AEO: 10
+    E-E-A-T: 20
+    SXO: 5
+    CRO: 5
+    total: 100
+
+# ============================================================
+# 平台 × 優化類型對照
+# ============================================================
+
+platform_optimization_map:
+
+  google_search:
+    primary: ["SEO", "E-E-A-T"]
+    secondary: ["AEO", "SXO"]
+
+  google_ai_overviews:
+    primary: ["GEO", "AEO"]
+    secondary: ["LLMO", "E-E-A-T"]
+
+  chatgpt:
+    primary: ["LLMO", "GEO"]
+    secondary: ["E-E-A-T"]
+
+  perplexity:
+    primary: ["LLMO", "GEO"]
+    secondary: ["E-E-A-T"]
+    note: "高引用率，偏好有來源的內容"
+
+  voice_assistants:
+    primary: ["VSO", "AEO"]
+    secondary: ["SEO"]
+
+# ============================================================
+# 快速參考卡
+# ============================================================
+
+quick_reference:
+
+  "什麼是 X？類問題":
+    optimize_for: ["LLMO", "AEO"]
+    format: "明確定義 + 詳細說明"
+
+  "如何做 X？類問題":
+    optimize_for: ["AEO", "VSO", "GEO"]
+    format: "步驟列表 + HowTo Schema"
+
+  "X 和 Y 哪個好？類問題":
+    optimize_for: ["AEO", "E-E-A-T"]
+    format: "比較表格 + 明確推薦"
+
+  "推薦 X 類問題":
+    optimize_for: ["SEO", "E-E-A-T", "CRO"]
+    format: "清單 + 評測 + CTA"
+
+  "附近的 X 類問題":
+    optimize_for: ["VSO", "SEO"]
+    format: "本地資訊 + 地點標記"

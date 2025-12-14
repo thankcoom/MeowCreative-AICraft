@@ -1,0 +1,223 @@
+# 術語表 - Blog Manager v2.6.0
+# 更新日期: 2025-12-14
+# 目的: 定義系統使用的專業術語，確保一致性
+
+version: "2.6.0"
+updated: "2025-12-14"
+
+# ============================================================
+# 搜尋優化術語 (v2.6.0 Search Everywhere)
+# ============================================================
+
+search_optimization:
+
+  SEO:
+    full_name: "Search Engine Optimization"
+    chinese: "搜尋引擎優化"
+    definition: "優化網頁內容以提升在傳統搜尋引擎（Google、Bing）中的排名"
+    weight_2025: "20%"
+
+  GEO:
+    full_name: "Generative Engine Optimization"
+    chinese: "生成式引擎優化"
+    definition: "優化內容以被生成式 AI 搜尋引擎引用和推薦"
+    weight_2025: "20%"
+    key_platforms:
+      - "Perplexity"
+      - "Google AI Mode"
+      - "Bing Chat"
+
+  LLMO:
+    full_name: "Large Language Model Optimization"
+    chinese: "大語言模型優化"
+    definition: "優化內容結構和格式，使其更容易被 ChatGPT、Claude 等 AI 選為回答素材"
+    weight_2025: "20%"
+    key_platforms:
+      - "ChatGPT (59% 市佔)"
+      - "Google Gemini (13%)"
+      - "Microsoft Copilot (14%)"
+      - "Perplexity (5.5%)"
+      - "Claude (2.8%)"
+    key_stats:
+      - "AI 搜尋流量 2024-2025 成長 1,200%"
+      - "AI 搜尋用戶轉換率是傳統的 4.4 倍"
+      - "82.5% 的 AI 引用來自深層頁面"
+
+  AEO:
+    full_name: "Answer Engine Optimization"
+    chinese: "答案引擎優化"
+    definition: "優化內容以出現在 Featured Snippet 和 AI Overviews 中"
+    weight_2025: "15%"
+    key_stats:
+      - "65% 的搜尋以零點擊結束"
+      - "30% 的查詢顯示 AI Overviews"
+
+  VSO:
+    full_name: "Voice Search Optimization"
+    chinese: "語音搜尋優化"
+    definition: "優化內容以被語音助理（Siri、Alexa、Google Assistant）選為回答"
+    weight_2025: "5%"
+    key_stats:
+      - "60%+ 搜尋來自語音/行動"
+      - "語音搜尋只提供 1 個答案"
+    optimization_tips:
+      - "使用問句標題 (5W1H)"
+      - "提供直接回答（30 字內）"
+      - "對話式長尾關鍵字"
+
+  CRO:
+    full_name: "Conversion Rate Optimization"
+    chinese: "轉換率優化"
+    definition: "優化內容以提升訪客轉化為行動（購買、訂閱、下載）的比率"
+    weight_2025: "5%"
+    key_stats:
+      - "AI 搜尋用戶轉換率是傳統的 4.4 倍"
+    key_elements:
+      - "價值主張"
+      - "社會證明"
+      - "行動呼籲 (CTA)"
+      - "緊迫感"
+
+  AISO:
+    full_name: "AI Search Optimization"
+    chinese: "AI 搜尋優化"
+    definition: "統一框架，整合 SEO、GEO、LLMO、AEO、VSO、CRO 的綜合優化策略"
+    components:
+      - SEO
+      - GEO
+      - LLMO
+      - AEO
+      - E-E-A-T
+      - VSO
+      - CRO
+
+# ============================================================
+# 品質評估術語
+# ============================================================
+
+quality_metrics:
+
+  E-E-A-T:
+    full_name: "Experience, Expertise, Authoritativeness, Trustworthiness"
+    chinese: "經驗、專業、權威、可信"
+    definition: "Google 評估內容品質的四大核心標準"
+    components:
+      Experience:
+        chinese: "經驗"
+        definition: "作者是否有第一手使用/體驗經驗"
+      Expertise:
+        chinese: "專業"
+        definition: "作者是否具備該主題的專業知識"
+      Authoritativeness:
+        chinese: "權威"
+        definition: "作者和網站在該領域的權威地位"
+      Trustworthiness:
+        chinese: "可信"
+        definition: "內容的準確性、透明度和可驗證性"
+
+  YMYL:
+    full_name: "Your Money Your Life"
+    chinese: "與金錢和生命相關"
+    definition: "可能影響讀者財務或健康的敏感主題，Google 對此類內容有更高的品質要求"
+    categories:
+      - "金融投資 (門檻 80)"
+      - "醫療健康 (門檻 85)"
+      - "法律 (門檻 85)"
+      - "安全 (門檻 80)"
+      - "重大採購 (門檻 75)"
+
+  SpamBrain:
+    chinese: "垃圾內容偵測系統"
+    definition: "Google 的 AI 垃圾內容偵測系統，用於識別低品質和抄襲內容"
+
+  Helpful_Content:
+    chinese: "有價值內容系統"
+    definition: "Google 用於評估內容是否真正對讀者有幫助的算法更新"
+
+# ============================================================
+# 說服力框架術語
+# ============================================================
+
+persuasion_frameworks:
+
+  AIDA:
+    chinese: "注意-興趣-慾望-行動"
+    components:
+      Attention: "注意 - 在前 3 秒抓住讀者"
+      Interest: "興趣 - 讓讀者想繼續了解"
+      Desire: "慾望 - 讓讀者想要解決方案"
+      Action: "行動 - 促使讀者採取行動"
+
+  PAS:
+    chinese: "問題-激化-解決方案"
+    components:
+      Problem: "問題 - 明確指出痛點"
+      Agitate: "激化 - 放大問題的影響"
+      Solution: "解決方案 - 提供解決方法"
+
+  4Cs:
+    chinese: "清楚-簡潔-吸引-可信"
+    components:
+      Clear: "清楚 - 訊息清晰度"
+      Concise: "簡潔 - 無冗餘"
+      Compelling: "吸引 - 情感連結"
+      Credible: "可信 - 證據支持"
+
+# ============================================================
+# 系統 Agent 術語
+# ============================================================
+
+system_agents:
+
+  Blog_Manager:
+    version: "v2.6.0"
+    codename: "Search Everywhere"
+    definition: "系統主協調 Agent，負責調度所有工作流程"
+
+  Memory_Agent:
+    version: "v2.3.0"
+    definition: "跨 Session 學習 Agent，負責記憶和累積知識"
+
+  Persona_Adapter:
+    version: "v2.3.0"
+    definition: "多讀者版本生成 Agent，一稿多版"
+
+  Quality_Predictor:
+    version: "v2.4.0"
+    definition: "品質預測 Agent，早期評估文章品質"
+
+  Performance_Optimizer:
+    version: "v2.4.0"
+    definition: "效能監控 Agent，追蹤和優化執行效率"
+
+# ============================================================
+# 內容創作術語
+# ============================================================
+
+content_creation:
+
+  Featured_Snippet:
+    chinese: "精選摘要"
+    definition: "搜尋結果頁面頂部顯示的直接回答區塊（Position Zero）"
+
+  Schema_Markup:
+    chinese: "結構化標記"
+    definition: "使用 Schema.org 標準標記內容，幫助搜尋引擎理解頁面結構"
+    types:
+      - "Article"
+      - "FAQPage"
+      - "HowTo"
+      - "BreadcrumbList"
+
+  Zero_Click_Search:
+    chinese: "零點擊搜尋"
+    definition: "用戶在搜尋結果頁面獲得答案，無需點擊進入網站"
+
+  Long_Tail_Keywords:
+    chinese: "長尾關鍵字"
+    definition: "較長、較具體的搜尋詞組，通常競爭較低但轉換率較高"
+
+  CTA:
+    full_name: "Call to Action"
+    chinese: "行動呼籲"
+    definition: "促使讀者採取具體行動的文字或按鈕"

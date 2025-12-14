@@ -1,0 +1,476 @@
+# 邏輯謬誤檢測指南
+# 用於驗證文章論證的邏輯正確性
+
+version: 1.0.0
+updated: 2025-12-11
+
+overview:
+  description: |
+    邏輯謬誤是看似合理但實際上有缺陷的論證。
+    即使形式正確，邏輯錯誤會嚴重損害文章的可信度。
+
+    本文件定義了內容寫作中最常見的邏輯謬誤，
+    供 Editor Agent 和 Logic Validator 檢測使用。
+
+  importance: |
+    為什麼邏輯正確性很重要：
+    1. 損害可信度 - 讀者發現邏輯錯誤會質疑整篇文章
+    2. E-E-A-T 影響 - Google 的 Trustworthiness 考量邏輯性
+    3. 轉換率降低 - 邏輯漏洞讓讀者無法被說服
+    4. 專業形象 - 邏輯錯誤顯示缺乏專業素養
+
+# ============================================================
+# 類別 1: 因果謬誤 (Causal Fallacies)
+# ============================================================
+
+causal_fallacies:
+  category_name: "因果謬誤"
+  description: "錯誤地建立因果關係"
+
+  post_hoc:
+    name: "後此謬誤 (Post Hoc)"
+    english: "Post Hoc Ergo Propter Hoc"
+    description: "因為 B 發生在 A 之後，所以 A 導致了 B"
+    severity: "high"
+
+    example:
+      fallacy: "我開始使用這個工具後，業績就成長了 30%。這個工具讓我的業績成長。"
+      problem: "可能是其他因素（市場、季節、其他努力）導致業績成長"
+      correction: |
+        "我開始使用這個工具後，業績成長了 30%。
+         雖然無法確定完全歸因於這個工具，
+         但根據 A/B 測試數據，使用工具的團隊比對照組高出 25%。"
+
+    detection_patterns:
+      - ".*之後.*就.*"
+      - "自從.*開始.*"
+      - "用了.*之後.*"
+
+    verification_questions:
+      - "是否有其他可能的解釋？"
+      - "是否有控制變量的實驗數據？"
+      - "時序是否等於因果？"
+
+  correlation_causation:
+    name: "相關等於因果"
+    english: "Correlation Does Not Imply Causation"
+    description: "兩件事相關不代表一個導致另一個"
+    severity: "high"
+
+    example:
+      fallacy: "研究顯示，喝咖啡的人賺更多錢。所以喝咖啡可以讓你賺更多錢。"
+      problem: "可能是第三因素（如工作壓力、職業類型）同時影響兩者"
+      correction: |
+        "研究顯示喝咖啡與收入呈正相關，
+         但這可能反映的是工作類型或生活方式的差異，
+         而非咖啡直接導致收入增加。"
+
+    detection_patterns:
+      - "研究顯示.*所以.*"
+      - "數據表明.*因此.*"
+      - ".*相關.*可以.*"
+
+    verification_questions:
+      - "是否有第三變量可以解釋這個相關？"
+      - "因果方向是否可能相反？"
+      - "是否有實驗證據支持因果關係？"
+
+  single_cause:
+    name: "單一原因謬誤"
+    english: "Single Cause Fallacy"
+    description: "將複雜現象歸因於單一原因"
+    severity: "medium"
+
+    example:
+      fallacy: "公司失敗的原因就是 CEO 的決策錯誤。"
+      problem: "忽略市場環境、競爭、團隊、時機等多重因素"
+      correction: |
+        "CEO 的決策是公司失敗的因素之一。
+         其他因素包括市場環境變化、競爭加劇、
+         以及內部執行能力不足。"
+
+    detection_patterns:
+      - ".*的原因就是.*"
+      - "唯一.*原因.*"
+      - "全都是因為.*"
+
+# ============================================================
+# 類別 2: 過度概括 (Overgeneralization)
+# ============================================================
+
+overgeneralization:
+  category_name: "過度概括"
+  description: "從有限樣本推導出過寬的結論"
+
+  hasty_generalization:
+    name: "倉促概括"
+    english: "Hasty Generalization"
+    description: "從少數案例得出普遍結論"
+    severity: "high"
+
+    example:
+      fallacy: "我認識的三個工程師都不喜歡這個工具，所以工程師都不喜歡這個工具。"
+      problem: "三個人無法代表所有工程師"
+      correction: |
+        "在我接觸的小樣本中，有些工程師表示不喜歡這個工具。
+         但要了解工程師群體的整體偏好，需要更大規模的調查。"
+
+    detection_patterns:
+      - "我認識的.*都.*"
+      - "所有.*都.*"
+      - "每個.*都.*"
+
+    verification_questions:
+      - "樣本數量是否足夠？"
+      - "樣本是否具有代表性？"
+      - "是否有反例？"
+
+  cherry_picking:
+    name: "摘櫻桃謬誤"
+    english: "Cherry Picking"
+    description: "只選擇支持自己觀點的證據"
+    severity: "high"
+
+    example:
+      fallacy: "這個方法非常有效，看看這三個成功案例！"
+      problem: "沒有提及失敗案例或整體成功率"
+      correction: |
+        "在我們測試的 100 個案例中，這個方法成功了 67 次（67% 成功率）。
+         以下是三個典型的成功案例和失敗案例分析..."
+
+    detection_patterns:
+      - "看看這.*個.*案例"
+      - "以.*為例"
+      - "比如.*就.*"
+
+    verification_questions:
+      - "是否呈現了完整的數據？"
+      - "是否提及了反面案例？"
+      - "整體成功率是多少？"
+
+  anecdotal_evidence:
+    name: "軼事證據"
+    english: "Anecdotal Evidence"
+    description: "用個人經歷代替系統性證據"
+    severity: "medium"
+
+    example:
+      fallacy: "我叔叔吃了這個保健品後癌症就好了，所以這個保健品可以治癌症。"
+      problem: "個人案例無法證明因果關係，可能有其他因素"
+      correction: |
+        "雖然有個人案例報告使用後狀況改善，
+         但目前沒有臨床試驗證據支持療效。
+         個人經驗可能受安慰劑效應或其他因素影響。"
+
+    detection_patterns:
+      - "我.*的經驗是.*"
+      - "有人.*之後.*"
+      - "聽說.*"
+
+# ============================================================
+# 類別 3: 攻擊謬誤 (Attack Fallacies)
+# ============================================================
+
+attack_fallacies:
+  category_name: "攻擊謬誤"
+  description: "攻擊人而非論點"
+
+  ad_hominem:
+    name: "人身攻擊"
+    english: "Ad Hominem"
+    description: "攻擊提出觀點的人，而非觀點本身"
+    severity: "high"
+
+    example:
+      fallacy: "他說的減肥方法不可信，因為他自己也很胖。"
+      problem: "即使提出者自己沒做到，方法本身可能仍然有效"
+      correction: |
+        "雖然這個方法值得討論，但讓我們看看方法本身的科學依據...
+         根據研究數據顯示..."
+
+    detection_patterns:
+      - "他.*所以他說的.*"
+      - "因為他是.*所以.*"
+      - "這種人說的.*"
+
+  straw_man:
+    name: "稻草人謬誤"
+    english: "Straw Man"
+    description: "歪曲對方觀點後再攻擊"
+    severity: "high"
+
+    example:
+      fallacy: "他說我們應該多用 AI 工具，意思就是讓 AI 取代所有人類工作。這太瘋狂了！"
+      problem: "對方沒有說要取代所有人類工作"
+      correction: |
+        "關於增加 AI 工具使用的建議，
+         需要討論的是哪些任務適合 AI 輔助，
+         而非全面取代人類工作。"
+
+    detection_patterns:
+      - "他的意思就是.*"
+      - "所以他是說.*"
+      - "這等於說.*"
+
+    verification_questions:
+      - "是否準確呈現了對方的觀點？"
+      - "是否有過度詮釋？"
+      - "原觀點是否真的這麼極端？"
+
+# ============================================================
+# 類別 4: 訴諸謬誤 (Appeal Fallacies)
+# ============================================================
+
+appeal_fallacies:
+  category_name: "訴諸謬誤"
+  description: "訴諸不相關的因素來支持論點"
+
+  appeal_to_authority:
+    name: "訴諸權威（不當）"
+    english: "Appeal to Authority (Improper)"
+    description: "引用不相關領域的專家"
+    severity: "medium"
+    note: "正確使用權威是有效的，問題在於使用不相關的權威"
+
+    example:
+      fallacy: "知名物理學家說這個投資策略很好，所以我們應該採用。"
+      problem: "物理學家不是投資專家"
+      correction: |
+        "關於投資策略，讓我們看看金融專家的意見...
+         根據 CFA 持證分析師的研究..."
+
+    valid_use:
+      example: "根據 Google 首席工程師在官方部落格的說明，這個 API 的最佳實踐是..."
+      why_valid: "工程師談論工程問題，相關領域的權威"
+
+    verification_questions:
+      - "引用的專家是否是這個領域的？"
+      - "專家的意見是否基於其專業？"
+      - "是否有更相關的權威來源？"
+
+  appeal_to_popularity:
+    name: "訴諸群眾"
+    english: "Appeal to Popularity"
+    description: "因為很多人相信/做，所以是對的"
+    severity: "medium"
+
+    example:
+      fallacy: "這個框架很流行，所以一定是最好的選擇。"
+      problem: "流行不等於最適合你的情況"
+      correction: |
+        "這個框架被廣泛採用，這表示它有其優點。
+         但選擇框架應該基於你的具體需求、團隊能力、
+         和專案特性，而非單純的流行度。"
+
+    detection_patterns:
+      - "很多人都.*所以.*"
+      - "流行.*所以.*"
+      - "大家都.*"
+
+  appeal_to_emotion:
+    name: "訴諸情感"
+    english: "Appeal to Emotion"
+    description: "用情感代替邏輯論證"
+    severity: "medium"
+    note: "情感連結是好的，但不能替代邏輯"
+
+    example:
+      fallacy: "想想你的孩子！如果你不買這個保險，你怎麼對得起他們？"
+      problem: "用愧疚感代替理性分析保險需求"
+      correction: |
+        "讓我們分析你的家庭保障需求：
+         考慮收入、負債、生活費用等因素，
+         計算出合理的保障金額..."
+
+    valid_use:
+      example: "這個方法可以節省你每週 5 小時，想像一下你可以用這些時間做什麼——陪伴家人、發展興趣..."
+      why_valid: "情感用於加強邏輯論證，而非替代"
+
+# ============================================================
+# 類別 5: 論證結構謬誤 (Structural Fallacies)
+# ============================================================
+
+structural_fallacies:
+  category_name: "論證結構謬誤"
+  description: "論證結構本身有問題"
+
+  circular_reasoning:
+    name: "循環論證"
+    english: "Circular Reasoning"
+    description: "結論已經包含在前提中"
+    severity: "high"
+
+    example:
+      fallacy: "這本書很暢銷因為很多人買，很多人買因為它很暢銷。"
+      problem: "沒有解釋為什麼人們最初會買"
+      correction: |
+        "這本書暢銷的原因包括：
+         1. 解決了讀者的實際問題
+         2. 作者在業界有良好聲譽
+         3. 出版商的行銷策略..."
+
+    detection_patterns:
+      - "因為.*所以.*因為.*"
+      - "是.*因為.*是.*"
+
+  false_dichotomy:
+    name: "假兩難"
+    english: "False Dichotomy"
+    description: "把複雜問題簡化為非此即彼的選擇"
+    severity: "medium"
+
+    example:
+      fallacy: "你要嘛用我們的方法，要嘛就是失敗。"
+      problem: "忽略了其他可能的選擇和方法"
+      correction: |
+        "這個方法是一個有效的選擇，
+         但也有其他方法值得考慮，如 X 和 Y。
+         選擇取決於你的具體情況..."
+
+    detection_patterns:
+      - "要嘛.*要嘛.*"
+      - "只有兩種選擇.*"
+      - "不是.*就是.*"
+
+  slippery_slope:
+    name: "滑坡謬誤"
+    english: "Slippery Slope"
+    description: "宣稱一件事會不可避免地導致極端後果"
+    severity: "medium"
+
+    example:
+      fallacy: "如果我們開始用 AI 寫程式，很快 AI 就會取代所有程式設計師，然後取代所有工作。"
+      problem: "忽略了過程中的選擇和控制"
+      correction: |
+        "AI 輔助程式設計會改變開發者的工作方式，
+         但這不意味著完全取代。
+         歷史上，新工具往往是增強而非取代人類能力..."
+
+    detection_patterns:
+      - "如果.*就會.*然後.*"
+      - "這會導致.*最終.*"
+      - "開始.*就停不下來.*"
+
+# ============================================================
+# 驗證流程 (給 Editor Agent / Logic Validator)
+# ============================================================
+
+verification_workflow:
+
+  step_1_identify_claims:
+    description: "識別文章中的所有主張"
+    actions:
+      - "標記所有做出斷言的句子"
+      - "區分事實陳述和觀點主張"
+      - "識別因果關係主張"
+
+  step_2_check_evidence:
+    description: "檢查每個主張的證據"
+    actions:
+      - "主張是否有支持證據？"
+      - "證據是否來自可靠來源？"
+      - "證據是否被正確引用？"
+
+  step_3_detect_fallacies:
+    description: "檢測邏輯謬誤"
+    actions:
+      - "對照本文件的謬誤清單"
+      - "使用 detection_patterns 進行搜索"
+      - "評估 verification_questions"
+
+  step_4_assess_severity:
+    description: "評估嚴重性"
+    severity_levels:
+      high: "嚴重損害可信度，必須修改"
+      medium: "影響說服力，建議修改"
+      low: "輕微瑕疵，可選修改"
+
+  step_5_provide_fixes:
+    description: "提供修正建議"
+    actions:
+      - "指出具體問題位置"
+      - "解釋為什麼是謬誤"
+      - "提供修正後的寫法"
+
+# ============================================================
+# 評分標準
+# ============================================================
+
+scoring:
+  dimension_name: "邏輯正確性"
+  max_score: 15
+  weight_in_total: "15%"
+
+  rubric:
+    excellent:
+      score_range: "13-15"
+      criteria:
+        - "無邏輯謬誤"
+        - "所有主張都有適當證據"
+        - "因果關係正確"
+        - "有預見和回應潛在質疑"
+
+    good:
+      score_range: "10-12"
+      criteria:
+        - "無高嚴重性謬誤"
+        - "可能有 1-2 個中等謬誤"
+        - "大部分主張有證據支持"
+
+    acceptable:
+      score_range: "7-9"
+      criteria:
+        - "有中等嚴重性謬誤"
+        - "部分主張缺乏證據"
+        - "因果關係可能不夠嚴謹"
+
+    poor:
+      score_range: "0-6"
+      criteria:
+        - "有高嚴重性謬誤"
+        - "多處邏輯錯誤"
+        - "主張缺乏證據支持"
+        - "可能損害可信度"
+
+# ============================================================
+# 常見寫作場景的謬誤風險
+# ============================================================
+
+scenario_risks:
+
+  product_review:
+    high_risk:
+      - "post_hoc (使用後效果)"
+      - "anecdotal_evidence (個人經驗)"
+    mitigation:
+      - "加入對照組數據"
+      - "承認其他可能因素"
+      - "提供多個案例"
+
+  technical_tutorial:
+    high_risk:
+      - "appeal_to_authority"
+      - "hasty_generalization"
+    mitigation:
+      - "引用官方文檔"
+      - "提供可驗證的代碼"
+      - "說明適用範圍"
+
+  opinion_piece:
+    high_risk:
+      - "straw_man"
+      - "false_dichotomy"
+      - "appeal_to_emotion"
+    mitigation:
+      - "公正呈現反方觀點"
+      - "承認多種可能性"
+      - "用邏輯支撐情感"
+
+  comparison_article:
+    high_risk:
+      - "cherry_picking"
+      - "false_dichotomy"
+    mitigation:
+      - "使用一致的評估標準"
+      - "列出各選項優缺點"
+      - "說明適用情境"

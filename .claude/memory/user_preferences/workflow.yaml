@@ -1,0 +1,8 @@
+phases:
+  auto_publish: false
+  skip_storyteller: false
+  skip_style_matcher: false
+quality:
+  max_ai_detection: 40
+  min_editor_score: 85
+  min_seo_score: 80

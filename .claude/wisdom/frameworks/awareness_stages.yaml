@@ -1,0 +1,491 @@
+# 讀者認知 5 階段框架
+# 整合 Eugene Schwartz 的 Awareness Stages
+# 用於判斷讀者狀態並選擇對應的內容策略
+
+version: 1.0.0
+updated: 2025-12-11
+
+overview:
+  source: "Eugene Schwartz - Breakthrough Advertising (1966)"
+
+  core_insight: |
+    你無法用同一種方式跟所有讀者說話。
+    讀者對問題和解決方案的「認知程度」不同，
+    需要完全不同的內容策略。
+
+  why_this_matters: |
+    大多數文章失敗的原因：
+    - 對不知道問題的人推銷解決方案
+    - 對已經相信的人重複說服
+    - 用錯誤的標題吸引錯誤的人
+
+    正確識別讀者的認知階段，
+    是寫出有效內容的第一步。
+
+# ============================================================
+# 5 階段詳細定義
+# ============================================================
+
+stages:
+
+  # ============================================================
+  # Stage 1: Unaware (完全不知道)
+  # ============================================================
+  stage_1:
+    id: "unaware"
+    name: "完全不知道"
+    english: "Unaware"
+    level: 1
+
+    reader_mindset:
+      beliefs:
+        - "我沒有這個問題"
+        - "這跟我無關"
+        - "我現在很好啊"
+      questions:
+        - "這是什麼？"
+        - "為什麼我要關心這個？"
+      resistance: "最高 - 不認為自己需要改變"
+
+    content_goal: "建立問題意識，讓讀者意識到『原來我有這個問題』"
+
+    strategy:
+      headline_approach:
+        type: "教育型、好奇型、震撼型"
+        do:
+          - "用引人好奇的問題"
+          - "分享震撼的數據或事實"
+          - "描述潛在的風險或損失"
+        dont:
+          - "提及產品或解決方案"
+          - "使用行業術語"
+          - "假設讀者已經知道問題"
+
+      opening_approach:
+        type: "故事、數據震撼、預言"
+        techniques:
+          - name: "未來預言"
+            example: "5 年後，不會用 AI 的開發者將會被淘汰。"
+          - name: "數據震撼"
+            example: "研究顯示，90% 的程式設計師不知道自己每天浪費 3 小時在可避免的錯誤上。"
+          - name: "反常識"
+            example: "你以為勤奮工作是成功的關鍵？其實可能正好相反。"
+
+      content_focus:
+        - "教育讀者認識問題的存在"
+        - "描述問題的嚴重性"
+        - "幫助讀者自我診斷"
+        - "不急著提出解決方案"
+
+    example_headlines:
+      good:
+        - "為什麼 90% 的開發者都在浪費時間卻不自知"
+        - "你的程式碼正在慢慢腐爛：大多數人忽略的警訊"
+        - "5 年後，不懂這個技能的人將會被淘汰"
+      bad:
+        - "使用 Claude Code 提升效率"  # 太直接，讀者不知道為什麼需要
+        - "最佳 AI 程式設計工具推薦"  # 假設讀者已經在找工具
+
+    blog_application:
+      suitable_for:
+        - "趨勢分析文章"
+        - "產業洞察"
+        - "風險警示"
+        - "教育性內容"
+      word_count: "較長，需要充分建立問題意識"
+      cta_strength: "低 - 目標是讓讀者開始思考，而非立即行動"
+
+  # ============================================================
+  # Stage 2: Problem-Aware (知道問題)
+  # ============================================================
+  stage_2:
+    id: "problem_aware"
+    name: "知道問題"
+    english: "Problem-Aware"
+    level: 2
+
+    reader_mindset:
+      beliefs:
+        - "我知道我有這個問題"
+        - "這個問題困擾我很久了"
+        - "我不知道該怎麼解決"
+      questions:
+        - "有解決方案嗎？"
+        - "為什麼會這樣？"
+        - "其他人怎麼處理的？"
+      resistance: "中等 - 願意聽，但需要被說服"
+
+    content_goal: "深化痛點，讓讀者知道『問題可以被解決』"
+
+    strategy:
+      headline_approach:
+        type: "同理心型、痛點型、原因揭示型"
+        do:
+          - "使用『你是否也...』句式"
+          - "描述具體的痛點場景"
+          - "揭示問題的根本原因"
+        dont:
+          - "立即推銷特定解決方案"
+          - "貶低讀者目前的做法"
+
+      opening_approach:
+        type: "同理心開頭、痛點描述"
+        techniques:
+          - name: "同理心問句"
+            example: "你是否也曾經在深夜加班，看著螢幕想著『為什麼這麼簡單的事要花這麼久？』"
+          - name: "場景描述"
+            example: "又是一個部署失敗的週五下午。你知道這個週末泡湯了..."
+          - name: "痛點列表"
+            example: "如果你曾經：花 3 小時找一個 bug / 同樣的程式碼寫了三遍 / 在凌晨 2 點修復生產環境問題..."
+
+      content_focus:
+        - "深入描述痛點，讓讀者覺得『你懂我』"
+        - "分析問題的根本原因"
+        - "暗示有更好的方法"
+        - "建立希望感"
+
+    example_headlines:
+      good:
+        - "你是否也厭倦了每天在程式碼 review 上花 2 小時？"
+        - "為什麼你越努力工作，效率卻越低？真正的原因可能讓你驚訝"
+        - "我也曾經以為這是正常的...直到我發現了真相"
+      bad:
+        - "Claude Code 可以幫你解決這個問題"  # 太快進入解決方案
+        - "購買我們的工具"  # 完全沒有同理心
+
+    blog_application:
+      suitable_for:
+        - "問題分析文章"
+        - "『為什麼』類文章"
+        - "痛點解析"
+        - "讀者共鳴文章"
+      word_count: "中等"
+      cta_strength: "低到中 - 引導讀者繼續了解解決方案"
+
+  # ============================================================
+  # Stage 3: Solution-Aware (知道有解決方案)
+  # ============================================================
+  stage_3:
+    id: "solution_aware"
+    name: "知道有解決方案"
+    english: "Solution-Aware"
+    level: 3
+
+    reader_mindset:
+      beliefs:
+        - "我知道這個問題可以被解決"
+        - "我正在比較不同的解決方案"
+        - "我想找到最適合我的方法"
+      questions:
+        - "哪個解決方案最好？"
+        - "這個方法和其他方法有什麼不同？"
+        - "為什麼我應該選擇這個？"
+      resistance: "中低 - 願意嘗試，但需要差異化理由"
+
+    content_goal: "展示你的方法為什麼不同/更好"
+
+    strategy:
+      headline_approach:
+        type: "差異化型、比較型、獨特賣點型"
+        do:
+          - "承認其他方案存在"
+          - "強調獨特的差異點"
+          - "指出其他方案的盲點"
+        dont:
+          - "貶低競爭對手"
+          - "宣稱『最好』而不解釋為什麼"
+
+      opening_approach:
+        type: "承認現狀，然後轉折"
+        techniques:
+          - name: "承認並轉折"
+            example: "你可能已經試過很多方法：GTD、番茄鐘、各種效率 App...但為什麼它們都沒有持續有效？"
+          - name: "揭示盲點"
+            example: "大多數效率方法都忽略了一個關鍵因素..."
+          - name: "重新定義問題"
+            example: "問題不是你不夠努力，而是你用錯了方法。"
+
+      content_focus:
+        - "分析現有解決方案的不足"
+        - "提出你的獨特角度或方法"
+        - "解釋為什麼你的方法不同"
+        - "不急著證明效果（那是 Stage 4 的事）"
+
+    example_headlines:
+      good:
+        - "為什麼傳統的 code review 方法已經過時了（以及更好的替代方案）"
+        - "我試過 10 種效率工具，只有這一種改變了我的工作方式"
+        - "你可能用錯了 AI 工具：3 個被忽略的關鍵功能"
+      bad:
+        - "Claude Code 是最好的"  # 沒有解釋為什麼
+        - "購買我們的服務"  # 讀者還在比較階段
+
+    blog_application:
+      suitable_for:
+        - "比較文章"
+        - "『vs』文章"
+        - "方法論介紹"
+        - "獨特觀點文章"
+      word_count: "中到長"
+      cta_strength: "中等 - 引導讀者深入了解你的方法"
+
+  # ============================================================
+  # Stage 4: Product-Aware (知道你的產品)
+  # ============================================================
+  stage_4:
+    id: "product_aware"
+    name: "知道你的產品/方法"
+    english: "Product-Aware"
+    level: 4
+
+    reader_mindset:
+      beliefs:
+        - "我知道這個產品/方法"
+        - "聽起來不錯，但我不確定對我有沒有用"
+        - "我需要更多證據"
+      questions:
+        - "這真的有效嗎？"
+        - "有沒有人跟我類似的成功案例？"
+        - "有什麼風險或缺點？"
+      resistance: "低 - 願意被說服，需要證據"
+
+    content_goal: "提供證據和案例，消除疑慮"
+
+    strategy:
+      headline_approach:
+        type: "證據型、案例型、社會證明型"
+        do:
+          - "展示具體成果和數據"
+          - "分享真實案例研究"
+          - "提供社會證明"
+          - "主動回應常見疑慮"
+        dont:
+          - "繼續解釋基本概念"
+          - "過度承諾"
+
+      opening_approach:
+        type: "直接展示成果"
+        techniques:
+          - name: "成果開頭"
+            example: "使用這個方法 3 個月後，我們團隊的 bug 率降低了 67%。"
+          - name: "數據震撼"
+            example: "在過去 12 個月，超過 5,000 名開發者用這個方法節省了平均 8.3 小時/週。"
+          - name: "案例引入"
+            example: "讓我告訴你 Kevin 的故事。他是台北的前端工程師，6 個月前..."
+
+      content_focus:
+        - "提供具體的成功案例"
+        - "展示可驗證的數據"
+        - "回應常見的疑慮和反對意見"
+        - "提供社會證明（類似的人也成功了）"
+
+    example_headlines:
+      good:
+        - "我用 Claude Code 3 個月後：具體數據和真實感受"
+        - "真實案例：一個 3 人團隊如何用這個方法節省每週 20 小時"
+        - "5,000+ 開發者驗證：這個方法的真實效果"
+      bad:
+        - "什麼是 Claude Code"  # 讀者已經知道了
+        - "AI 程式設計的好處"  # 太基礎
+
+    blog_application:
+      suitable_for:
+        - "案例研究"
+        - "使用心得/評測"
+        - "數據分析"
+        - "常見問題解答"
+      word_count: "中等"
+      cta_strength: "高 - 讀者準備好行動了"
+
+  # ============================================================
+  # Stage 5: Most-Aware (完全相信)
+  # ============================================================
+  stage_5:
+    id: "most_aware"
+    name: "完全相信"
+    english: "Most-Aware"
+    level: 5
+
+    reader_mindset:
+      beliefs:
+        - "我相信這個有效"
+        - "我想要這個"
+        - "我只是還沒行動"
+      questions:
+        - "現在是行動的好時機嗎？"
+        - "有什麼優惠？"
+        - "如何開始？"
+      resistance: "最低 - 只需要最後推一把"
+
+    content_goal: "降低行動門檻，製造緊迫感"
+
+    strategy:
+      headline_approach:
+        type: "行動型、緊迫型、優惠型"
+        do:
+          - "提供明確的行動指引"
+          - "製造合理的緊迫感"
+          - "降低行動門檻"
+          - "強調損失（不行動的代價）"
+        dont:
+          - "繼續說服（已經不需要了）"
+          - "製造假緊迫感"
+
+      opening_approach:
+        type: "直接行動號召"
+        techniques:
+          - name: "限時優惠"
+            example: "本週限定：免費試用 30 天，不需要信用卡。"
+          - name: "簡化行動"
+            example: "5 分鐘就能開始。以下是具體步驟..."
+          - name: "損失框架"
+            example: "每拖延一天，你就損失 47 分鐘的生產力。"
+
+      content_focus:
+        - "提供清晰的行動步驟"
+        - "消除最後的障礙"
+        - "製造適度的緊迫感"
+        - "強調不行動的代價"
+
+    example_headlines:
+      good:
+        - "5 分鐘快速開始指南：今天就能看到效果"
+        - "限時開放：免費獲取完整工具包"
+        - "準備好了嗎？這是你的起點"
+      bad:
+        - "為什麼你應該用這個工具"  # 已經相信了，不需要再說服
+        - "這個工具的 10 大好處"  # 同上
+
+    blog_application:
+      suitable_for:
+        - "快速開始指南"
+        - "行動召喚頁面"
+        - "限時優惠公告"
+        - "入門教學"
+      word_count: "較短，直接切入"
+      cta_strength: "最高 - 明確告訴讀者下一步"
+
+# ============================================================
+# 階段識別指南
+# ============================================================
+
+stage_identification:
+
+  questions_to_ask:
+    - question: "你的目標讀者知道自己有這個問題嗎？"
+      if_no: "Stage 1 (Unaware)"
+      if_yes: "繼續下一題"
+
+    - question: "他們是否正在尋找解決方案？"
+      if_no: "Stage 2 (Problem-Aware)"
+      if_yes: "繼續下一題"
+
+    - question: "他們是否知道你的方法/產品？"
+      if_no: "Stage 3 (Solution-Aware)"
+      if_yes: "繼續下一題"
+
+    - question: "他們是否相信你的方法有效？"
+      if_no: "Stage 4 (Product-Aware)"
+      if_yes: "Stage 5 (Most-Aware)"
+
+  decision_flowchart: |
+    知道有問題？
+       ↓
+    否 → Stage 1 (Unaware)
+       ↓ 是
+    在找解決方案？
+       ↓
+    否 → Stage 2 (Problem-Aware)
+       ↓ 是
+    知道你的方法？
+       ↓
+    否 → Stage 3 (Solution-Aware)
+       ↓ 是
+    相信有效？
+       ↓
+    否 → Stage 4 (Product-Aware)
+       ↓ 是
+    Stage 5 (Most-Aware)
+
+  common_scenarios:
+    new_technology:
+      typical_stage: "Stage 1-2"
+      reason: "大多數人不知道這個技術存在或不知道它能解決什麼問題"
+
+    established_category:
+      typical_stage: "Stage 3"
+      reason: "讀者知道這類解決方案，正在比較選擇"
+
+    returning_visitors:
+      typical_stage: "Stage 4-5"
+      reason: "已經了解你的內容，需要更多證據或行動推力"
+
+    search_traffic:
+      analysis: |
+        搜尋詞可以幫助判斷階段：
+        - "什麼是 X" → Stage 1-2
+        - "X vs Y" → Stage 3
+        - "X 評價" / "X 效果" → Stage 4
+        - "X 價格" / "X 購買" → Stage 5
+
+# ============================================================
+# 應用指南
+# ============================================================
+
+application:
+
+  for_writer_agent:
+    pre_writing_checklist:
+      - "確定目標讀者的認知階段"
+      - "選擇對應的標題策略"
+      - "選擇對應的開頭方式"
+      - "調整 CTA 強度"
+
+    stage_to_headline_matrix:
+      stage_1: "教育型、好奇型"
+      stage_2: "同理心型、痛點型"
+      stage_3: "差異化型、比較型"
+      stage_4: "證據型、案例型"
+      stage_5: "行動型、緊迫型"
+
+  for_editor_agent:
+    verification_points:
+      - "文章是否正確識別了目標讀者的認知階段？"
+      - "標題策略是否符合該階段？"
+      - "開頭方式是否適當？"
+      - "CTA 強度是否合適？"
+      - "是否有『跳階』問題（如對 Stage 2 讀者直接推銷）？"
+
+  for_benchmark_agent:
+    analysis_framework:
+      - "這篇文章針對哪個認知階段？"
+      - "它使用了什麼階段策略？"
+      - "策略是否有效？"
+      - "我們可以學習什麼？"
+
+# ============================================================
+# 常見錯誤
+# ============================================================
+
+common_mistakes:
+
+  stage_mismatch:
+    description: "內容策略與讀者認知階段不符"
+    examples:
+      - "對 Stage 1 讀者直接推銷產品"
+      - "對 Stage 5 讀者重複基本說服"
+      - "對 Stage 3 讀者不提供差異化"
+
+  stage_skipping:
+    description: "試圖跳過階段"
+    examples:
+      - "希望一篇文章從 Stage 1 直接帶到 Stage 5"
+      - "不建立問題意識就推銷解決方案"
+
+  wrong_headline:
+    description: "標題吸引錯誤階段的讀者"
+    example: |
+      標題：「最佳 AI 程式設計工具推薦」
+      問題：這會吸引 Stage 3+ 的讀者，
+            但如果內容是基礎教育（Stage 1），
+            讀者會覺得浪費時間。

@@ -1,0 +1,166 @@
+{
+  "calibrated_at": "2025-12-14T12:00:00",
+  "version": "2.6.0",
+  "description": "效能基準 - 含 Search Everywhere 優化 Phases",
+  "benchmarks": {
+    "0": {
+      "name": "Experience Collector",
+      "target": 60,
+      "warning": 120,
+      "critical": 180,
+      "description": "收集用戶真實經驗"
+    },
+    "1": {
+      "name": "Content Analyst",
+      "target": 45,
+      "warning": 90,
+      "critical": 150,
+      "description": "分析原文結構"
+    },
+    "2a": {
+      "name": "Research Agent",
+      "target": 90,
+      "warning": 180,
+      "critical": 300,
+      "description": "市場研究"
+    },
+    "2b": {
+      "name": "Style Matcher",
+      "target": 60,
+      "warning": 120,
+      "critical": 180,
+      "description": "風格學習"
+    },
+    "3": {
+      "name": "Writer Agent",
+      "target": 180,
+      "warning": 300,
+      "critical": 480,
+      "description": "撰寫文章"
+    },
+    "3.4": {
+      "name": "Quality Predictor",
+      "target": 30,
+      "warning": 60,
+      "critical": 90,
+      "description": "品質預測"
+    },
+    "3.5": {
+      "name": "Editor Agent",
+      "target": 90,
+      "warning": 150,
+      "critical": 240,
+      "description": "品質審查"
+    },
+    "3.6": {
+      "name": "Fact Checker",
+      "target": 60,
+      "warning": 120,
+      "critical": 180,
+      "description": "事實驗證"
+    },
+    "3.7": {
+      "name": "Humanizer",
+      "target": 60,
+      "warning": 120,
+      "critical": 180,
+      "description": "內容人類化"
+    },
+    "3.8": {
+      "name": "Persuasion Agent",
+      "target": 60,
+      "warning": 120,
+      "critical": 180,
+      "description": "說服力強化"
+    },
+    "3.9": {
+      "name": "Storyteller",
+      "target": 60,
+      "warning": 120,
+      "critical": 180,
+      "description": "故事敘事"
+    },
+    "4": {
+      "name": "SEO Optimizer",
+      "target": 90,
+      "warning": 150,
+      "critical": 240,
+      "description": "SEO 優化"
+    },
+    "4d": {
+      "name": "LLMO Optimizer",
+      "target": 45,
+      "warning": 90,
+      "critical": 150,
+      "description": "AI 引用優化"
+    },
+    "4e": {
+      "name": "GEO Optimizer",
+      "target": 45,
+      "warning": 90,
+      "critical": 150,
+      "description": "生成式搜尋優化"
+    },
+    "4f": {
+      "name": "VSO Optimizer",
+      "target": 30,
+      "warning": 60,
+      "critical": 90,
+      "description": "語音搜尋優化"
+    },
+    "4g": {
+      "name": "CRO Optimizer",
+      "target": 30,
+      "warning": 60,
+      "critical": 90,
+      "description": "轉換率優化"
+    },
+    "4h": {
+      "name": "AISO Scorer",
+      "target": 30,
+      "warning": 60,
+      "critical": 90,
+      "description": "AISO 統一評分"
+    },
+    "5": {
+      "name": "Publisher",
+      "target": 30,
+      "warning": 60,
+      "critical": 120,
+      "description": "WordPress 發布"
+    },
+    "11": {
+      "name": "Memory Agent",
+      "target": 30,
+      "warning": 60,
+      "critical": 90,
+      "description": "跨 Session 學習"
+    },
+    "12": {
+      "name": "Persona Adapter",
+      "target": 120,
+      "warning": 180,
+      "critical": 300,
+      "description": "多讀者版本生成"
+    },
+    "13": {
+      "name": "Performance Optimizer",
+      "target": 15,
+      "warning": 30,
+      "critical": 60,
+      "description": "效能優化"
+    }
+  },
+  "total_workflow": {
+    "target": 600,
+    "warning": 900,
+    "critical": 1200
+  },
+  "grades": {
+    "A+": {"max_duration": 480, "description": "優秀 - 小於 8 分鐘"},
+    "A": {"max_duration": 600, "description": "良好 - 小於 10 分鐘"},
+    "B": {"max_duration": 900, "description": "可接受 - 小於 15 分鐘"},
+    "C": {"max_duration": 1200, "description": "需改進 - 小於 20 分鐘"},
+    "D": {"max_duration": 99999, "description": "待優化 - 超過 20 分鐘"}
+  }
+}

@@ -1,0 +1,224 @@
+# 參考作者資料庫
+# 根據文章主題動態選擇合適的參考作者
+# 版本: 1.0.0
+# 建立日期: 2025-10-24
+
+# ============================================
+# 主題分類與對應作者
+# ============================================
+
+topic_categories:
+  # AI/機器學習類
+  ai_ml:
+    keywords: ["AI", "人工智慧", "機器學習", "深度學習", "Claude", "GPT", "LLM", "神經網路"]
+    reference_authors:
+      - name: "李宏毅"
+        blog: "https://speech.ee.ntu.edu.tw/~hylee/ml/2023-spring.php"
+        style_notes: "學術嚴謹但深入淺出,善用圖表說明複雜概念"
+        strengths:
+          - "複雜理論的視覺化解釋"
+          - "循序漸進的教學方式"
+          - "豐富的範例和實作"
+        best_for: ["機器學習原理", "深度學習教學", "AI基礎概念"]
+        article_examples:
+          - "https://speech.ee.ntu.edu.tw/~hylee/ml/2023-spring.php"
+
+      - name: "Andrew Ng 中文筆記"
+        blog: "https://github.com/fengdu78/Coursera-ML-AndrewNg-Notes"
+        style_notes: "系統化教學,理論與實踐並重"
+        strengths:
+          - "完整的知識體系"
+          - "清晰的數學推導"
+          - "實用的coding範例"
+        best_for: ["機器學習入門", "演算法解析"]
+
+  # 量化交易/金融科技
+  fintech_trading:
+    keywords: ["量化", "交易", "投資", "金融", "股票", "加密貨幣", "回測", "策略"]
+    reference_authors:
+      - name: "FinLab"
+        blog: "https://www.finlab.tw/"
+        style_notes: "數據驅動,實戰案例豐富,Python實作導向"
+        strengths:
+          - "完整的回測流程"
+          - "真實交易數據分析"
+          - "策略績效展示"
+        best_for: ["量化策略開發", "回測分析", "交易系統"]
+        article_examples:
+          - "https://www.finlab.tw/category/python-fintech/"
+
+      - name: "量化交易研究"
+        blog: "https://www.fmz.com/bbs"
+        style_notes: "技術細節深入,策略代碼完整"
+        strengths:
+          - "多平台策略實作"
+          - "詳細的API使用"
+          - "風控機制說明"
+        best_for: ["API對接", "策略實現", "風控設計"]
+
+  # 創業/商業
+  startup_business:
+    keywords: ["創業", "商業模式", "產品", "市場", "增長", "營運", "管理"]
+    reference_authors:
+      - name: "Star Rocket"
+        blog: "https://blog.starrocket.io/"
+        style_notes: "案例豐富,商業思維清晰,實用建議多"
+        strengths:
+          - "真實創業案例分析"
+          - "商業模式拆解"
+          - "實用的成長策略"
+        best_for: ["創業經驗", "商業分析", "產品策略"]
+        article_examples:
+          - "https://blog.starrocket.io/"
+
+      - name: "MR JAMIE"
+        blog: "https://mrjamie.cc/"
+        style_notes: "觀點獨特,結合本土與國際視角"
+        strengths:
+          - "創投視角分析"
+          - "趨勢洞察"
+          - "創業實戰建議"
+        best_for: ["創業趨勢", "投資思維", "商業策略"]
+
+  # 技術開發(預設)
+  tech_development:
+    keywords: ["開發", "程式", "code", "API", "架構", "系統", "工具", "framework"]
+    reference_authors:
+      - name: "Ihower (張文鈿)"
+        blog: "https://ihower.tw/blog/"
+        style_notes: "技術深入、邏輯清晰、實戰導向"
+        strengths:
+          - "深入淺出的技術解析"
+          - "完整的實作流程"
+          - "最佳實踐分享"
+        best_for: ["技術深度文章", "架構設計", "開發經驗"]
+        article_examples:
+          - "https://ihower.tw/blog/archives/tag/ruby-on-rails"
+
+      - name: "Cash Wu"
+        blog: "https://blog.cashwu.com/"
+        style_notes: "結構完整、詳細示例、新技術追蹤"
+        strengths:
+          - "清晰的文章結構"
+          - "豐富的程式碼範例"
+          - "及時的新技術介紹"
+        best_for: [".NET相關", "C#", "新技術評測"]
+        article_examples:
+          - "https://blog.cashwu.com/"
+
+  # 自動化/DevOps
+  automation_devops:
+    keywords: ["自動化", "CI/CD", "Docker", "Kubernetes", "DevOps", "部署", "監控"]
+    reference_authors:
+      - name: "TechBridge"
+        blog: "https://blog.techbridge.cc/"
+        style_notes: "團隊協作經驗,實用工具分享"
+        strengths:
+          - "完整的DevOps流程"
+          - "工具選型經驗"
+          - "團隊實踐分享"
+        best_for: ["DevOps實踐", "工具教學", "團隊協作"]
+
+  # Web開發
+  web_development:
+    keywords: ["前端", "後端", "React", "Vue", "Node", "網頁", "JavaScript"]
+    reference_authors:
+      - name: "Huli"
+        blog: "https://blog.huli.tw/"
+        style_notes: "前端專家,教學細緻,安全意識強"
+        strengths:
+          - "前端技術深度"
+          - "資安觀念融入"
+          - "學習路徑清晰"
+        best_for: ["前端開發", "Web安全", "JavaScript"]
+
+# ============================================
+# 預設回退策略
+# ============================================
+
+default_authors:
+  # 當無法匹配任何主題時,使用這些通用作者
+  fallback:
+    - name: "Ihower"
+      blog: "https://ihower.tw/blog/"
+    - name: "Cash Wu"
+      blog: "https://blog.cashwu.com/"
+
+# ============================================
+# 匹配規則
+# ============================================
+
+matching_rules:
+  # 關鍵字匹配策略
+  keyword_matching:
+    method: "weighted"  # 加權匹配
+    min_match_score: 0.3  # 最低匹配分數
+
+  # 優先級規則
+  priority:
+    # 精確匹配 > 部分匹配 > 預設作者
+    exact_match_weight: 1.0
+    partial_match_weight: 0.5
+    fallback_weight: 0.1
+
+  # 作者數量
+  max_authors_per_topic: 2  # 每個主題最多推薦2位作者
+
+# ============================================
+# 使用範例
+# ============================================
+
+usage_examples:
+  example1:
+    topic: "Claude Code AI 自動化應用"
+    matched_keywords: ["Claude", "AI", "自動化"]
+    selected_category: "ai_ml"  # AI類 + automation_devops類
+    recommended_authors:
+      - "李宏毅 (AI類)"
+      - "TechBridge (自動化類)"
+
+  example2:
+    topic: "量化交易策略回測"
+    matched_keywords: ["量化", "交易", "策略", "回測"]
+    selected_category: "fintech_trading"
+    recommended_authors:
+      - "FinLab"
+      - "量化交易研究"
+
+  example3:
+    topic: "Next.js 專案實戰"
+    matched_keywords: ["Next", "專案", "實戰"]
+    selected_category: "web_development" # + tech_development
+    recommended_authors:
+      - "Huli (Web類)"
+      - "Ihower (技術類)"
+
+# ============================================
+# 維護說明
+# ============================================
+
+maintenance_notes: |
+  如何新增參考作者:
+
+  1. 確定作者的專業領域
+  2. 在對應的 topic_categories 下新增
+  3. 填寫完整的作者資訊:
+     - name: 作者名稱
+     - blog: 部落格網址
+     - style_notes: 風格特色
+     - strengths: 優勢(列點)
+     - best_for: 適合主題
+     - article_examples: 範例文章
+
+  4. 測試匹配:
+     python dynamic_references.py test "測試主題"
+
+# ============================================
+# 版本記錄
+# ============================================
+
+version_history:
+  - version: "1.0.0"
+    date: "2025-10-24"
+    changes: "初始版本,建立6大主題分類和12位參考作者"
+    authors_count: 12

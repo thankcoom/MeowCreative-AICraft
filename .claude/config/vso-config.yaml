@@ -1,0 +1,445 @@
+# VSO - Voice Search Optimization 配置
+# 語音搜尋優化：讓內容被 Siri、Alexa、Google Assistant 選為回答
+# 版本: 1.0.0
+# 更新: 2025-12-11
+
+version: "1.0.0"
+updated: "2025-12-11"
+
+# ============================================================
+# VSO 核心概念
+# ============================================================
+
+overview:
+  definition: |
+    VSO (Voice Search Optimization) 是優化內容以被語音助理選中作為口語回答的策略。
+    語音搜尋的查詢方式和結果呈現都與文字搜尋不同，需要專門優化。
+
+  why_important:
+    - "60%+ 的搜尋來自語音或行動裝置"
+    - "語音搜尋只提供 1 個答案，不是 10 個連結"
+    - "語音查詢通常是完整問句，而非關鍵字"
+    - "智慧音箱和車載系統使用量持續成長"
+    - "Gen Z 更習慣語音互動"
+
+  key_platforms:
+    - name: "Google Assistant"
+      devices: ["Android 手機", "Google Home", "智慧電視"]
+      data_source: "Google 搜尋 + Featured Snippets"
+
+    - name: "Siri"
+      devices: ["iPhone", "iPad", "Mac", "HomePod", "CarPlay"]
+      data_source: "Apple 搜尋 + Spotlight"
+
+    - name: "Alexa"
+      devices: ["Echo 系列", "Fire TV", "第三方智慧家電"]
+      data_source: "Bing + Amazon"
+
+    - name: "Cortana"
+      devices: ["Windows PC", "部分車載系統"]
+      data_source: "Bing"
+
+# ============================================================
+# 語音搜尋特性
+# ============================================================
+
+voice_search_characteristics:
+
+  query_patterns:
+    description: "語音查詢與文字查詢的差異"
+
+    voice_queries:
+      - pattern: "完整問句"
+        example: "一人公司怎麼開始？"
+        vs_text: "一人公司 教學"
+
+      - pattern: "對話式"
+        example: "附近哪裡可以吃早餐？"
+        vs_text: "早餐店 附近"
+
+      - pattern: "長尾"
+        example: "適合新手的免費記帳 app 推薦"
+        vs_text: "記帳 app 推薦"
+
+      - pattern: "口語化"
+        example: "什麼東西可以幫我提高工作效率？"
+        vs_text: "提高效率 工具"
+
+  response_format:
+    description: "語音回答的特性"
+
+    requirements:
+      - "只有一個答案被選中 (Position Zero)"
+      - "答案需要適合朗讀 (30 秒內)"
+      - "不能依賴視覺元素 (圖表、連結)"
+      - "需要完整自足，不需補充說明"
+
+    ideal_length:
+      short_answer: "29 字以內 (最佳)"
+      medium_answer: "30-50 字 (可接受)"
+      max_answer: "不超過 60 字"
+
+# ============================================================
+# VSO 優化策略
+# ============================================================
+
+optimization_strategies:
+
+  # 策略 1: 問句標題
+  question_headings:
+    importance: "★★★★★"
+    description: "使用完整問句作為標題，直接對應語音查詢"
+
+    patterns:
+      what:
+        chinese: "什麼是 [X]？"
+        example: "什麼是一人公司？"
+        answer_format: "[X] 是 [定義]。"
+
+      how:
+        chinese: "如何 [做某事]？"
+        example: "如何開始一人公司？"
+        answer_format: "要 [做某事]，你需要 [步驟摘要]。"
+
+      why:
+        chinese: "為什麼 [現象]？"
+        example: "為什麼一人公司越來越流行？"
+        answer_format: "[現象] 是因為 [原因]。"
+
+      which:
+        chinese: "哪個 [選項] 最好？"
+        example: "哪個記帳 app 最適合新手？"
+        answer_format: "對新手來說，[推薦] 是最好的選擇，因為 [原因]。"
+
+      when:
+        chinese: "什麼時候應該 [做某事]？"
+        example: "什麼時候應該辭職創業？"
+        answer_format: "你應該在 [條件] 時 [做某事]。"
+
+      where:
+        chinese: "[某物] 在哪裡？"
+        example: "台北最好的咖啡廳在哪裡？"
+        answer_format: "[地點] 是 [地區] 最好的 [類型]。"
+
+    verification:
+      - "H2 標題是否使用完整問句？"
+      - "問句是否反映真實語音查詢？"
+      - "問句後是否緊接直接回答？"
+
+  # 策略 2: 直接回答
+  direct_answers:
+    importance: "★★★★★"
+    description: "在問句標題下立即提供簡潔直接的回答"
+
+    structure:
+      format: |
+        ## [問句]？
+
+        [直接回答，一句話，不超過 30 字]
+
+        [詳細說明...]
+
+      example: |
+        ## 什麼是 PARA 方法？
+
+        PARA 是一套知識管理系統，用四個資料夾組織所有資訊：Projects、Areas、Resources、Archive。
+
+        這套方法由 Tiago Forte 發明...
+
+    answer_templates:
+      definition:
+        template: "[X] 是 [類別]，[核心功能/特徵]。"
+        example: "LLMO 是一種內容優化策略，讓文章更容易被 AI 引用。"
+
+      how_to:
+        template: "要 [做某事]，你需要 [核心步驟]。"
+        example: "要開始一人公司，你需要先確定定位、建立內容系統、再發展產品。"
+
+      recommendation:
+        template: "[推薦選項] 是最好的選擇，因為 [原因]。"
+        example: "Notion 是最好的筆記工具，因為它結合了筆記、資料庫和專案管理。"
+
+      comparison:
+        template: "[A] 和 [B] 的主要差異是 [差異點]。"
+        example: "SEO 和 GEO 的主要差異是目標平台：SEO 針對搜尋引擎，GEO 針對 AI 系統。"
+
+    verification:
+      - "問句後的第一句話是否直接回答問題？"
+      - "回答是否在 30 字以內？"
+      - "回答是否不依賴上下文即可理解？"
+
+  # 策略 3: 對話式關鍵字
+  conversational_keywords:
+    importance: "★★★★☆"
+    description: "使用口語化、對話式的長尾關鍵字"
+
+    transformation:
+      - text_keyword: "一人公司 教學"
+        voice_keyword: "一人公司怎麼開始"
+
+      - text_keyword: "記帳 app 推薦"
+        voice_keyword: "有什麼好用的記帳 app"
+
+      - text_keyword: "SEO 技巧"
+        voice_keyword: "怎麼讓網站排名更高"
+
+      - text_keyword: "台北 早餐"
+        voice_keyword: "台北哪裡有好吃的早餐"
+
+    patterns:
+      - "怎麼 [動作]"
+      - "如何 [目標]"
+      - "為什麼 [現象]"
+      - "什麼是 [概念]"
+      - "[地點] 哪裡有 [目標]"
+      - "有什麼 [形容詞] 的 [名詞]"
+      - "[名詞] 好不好"
+      - "[A] 和 [B] 哪個比較好"
+
+    verification:
+      - "是否包含對話式長尾關鍵字？"
+      - "關鍵字是否反映真實口語查詢？"
+
+  # 策略 4: 朗讀友善
+  speakable_content:
+    importance: "★★★★☆"
+    description: "確保內容適合被語音助理朗讀"
+
+    requirements:
+      sentence_length:
+        ideal: "15-20 字"
+        max: "30 字"
+        reason: "太長的句子朗讀不自然"
+
+      avoid:
+        - "過多縮寫 (除非是常見的)"
+        - "複雜的表格數據"
+        - "依賴視覺的內容 (如「如下圖所示」)"
+        - "連續的列表項目 (朗讀時難以區分)"
+        - "數字過多的句子"
+
+      prefer:
+        - "完整句子而非片語"
+        - "數字用文字描述 (「大約五成」vs「50%」)"
+        - "簡單直接的句型"
+        - "自然的語調轉換"
+
+    example:
+      bad: "根據 2024 年 Semrush 的數據，AI 搜尋轉換率比傳統搜尋高 4.4 倍，而 McKinsey 預測 2028 年將有 $750B 收入經由 AI 搜尋。"
+
+      good: "AI 搜尋的轉換率比傳統搜尋高出四倍以上。換句話說，透過 AI 搜尋來的訪客更容易成為客戶。"
+
+    verification:
+      - "句子是否適合朗讀？"
+      - "是否避免依賴視覺元素？"
+      - "數字表達是否自然？"
+
+  # 策略 5: FAQ Schema
+  faq_schema:
+    importance: "★★★★☆"
+    description: "使用 FAQ Schema 標記問答內容"
+
+    format:
+      json_ld: |
+        {
+          "@context": "https://schema.org",
+          "@type": "FAQPage",
+          "mainEntity": [
+            {
+              "@type": "Question",
+              "name": "什麼是一人公司？",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "一人公司是由一個人經營的事業..."
+              }
+            }
+          ]
+        }
+
+    best_practices:
+      - "每頁 5-10 個 FAQ"
+      - "問題要反映真實用戶查詢"
+      - "答案要簡潔完整 (50-300 字)"
+      - "答案要能獨立存在"
+
+    verification:
+      - "是否有 FAQPage Schema？"
+      - "問答是否標記正確？"
+      - "答案長度是否適中？"
+
+  # 策略 6: 本地優化 (如適用)
+  local_optimization:
+    importance: "★★★☆☆"
+    description: "語音搜尋中有大量本地查詢"
+
+    patterns:
+      - "[類型] 附近"
+      - "[地點] 最好的 [類型]"
+      - "[類型] 在哪裡"
+      - "離我最近的 [類型]"
+
+    tactics:
+      - "加入地點相關關鍵字"
+      - "使用 LocalBusiness Schema"
+      - "提供地址和營業時間"
+      - "加入 Google Maps 嵌入"
+
+    note: "對於非本地性內容可跳過此策略"
+
+# ============================================================
+# 內容格式範本
+# ============================================================
+
+content_templates:
+
+  # 語音優化問答區塊
+  voice_qa_block:
+    description: "專為語音搜尋優化的問答格式"
+    format: |
+      ## [完整問句]？
+
+      [直接回答，一句話]
+
+      ### 詳細說明
+
+      [補充說明，2-3 段]
+
+      ### 相關問題
+
+      - [相關問句 1]
+      - [相關問句 2]
+
+  # 語音友善摘要
+  voice_summary:
+    description: "適合被朗讀的摘要"
+    format: |
+      > **一句話重點**
+      > [30 字以內的核心結論]
+
+    example: |
+      > **一句話重點**
+      > 一人公司的關鍵不是更努力，而是建立系統讓收入自動化。
+
+  # 語音友善步驟
+  voice_steps:
+    description: "適合語音朗讀的步驟"
+    format: |
+      要 [達成目標]，有三個主要步驟：
+
+      首先，[步驟一]。
+      接著，[步驟二]。
+      最後，[步驟三]。
+
+    example: |
+      要開始一人公司，有三個主要步驟：
+
+      首先，確定你的核心定位，想清楚要幫誰解決什麼問題。
+      接著，建立內容系統，讓獲客自動化。
+      最後，把服務變成產品，脫離時間換錢的模式。
+
+# ============================================================
+# 評分標準
+# ============================================================
+
+scoring:
+
+  dimensions:
+    question_headings:
+      weight: 25
+      criteria:
+        - "H2 使用完整問句"
+        - "問句反映真實語音查詢"
+        - "涵蓋主要 5W1H"
+
+    direct_answers:
+      weight: 30
+      criteria:
+        - "問句後立即有直接回答"
+        - "回答在 30 字以內"
+        - "回答完整自足"
+
+    conversational_keywords:
+      weight: 20
+      criteria:
+        - "包含對話式長尾關鍵字"
+        - "關鍵字自然融入內容"
+
+    speakable:
+      weight: 15
+      criteria:
+        - "句子長度適中 (15-20字)"
+        - "不依賴視覺元素"
+        - "數字表達自然"
+
+    schema:
+      weight: 10
+      criteria:
+        - "有 FAQPage Schema"
+        - "問答標記正確"
+
+  grading:
+    A: "85-100 - 極高語音搜尋能見度"
+    B: "70-84 - 高語音搜尋能見度"
+    C: "55-69 - 中等語音搜尋能見度"
+    D: "40-54 - 低語音搜尋能見度"
+    F: "<40 - 極低語音搜尋能見度"
+
+# ============================================================
+# 驗證清單
+# ============================================================
+
+verification_checklist:
+
+  must_have:
+    - "□ 至少 3 個 H2 使用完整問句"
+    - "□ 每個問句後有直接回答 (30字內)"
+    - "□ 包含對話式長尾關鍵字"
+    - "□ 句子平均長度 < 25 字"
+
+  should_have:
+    - "□ 有 FAQPage Schema"
+    - "□ 有語音友善摘要"
+    - "□ 避免依賴視覺元素的表達"
+    - "□ 數字有文字描述版本"
+
+  nice_to_have:
+    - "□ 涵蓋 5W1H 各類問句"
+    - "□ 有語音友善步驟格式"
+    - "□ 本地資訊 (如適用)"
+
+# ============================================================
+# 與現有系統整合
+# ============================================================
+
+integration:
+
+  with_seo_optimizer:
+    - "VSO 問句作為 H2 標題建議"
+    - "FAQ Schema 整合到 Schema 生成"
+
+  with_aeo:
+    - "共享問答格式優化"
+    - "共享 Featured Snippet 策略"
+
+  with_writer_agent:
+    - "寫作時自動加入問句標題"
+    - "生成語音友善摘要"
+
+  with_editor_agent:
+    - "檢查句子長度"
+    - "驗證直接回答存在"
+
+# ============================================================
+# 報告格式
+# ============================================================
+
+report_format:
+  filename: "vso_report.md"
+  sections:
+    - "VSO 評分總覽"
+    - "問句標題分析"
+    - "直接回答檢查"
+    - "對話式關鍵字覆蓋"
+    - "朗讀友善度評估"
+    - "Schema 驗證"
+    - "改進建議"

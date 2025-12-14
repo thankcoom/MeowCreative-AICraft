@@ -1,0 +1,9 @@
+requests==2.31.0
+beautifulsoup4==4.12.2
+pyyaml==6.0.1
+pillow>=10.0.0
+cairosvg>=2.7.0
+svgwrite>=1.4.3
+
+# Skills 支援套件
+matplotlib>=3.7.0  # Analytics Reporter 圖表生成

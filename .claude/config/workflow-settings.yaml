@@ -1,0 +1,371 @@
+# 工作流程設定
+# 控制自動化程度和使用者互動檢查點
+# 版本: 2.0.0
+# 建立日期: 2025-10-24
+# 更新日期: 2025-11-11
+
+# ============================================
+# 工作流程模式
+# ============================================
+
+workflow_mode:
+  # 模式選擇: auto (全自動) | semi-auto (半自動,有檢查點) | manual (手動)
+  current_mode: "semi-auto"
+
+  description: |
+    - auto: 一鍵生成,無需人工介入
+    - semi-auto: 關鍵階段需要使用者確認
+    - manual: 每個步驟都需要使用者觸發
+
+# ============================================
+# 互動檢查點配置
+# ============================================
+
+checkpoints:
+  # 檢查點 1: 研究報告審查
+  research_review:
+    enabled: true
+    phase: "Phase 2"
+    trigger: "research_report_generated"
+    description: "研究完成後,讓使用者審查研究報告"
+
+    prompt_message: |
+      📊 研究報告已完成!
+
+      檔案位置: output/session_{timestamp}/research_report.md
+
+      請審查:
+      - ✅ 熱門文章數量是否足夠 (10-15篇)
+      - ✅ 共同模式分析是否有洞察
+      - ✅ 寫作建議是否具體可執行
+      - ✅ 關鍵字建議是否符合主題
+
+      是否繼續進入 Phase 3 (內容創作)?
+
+    options:
+      - label: "繼續"
+        action: "proceed"
+        description: "研究報告符合預期,進入內容創作"
+
+      - label: "重新研究"
+        action: "retry_research"
+        description: "研究不足,需要調整關鍵字或擴大範圍"
+
+      - label: "手動編輯"
+        action: "pause_for_edit"
+        description: "暫停工作流程,我要手動修改研究報告"
+
+    default_action: "proceed"
+    timeout_seconds: 300  # 5分鐘無回應則自動繼續
+
+  # 檢查點 2: 風格指南審查
+  style_guide_review:
+    enabled: true
+    phase: "Phase 2"
+    trigger: "style_guide_generated"
+    description: "風格融合策略完成,讓使用者確認寫作方向"
+
+    prompt_message: |
+      🎨 風格指南已生成!
+
+      檔案位置: output/session_{timestamp}/style_guide.md
+
+      請審查:
+      - ✅ 推薦的參考作者是否合適
+      - ✅ 風格融合策略是否符合品牌調性
+      - ✅ 寫作指引是否明確
+
+      是否繼續撰寫文章?
+
+    options:
+      - label: "繼續"
+        action: "proceed"
+
+      - label: "調整風格"
+        action: "regenerate_style"
+        description: "重新選擇參考作者或調整融合策略"
+
+      - label: "跳過風格指南"
+        action: "skip_style"
+        description: "使用預設風格,直接開始寫作"
+
+    default_action: "proceed"
+    timeout_seconds: 300
+
+  # 檢查點 3: 初稿審查
+  draft_review:
+    enabled: true
+    phase: "Phase 3"
+    trigger: "draft_generated"
+    description: "初稿完成,讓使用者決定是否進入編輯審查"
+
+    prompt_message: |
+      ✍️  初稿已完成!
+
+      檔案位置: output/session_{timestamp}/draft_final.md
+      字數: {word_count} 字
+
+      請審查:
+      - ✅ 內容是否符合預期方向
+      - ✅ 結構是否完整
+      - ✅ 關鍵信息是否涵蓋
+
+      下一步?
+
+    options:
+      - label: "進入編輯審查"
+        action: "proceed_to_editor"
+        description: "讓 Editor Agent 進行量化評估"
+
+      - label: "直接優化發布"
+        action: "skip_editor"
+        description: "跳過編輯審查,直接進入 SEO 優化"
+
+      - label: "重寫"
+        action: "rewrite"
+        description: "內容方向不對,需要重新撰寫"
+
+      - label: "手動修改"
+        action: "pause_for_edit"
+        description: "暫停,讓我先手動修改初稿"
+
+    default_action: "proceed_to_editor"
+    timeout_seconds: 600  # 10分鐘
+
+  # 檢查點 4: 編輯審查結果
+  editor_review_decision:
+    enabled: true
+    phase: "Phase 3.5"
+    trigger: "editor_review_completed"
+    description: "Editor 審查完成,根據評分決定後續行動"
+
+    prompt_message: |
+      📝 編輯審查完成!
+
+      評分: {score}/100 (評級: {grade})
+      檔案: output/session_{timestamp}/editor_review.md
+
+      問題摘要:
+      - 高優先級: {high_priority_count} 個
+      - 中優先級: {medium_priority_count} 個
+      - 低優先級: {low_priority_count} 個
+
+      下一步?
+
+    # 根據評分自動決策
+    auto_decision_rules:
+      - condition: "score >= 90"
+        action: "proceed"
+        message: "評分優秀,直接進入 SEO 優化"
+
+      - condition: "score >= 80 and high_priority_count == 0"
+        action: "proceed"
+        message: "評分良好且無高優先級問題,進入 SEO 優化"
+
+      - condition: "score >= 70"
+        action: "ask_user"
+        message: "評分及格但有改進空間,詢問使用者意見"
+
+      - condition: "score < 70"
+        action: "ask_user"
+        message: "評分不及格,建議修訂"
+
+    options:
+      - label: "接受並繼續"
+        action: "proceed"
+        description: "接受目前品質,進入 SEO 優化和發布"
+
+      - label: "修訂問題"
+        action: "revise"
+        description: "根據 Editor 建議修改文章"
+
+      - label: "重寫"
+        action: "rewrite"
+        description: "品質不佳,需要重新撰寫"
+
+      - label: "手動修改"
+        action: "pause_for_edit"
+        description: "暫停,讓我手動處理問題"
+
+    default_action: "revise"
+    timeout_seconds: 600
+
+  # 檢查點 5: MCP 功能確認 (v2.0.0 新增)
+  mcp_features_check:
+    enabled: true
+    phase: "Phase 5"
+    trigger: "wordpress_published"
+    description: "WordPress 發布完成後,確認是否執行 MCP 整合功能"
+
+    prompt_message: |
+      📊 WordPress 發布完成!
+
+      檔案位置: output/session_{timestamp}/publish_report.md
+      發布網址: {wordpress_url}
+
+      v2.0.0 新功能 - MCP 整合:
+      - [ ] Phase 7: Analytics Reporter (真實 GA 數據分析)
+      - [ ] Phase 8: Multi-Platform Publishing (Twitter + Notion)
+      - [ ] Phase 9: A/B Testing (標題測試追蹤)
+      - [ ] Phase 10: Data Dashboard (整合數據儀表板)
+
+      是否執行 MCP 整合功能?
+
+    options:
+      - label: "執行完整 MCP 流程"
+        action: "proceed_mcp_full"
+        description: "執行 Phase 7-10 所有 MCP 功能"
+
+      - label: "僅執行 Analytics"
+        action: "analytics_only"
+        description: "只執行 Phase 7,獲取 GA 數據報告"
+
+      - label: "跳過 MCP 功能"
+        action: "skip_mcp"
+        description: "不使用 MCP 功能,工作流程結束"
+
+    default_action: "proceed_mcp_full"
+    timeout_seconds: 300
+
+  # 檢查點 6: Analytics 數據確認 (v2.0.0 新增)
+  analytics_review:
+    enabled: true
+    phase: "Phase 7"
+    trigger: "analytics_report_generated"
+    description: "Analytics Reporter 完成後,檢視真實流量數據"
+
+    prompt_message: |
+      📊 Analytics 數據報告已生成!
+
+      檔案位置: output/session_{timestamp}/analytics_report.md
+
+      請審查:
+      - ✅ GA 數據是否成功讀取 (或使用模擬數據)
+      - ✅ 流量趨勢分析是否合理
+      - ✅ 圖表是否正確生成
+      - ✅ 改進建議是否具體可行
+
+      下一步?
+
+    options:
+      - label: "繼續多平台發布"
+        action: "proceed_to_phase8"
+        description: "進入 Phase 8: Twitter/Notion 發布"
+
+      - label: "僅生成儀表板"
+        action: "skip_to_dashboard"
+        description: "跳過 Phase 8-9,直接生成 Phase 10 儀表板"
+
+      - label: "結束流程"
+        action: "finish"
+        description: "結束 v2.0.0 工作流程"
+
+    default_action: "proceed_to_phase8"
+    timeout_seconds: 300
+
+# ============================================
+# 快速模式覆寫
+# ============================================
+
+quick_mode:
+  # 快速模式: 禁用所有檢查點,適合批次創作
+  enabled: false
+
+  when_enabled:
+    # 快速模式下的行為
+    disable_all_checkpoints: true
+    auto_approve_threshold: 70  # Editor 評分 >= 70 就自動通過
+    skip_style_matching: false  # 仍然使用動態風格匹配
+    use_research_cache: true    # 積極使用快取
+
+# ============================================
+# 通知設定
+# ============================================
+
+notifications:
+  # 檢查點通知方式
+  method: "console"  # console | file | webhook
+
+  # 控制台顏色
+  colors:
+    info: "blue"
+    warning: "yellow"
+    success: "green"
+    error: "red"
+
+  # 聲音提示(如果支援)
+  sound_enabled: false
+
+# ============================================
+# 超時處理
+# ============================================
+
+timeout_behavior:
+  # 檢查點超時後的預設行為
+  default_action: "proceed"  # proceed | pause | cancel
+
+  # 是否記錄超時事件
+  log_timeouts: true
+
+  # 超時日誌位置
+  timeout_log: ".claude/logs/checkpoint_timeouts.log"
+
+# ============================================
+# 批次模式
+# ============================================
+
+batch_mode:
+  # 批次創作時的檢查點策略
+  enabled: false
+
+  when_enabled:
+    # 批次模式下,只在特定條件觸發檢查點
+    trigger_checkpoints_when:
+      - "editor_score < 70"  # 只有評分不及格才暫停
+      - "high_priority_issues > 3"  # 高優先級問題超過3個
+
+    # 其他情況自動繼續
+    auto_proceed: true
+
+# ============================================
+# 使用範例
+# ============================================
+
+usage_examples:
+  example1:
+    scenario: "日常單篇創作"
+    recommended_mode: "semi-auto"
+    enabled_checkpoints: ["research_review", "draft_review", "editor_review_decision"]
+    description: "保留關鍵檢查點,確保品質"
+
+  example2:
+    scenario: "批次創作 10 篇文章"
+    recommended_mode: "auto"
+    quick_mode: true
+    description: "禁用檢查點,只有評分<70才暫停"
+
+  example3:
+    scenario: "實驗新主題"
+    recommended_mode: "manual"
+    enabled_checkpoints: "all"
+    description: "每個階段都審查,確保方向正確"
+
+# ============================================
+# 版本記錄
+# ============================================
+
+version_history:
+  - version: "2.6.0"
+    date: "2025-12-14"
+    changes: "新增 Search Everywhere 模式 (LLMO/GEO/VSO/CRO/AISO 優化)"
+    author: "系統優化團隊"
+
+  - version: "2.0.0"
+    date: "2025-11-11"
+    changes: "新增 Phase 6-10 MCP 整合檢查點 (MCP 功能確認、Analytics 數據審查)"
+    author: "系統優化團隊"
+
+  - version: "1.0.0"
+    date: "2025-10-24"
+    changes: "初始版本,建立 4 個互動檢查點和模式配置"
+    author: "系統優化團隊"
